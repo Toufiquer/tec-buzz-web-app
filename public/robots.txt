@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://tecbuzz.bd
+
+# Sitemaps
+Sitemaps: https://tecbuzz.bd/sitemaps.xml
