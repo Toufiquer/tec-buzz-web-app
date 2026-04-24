@@ -316,8 +316,6 @@ export default function TecBuzzPage() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
-
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
@@ -338,7 +336,7 @@ export default function TecBuzzPage() {
         body {
           background: var(--paper);
           color: var(--ink);
-          font-family: 'DM Sans', sans-serif;
+          font-family: var(--font-dm-sans), sans-serif;
           line-height: 1.6;
           overflow-x: hidden;
         }
@@ -358,7 +356,7 @@ export default function TecBuzzPage() {
           padding: 12px 5%;
         }
         .nav-logo {
-          font-family: 'DM Serif Display', serif;
+          font-family: var(--font-dm-serif), serif;
           font-size: 1.7rem;
           color: var(--ink);
           letter-spacing: -0.5px;
@@ -366,7 +364,7 @@ export default function TecBuzzPage() {
         }
         .nav-logo span { color: var(--accent); }
         .nav-tagline {
-          font-family: 'Tiro Bangla', serif;
+          font-family: var(--font-tiro-bangla), serif;
           font-size: 0.78rem;
           color: var(--muted);
           letter-spacing: 0.02em;
@@ -398,7 +396,7 @@ export default function TecBuzzPage() {
           position: absolute;
           top: 50%; left: 50%;
           transform: translate(-50%, -50%);
-          font-family: 'DM Serif Display', serif;
+          font-family: var(--font-dm-serif), serif;
           font-size: clamp(120px, 22vw, 280px);
           color: rgba(200,68,10,0.04);
           white-space: nowrap;
@@ -412,14 +410,14 @@ export default function TecBuzzPage() {
           margin-bottom: 28px;
         }
         .hero-eyebrow {
-          font-family: 'Tiro Bangla', serif;
+          font-family: var(--font-tiro-bangla), serif;
           font-size: 1rem;
           color: var(--accent);
           margin-bottom: 12px;
           letter-spacing: 0.04em;
         }
         .hero-headline {
-          font-family: 'DM Serif Display', serif;
+          font-family: var(--font-dm-serif), serif;
           font-size: clamp(2.8rem, 7vw, 6rem);
           line-height: 1.05;
           letter-spacing: -0.03em;
@@ -427,7 +425,7 @@ export default function TecBuzzPage() {
           margin-bottom: 16px;
         }
         .hero-headline-bn {
-          font-family: 'Tiro Bangla', serif;
+          font-family: var(--font-tiro-bangla), serif;
           font-size: clamp(1.4rem, 3.5vw, 2.8rem);
           color: var(--muted);
           line-height: 1.4;
@@ -496,13 +494,13 @@ export default function TecBuzzPage() {
         }
         .stat-card:last-child { border-right: none; }
         .stat-value {
-          font-family: 'DM Serif Display', serif;
+          font-family: var(--font-dm-serif), serif;
           font-size: 2.8rem;
           color: var(--accent);
           line-height: 1;
         }
         .stat-label-bn {
-          font-family: 'Tiro Bangla', serif;
+          font-family: var(--font-tiro-bangla), serif;
           font-size: 0.9rem;
           color: rgba(255,255,255,0.7);
         }
@@ -529,19 +527,19 @@ export default function TecBuzzPage() {
           margin-bottom: 10px;
         }
         .section-title {
-          font-family: 'DM Serif Display', serif;
+          font-family: var(--font-dm-serif), serif;
           font-size: clamp(2rem, 4vw, 3.4rem);
           line-height: 1.1;
           letter-spacing: -0.03em;
         }
         .section-title-bn {
-          font-family: 'Tiro Bangla', serif;
+          font-family: var(--font-tiro-bangla), serif;
           font-size: clamp(1rem, 2.5vw, 1.4rem);
           color: var(--muted);
           margin-top: 8px;
         }
         .section-count {
-          font-family: 'DM Serif Display', serif;
+          font-family: var(--font-dm-serif), serif;
           font-size: 5rem;
           color: rgba(200,68,10,0.08);
           line-height: 1;
@@ -588,7 +586,7 @@ export default function TecBuzzPage() {
           line-height: 1;
         }
         .service-title-bn {
-          font-family: 'Tiro Bangla', serif;
+          font-family: var(--font-tiro-bangla), serif;
           font-size: 1.15rem;
           color: var(--ink);
           margin-bottom: 4px;
@@ -603,7 +601,7 @@ export default function TecBuzzPage() {
           font-weight: 500;
         }
         .service-desc {
-          font-family: 'Tiro Bangla', serif;
+          font-family: var(--font-tiro-bangla), serif;
           font-size: 0.9rem;
           color: #4a4338;
           line-height: 1.75;
@@ -632,7 +630,7 @@ export default function TecBuzzPage() {
         .cta-section::before {
           content: 'TecBuzz';
           position: absolute;
-          font-family: 'DM Serif Display', serif;
+          font-family: var(--font-dm-serif), serif;
           font-size: 14vw;
           color: rgba(0,0,0,0.07);
           bottom: -20px;
@@ -641,7 +639,7 @@ export default function TecBuzzPage() {
           pointer-events: none;
         }
         .cta-title {
-          font-family: 'DM Serif Display', serif;
+          font-family: var(--font-dm-serif), serif;
           font-size: clamp(2rem, 5vw, 4rem);
           color: #fff;
           line-height: 1.1;
@@ -649,7 +647,7 @@ export default function TecBuzzPage() {
           margin-bottom: 12px;
         }
         .cta-title-bn {
-          font-family: 'Tiro Bangla', serif;
+          font-family: var(--font-tiro-bangla), serif;
           font-size: clamp(1rem, 2.5vw, 1.6rem);
           color: rgba(255,255,255,0.75);
           margin-bottom: 36px;
@@ -685,13 +683,13 @@ export default function TecBuzzPage() {
           border-bottom: 1px solid rgba(255,255,255,0.08);
         }
         .footer-brand {
-          font-family: 'DM Serif Display', serif;
+          font-family: var(--font-dm-serif), serif;
           font-size: 2rem;
           color: #fff;
         }
         .footer-brand span { color: var(--accent); }
         .footer-tagline {
-          font-family: 'Tiro Bangla', serif;
+          font-family: var(--font-tiro-bangla), serif;
           font-size: 0.85rem;
           color: rgba(255,255,255,0.4);
           margin-top: 6px;
@@ -718,7 +716,7 @@ export default function TecBuzzPage() {
           letter-spacing: 0.04em;
         }
         .footer-copy-bn {
-          font-family: 'Tiro Bangla', serif;
+          font-family: var(--font-tiro-bangla), serif;
           font-size: 0.78rem;
           color: rgba(255,255,255,0.2);
         }
@@ -770,7 +768,7 @@ export default function TecBuzzPage() {
         }
         .pricing-header { display: flex; flex-direction: column; gap: 2px; }
         .pricing-title-bn {
-          font-family: 'Tiro Bangla', serif;
+          font-family: var(--font-tiro-bangla), serif;
           font-size: 1.15rem;
           color: var(--ink);
         }
@@ -786,13 +784,13 @@ export default function TecBuzzPage() {
         .pricing-prices { display: flex; flex-direction: column; gap: 6px; }
         .pricing-offer { display: flex; align-items: baseline; gap: 4px; }
         .price-currency {
-          font-family: 'DM Serif Display', serif;
+          font-family: var(--font-dm-serif), serif;
           font-size: 1.6rem;
           color: var(--accent);
           line-height: 1;
         }
         .price-amount {
-          font-family: 'DM Serif Display', serif;
+          font-family: var(--font-dm-serif), serif;
           font-size: 3.2rem;
           color: var(--accent);
           line-height: 1;
@@ -832,7 +830,7 @@ export default function TecBuzzPage() {
           flex-shrink: 0;
         }
         .feature-text {
-          font-family: 'Tiro Bangla', serif;
+          font-family: var(--font-tiro-bangla), serif;
           font-size: 0.88rem;
           color: #4a4338;
           line-height: 1.5;
@@ -1013,7 +1011,7 @@ export default function TecBuzzPage() {
           href={`https://wa.me/${WHATSAPP_NUMBER}`}
           target="_blank"
           rel="noopener noreferrer"
-          style={{ marginTop: 16, color: "rgba(255,255,255,0.7)", fontSize: "0.82rem", textDecoration: "none", fontFamily: "'Tiro Bangla', serif" }}
+          style={{ marginTop: 16, color: "rgba(255,255,255,0.7)", fontSize: "0.82rem", textDecoration: "none", fontFamily: "var(--font-tiro-bangla), serif" }}
         >
           অথবা WhatsApp করুন: 01607333369
         </a>
