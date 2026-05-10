@@ -912,7 +912,7 @@ export default function TecBuzzPage() {
           </div>
           <div className="nav-tagline">আপনার ডিজিটাল সমাধান</div>
         </div>
-        <a href="#contact" className="nav-cta">
+        <a  href={`https://wa.me/${WHATSAPP_NUMBER}`} className="nav-cta">
           যোগাযোগ করুন
         </a>
       </nav>
@@ -937,7 +937,7 @@ export default function TecBuzzPage() {
           <a href="#services" className="btn-primary">
             আমাদের সেবা দেখুন →
           </a>
-          <a href="#contact" className="btn-secondary">
+          <a  href={`https://wa.me/${WHATSAPP_NUMBER}`} className="btn-secondary">
             Get Started
           </a>
         </div>
@@ -1004,7 +1004,7 @@ export default function TecBuzzPage() {
         <p className="cta-title-bn">
           আজই শুরু করুন — আপনার স্বপ্নের ওয়েবসাইট মাত্র একটি কলের দূরত্বে
         </p>
-        <a href="mailto:hello@tecbuzz.com" className="btn-white">
+        <a  href={`https://wa.me/${WHATSAPP_NUMBER}`} className="btn-white">
           আমাদের সাথে কথা বলুন
         </a>
         <a
