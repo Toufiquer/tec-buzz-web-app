@@ -140,19 +140,6 @@ const WHATSAPP_NUMBER = "8801607333369";
 
 const pricingPlans: PricingPlan[] = [
   {
-    titleBn: "স্টার্টার প্যাকেজ",
-    titleEn: "Starter",
-    offerPrice: 5000,
-    realPrice: 7000,
-    features: [
-      "দ্রুত লোডিং ওয়েবসাইট",
-      "আনলিমিটেড পেজ",
-      "SEO অপ্টিমাইজেশন",
-      "Facebook পেজ সেটআপ",
-      "লাইফটাইম হোস্টিং",
-    ],
-  },
-  {
     titleBn: "গ্রোথ প্যাকেজ",
     titleEn: "Growth",
     offerPrice: 18000,
