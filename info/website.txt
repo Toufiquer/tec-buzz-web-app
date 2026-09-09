@@ -1,0 +1,350 @@
+TECBUZZ WEBSITE PLAN
+Brand line: Ideas • Innovation • Impact
+
+1. WEBSITE IDEA
+
+Build a premium, bilingual (Bangla-first with English support), mobile-first website for Bangladesh SMEs. Position TecBuzz as a Growth System, not only a website maker: Website + Lead Management + Tracking + WhatsApp + SEO + Automation.
+
+Core promise: "২৪–৪৮ ঘণ্টায় SME Growth Website + Lead System"
+Supporting line: "ওয়েবসাইট নয়, ব্যবসার জন্য একটি Lead & Growth System।"
+Main funnel: Visitor -> Free Audit -> Qualified Lead -> Live Demo -> Proposal -> Launch -> Monthly Growth Service.
+Primary CTA: "Free 10-Minute Audit নিন"
+Secondary CTA: "Live Demo দেখুন"
+Persistent CTA: WhatsApp করুন (01607333369)
+Delivery disclaimer: Standard build-এর delivery clock শুরু হবে advance payment, required assets এবং approved scope পাওয়ার পর।
+
+2. DESIGN DIRECTION
+
+- Use the supplied TecBuzz logo in header, footer, favicon and loading state.
+- Visual language: white/ice-blue background, deep navy text, electric-blue/cyan gradients inspired by the logo, clean geometry and subtle pixel/connection motion.
+- Premium but practical: generous whitespace, rounded cards, soft shadows, real dashboard/project visuals; no generic stock-laptop hero.
+- Typography: highly readable Bangla and English; bold short headings and concise body text.
+- Mobile first: a compact sticky/floating WhatsApp CTA; easy-to-scan pricing, forms and galleries.
+- Motion: subtle reveal, card hover and light dashboard micro-motion only; keep performance fast.
+- Trust: real portfolio, verified testimonials and accurate claims only. Never invent revenue or lead-growth results.
+- Content mix: 70% education/problem/proof, 20% demos/case studies, 10% direct offer.
+
+3. NAVIGATION
+
+Header: Home | Services | Solutions | Portfolio | Pricing | Resources | About
+Header actions: Free Audit | WhatsApp
+Services menu: Website Development | Business Automation | Content & Social | SEO | Ads Management
+Solutions menu: Education & Coaching | Clinic & Healthcare | SME & Corporate | E-commerce | Professional Services
+Resources menu: Blog | Static Post Examples | Reels Examples | Ad Creative Gallery | FAQ
+Footer: Services, Solutions, Portfolio, Resources, Company, Legal, Contact, WhatsApp and social links.
+
+4. COMPLETE SITEMAP
+
+CORE SALES PAGES
+
+1. / — Home
+Hero -> trust strip -> business problems -> Growth System flow -> core solutions -> six demo highlights -> pricing -> delivery process -> proof -> FAQ -> final audit CTA.
+
+2. /services — All Services
+Service discovery cards, outcomes, relevant proof and CTA.
+
+3. /website-development — Website Development
+Website outcomes, included features, package comparison, build process, demos, objections and audit CTA.
+
+4. /business-automation — Business Automation
+Lead CRM, assignment, follow-up workflow, role access, dashboard demo and book-demo CTA.
+
+5. /content-social-media — Content & Social Media
+Content process, packages, examples gallery and request-content-plan CTA.
+
+6. /seo — SEO Service
+SEO foundation, ongoing local SEO, process, what SEO does/does not guarantee and audit CTA.
+
+7. /ads-management — Ads Management
+Boost vs Ads Manager, campaign funnel, fee explanation, ad-spend-separate note, creative gallery and request-ad-plan CTA.
+
+8. /pricing — Pricing
+Website packages, content packages, single-item cost, inclusions/exclusions, payment and delivery notes.
+
+PORTFOLIO / PROOF
+
+9. /portfolio — Portfolio
+Filterable project gallery, six featured demos, live-demo links and CTA.
+
+10. /portfolio/[slug] — Six Project Detail Pages
+Business type, challenge, TecBuzz build, key screens, systems included, verified outcome if available and live-demo CTA.
+
+11. /case-studies — Case Studies
+Problem -> Solution -> Implementation -> Verified Outcome -> Client Quote. If no outcome is verified, label it an implementation case study.
+
+12. /testimonials — Testimonials
+Permissioned client quote, name/company/logo, relevant project and service used.
+
+SOLUTION PAGES
+
+13. /solutions — All Solutions
+14. /solutions/education-coaching — Admission lead capture, counsellor assignment and follow-up CRM.
+15. /solutions/clinic-healthcare — Appointment/enquiry flow, service pages, WhatsApp and tracking.
+16. /solutions/sme-corporate — Professional presence, quotation leads and team workflow.
+17. /solutions/ecommerce — Storefront, product/order flow and campaign tracking.
+18. /solutions/professional-services — Trust, inquiry, booking and conversion funnel.
+
+CONTENT / RESOURCE PAGES
+
+19. /static-posts — 30 Static Post Examples, filterable grid.
+20. /static-posts/[slug] — Individual visual, caption, CTA and related service.
+21. /reels — 24 Reels Examples, each with video/storyboard, hook and CTA.
+22. /reels/[slug] — Individual reel detail with script outline and related service.
+23. /ad-creatives — 21 Ad Creative Gallery, filterable by funnel stage, format and niche.
+24. /ad-creatives/[slug] — Audience, placement, copy, CTA and test hypothesis.
+25. /blog — Buyer-intent resource library.
+26. /blog/[slug] — Individual SEO article.
+
+LEAD / COMPANY PAGES
+
+27. /free-audit — Focused lead page. Form: name, WhatsApp, business name, category, current site/page, goal, budget range, launch timeline. Thank-you state: WhatsApp + demo + optional booking.
+28. /demo — Live Demo Hub for the six niche demos.
+29. /contact — Form, WhatsApp, phone/email, business hours, social links and accurate address/map only if available.
+30. /about — Mission, method, values and "Ideas • Innovation • Impact" story.
+31. /how-we-work — Audit, scope, advance, assets, build, QA, revision, launch and support.
+32. /thank-you — Post-form next steps.
+
+HELP / LEGAL / SYSTEM PAGES
+
+33. /faq — Updated buying-objection FAQ below.
+34. /privacy — Form data, analytics/cookies, use, retention, security, sharing and contact.
+35. /terms — Scope approval, payments, delivery, revisions, change requests, client duties, ownership, support and liability.
+36. /refund — Cancellation, work completed, non-refundable third-party/domain/hosting/ad-spend items, process and contact. Obtain legal review before publishing.
+37. /cookies — GA4/GTM, Meta Pixel/TikTok Pixel disclosure and consent/opt-out approach.
+38. /accessibility — Accessibility commitment and support contact.
+39. /404 — Helpful navigation, Free Audit and WhatsApp CTA.
+40. /500 — Friendly error recovery and contact CTA.
+
+5. HOMEPAGE SECTION ORDER
+
+1. Hero: "আপনার Business Website ২৪–৪৮ ঘণ্টায় Live করুন"; starting from ৳14,900; Free Audit and Live Demo CTAs.
+2. Trust strip: Responsive | Lead-ready | GA4/Pixel Tracking | PWA | Secure Access | 24–48h Standard Delivery.
+3. Problem: inbox lead loss, no ownership, unclear source, low-conversion website.
+4. Solution flow: Visitor -> Lead -> Assigned Employee/Counsellor -> Follow-up -> Proposal -> Won Customer.
+5. Solution cards: Website, Lead CRM, Team Access, Analytics, WhatsApp, PWA, Security and Media.
+6. Six industry demos.
+7. Why TecBuzz: buyer outcomes instead of developer jargon.
+8. Pricing preview.
+9. Transparent delivery process.
+10. Real proof/testimonials.
+11. FAQ preview.
+12. Final CTA: "১০ মিনিটে জানুন কোথায় lead হারাচ্ছেন।"
+
+6. PRICING (FROM service.txt)
+
+WEBSITE / GROWTH SYSTEM
+
+- TecBuzz Starter — ৳14,900: Website + SEO
+- Lead Express — ৳24,900: Website + SEO + 1 Month Content + Marketing Support
+- Enterprise — ৳79,900: Website + business-requirement updates for 1 Month + SEO + Marketing Support + 2 Months Content
+
+MONTHLY CONTENT
+
+- Content Lite — real ৳7,650/month; discount ৳5,000/month: 12 Reels + 30 Static Posts + 21 Ad Creatives
+- Content Growth — real ৳12,150/month; discount ৳7,500/month: 30 Reels + 30 Static Posts + 21 Ad Creatives
+- Content Scale — real ৳24,300/month; discount ৳13,500/month: 60 Reels + 60 Static Posts + 42 Ad Creatives
+
+SINGLE CONTENT COST
+
+- Reel: ৳250
+- Static Post: ৳50
+- Ad Creative: ৳150
+
+Show these service capabilities carefully as package-dependent/custom where applicable: fast loading, unlimited pages, Vercel hosting options, secure authentication/authorization, employee management, PWA, user blocking, GA4/GTM + Facebook Pixel, SEO, Facebook page setup and ad-boosting support. State inclusions, exclusions, hosting renewal, revisions and custom-work scope clearly.
+
+7. SIX DEMO PROJECTS
+
+Each demo needs live preview, desktop/mobile screenshots, challenge, solution, included modules and CTA. No unverified numerical result claims.
+
+1. EduFlow Academy — Education / Coaching
+Admission page, application form, counsellor assignment, lead stages and WhatsApp follow-up.
+
+2. CarePoint Clinic — Clinic / Healthcare
+Doctor/service pages, appointment request, map/contact, WhatsApp and enquiry tracking.
+
+3. Vertex Trading — SME / Corporate
+Corporate site, service catalogue, quotation request, team pages and lead-source tracking.
+
+4. NoboMart — E-commerce / Retail
+Storefront, categories, product detail, checkout/order flow, WhatsApp support and campaign tracking.
+
+5. CounselPro — Professional Services
+Expertise pages, proof, consultation form, booking/contact CTA and lead pipeline.
+
+6. LeadBoard CRM — Business Automation
+New -> Contacted -> Qualified -> Demo -> Proposal -> Won/Lost pipeline, assignment, notes and role access.
+
+8. FAQ — UPDATED FROM info FOLDER
+
+1. ২৪–৪৮ ঘণ্টার delivery কীভাবে কাজ করে?
+Standard build starts only after advance payment, required assets and approved scope; custom/automation work gets a separate timeline.
+
+2. Domain ও hosting কার ownership-এ থাকবে?
+Ownership, annual renewal and managed-hosting responsibility will be explicit in the proposal and terms. Never use an undefined "lifetime hosting" promise.
+
+3. কতটি revision আছে?
+The package/proposal states included revision rounds. Revision improves approved work; a new feature/page type is a change request.
+
+4. Content না থাকলে TecBuzz লিখে দেবে কি?
+Content support can be separately scoped, while client business information and approvals remain necessary.
+
+5. SEO কি ranking guarantee করে?
+No. TecBuzz delivers agreed technical/on-page SEO work; ranking depends on competition, content, authority and search-engine factors.
+
+6. Ads budget ও management fee কি আলাদা?
+Yes. Advertising-platform spend is separate from TecBuzz management/service fees.
+
+7. Website launch-এর পর support কীভাবে পাওয়া যাবে?
+Support channel, maintenance scope, response expectations and recurring fees are defined in the package/proposal.
+
+8. Custom feature চাইলে timeline/price কীভাবে নির্ধারণ হবে?
+TecBuzz reviews the workflow, confirms written scope, then gives a custom quote and delivery plan.
+
+9. Free Audit-এ কী দেখা হবে?
+Speed, mobile UX, CTA, WhatsApp, forms, tracking/Pixel, SEO basics, trust signals and follow-up flow.
+
+10. ২৪–৪৮ ঘণ্টার promise কি সব package-এর জন্য?
+No. It applies to qualified standard builds. Lead systems may take longer; Automation/Enterprise work is scope-based.
+
+11. Client asset delay হলে কী হবে?
+The delivery clock pauses until the logo, copy, images, contact details and approvals are received.
+
+12. Payment, cancellation ও refund rules কোথায় পাব?
+Read Pricing, Terms & Conditions and Refund & Cancellation before confirming a project.
+
+9. STATIC POST LIBRARY — 30 EXAMPLES
+
+Format: 1080x1080. Each card/detail: visual, Bangla caption, one CTA, topic tag and related service.
+
+1. Facebook Page আছে, Website কেন দরকার?
+2. ২০২৬ সালে Website বানাতে কত খরচ?
+3. Lead কোথায় হারাচ্ছেন?
+4. Fast Website কেন গুরুত্বপূর্ণ?
+5. GA4 কী কাজে লাগে?
+6. Meta Pixel কী?
+7. Portfolio Highlight: Education Demo
+8. Boost Button বনাম Ads Manager
+9. WhatsApp Button থাকলেই কি যথেষ্ট?
+10. Website-এর ৫টি Trust Signal
+11. Clinic Website-এর ৬টি দরকারি Feature
+12. Coaching/Consultancy Lead কেন হারায়?
+13. SME Company Website Checklist
+14. PWA কী?
+15. Role-based Access কেন দরকার?
+16. Website Security Basics
+17. SEO Setup বনাম Monthly SEO
+18. Domain + Hosting Ownership Explained
+19. ২৪–৪৮ ঘণ্টায় Website কীভাবে হয়?
+20. Website শুধু সুন্দর হলেই হয় না
+21. একটি Lead-এর Journey
+22. Meta না Google Ads?
+23. Website-এ কোন CTA ভালো?
+24. Before/After UI: Generic থেকে Conversion-focused
+25. FAQ: Revision কী?
+26. Client Asset Checklist
+27. Cost per Lead নয়, Qualified Lead দেখুন
+28. Website Analytics Dashboard
+29. Monthly Growth Service কেন দরকার?
+30. TecBuzz Offer Summary + Free Audit CTA
+
+10. REELS LIBRARY — 24 EXAMPLES
+
+Format: vertical 9:16. Structure: 0–2s hook; 3–8s problem; 9–20s solution/demo; 21–26s outcome/proof; 27–30s one CTA. Large subtitles, small logo, uncluttered screen recording.
+
+1. Facebook Page আছে, কিন্তু customer data কোথায় যায়?
+2. ৳10,000 আর ৳40,000 Website-এর পার্থক্য কী?
+3. ২৪–৪৮ ঘণ্টায় Website কীভাবে বানাই?
+4. Lead এলো—এরপর কী?
+5. Boost করলে sale হয় না কেন?
+6. Google Ads না Facebook Ads?
+7. Website slow হলে ৩টি business loss
+8. GA4 + Meta Pixel একসাথে কেন?
+9. Clinic Website-এ কী থাকবে?
+10. Coaching Business-এ Counsellor CRM
+11. PWA: App Store ছাড়াই Website Install
+12. Website কিনবেন না—আগে Audit নিন
+13. Website-এ এক CTA কেন গুরুত্বপূর্ণ?
+14. Lead Source Tracking: কোন ad থেকে lead এলো?
+15. Portfolio Walkthrough: EduFlow
+16. Portfolio Walkthrough: CarePoint
+17. Portfolio Walkthrough: Vertex Trading
+18. Portfolio Walkthrough: NoboMart
+19. Portfolio Walkthrough: CounselPro
+20. Portfolio Walkthrough: LeadBoard CRM
+21. Client Asset না থাকলে Build Delay কেন হয়?
+22. Revision আর New Feature-এর পার্থক্য
+23. Website Launch-এর আগে 7-Point QA
+24. Free 10-Minute Audit-এ কী পাবেন?
+
+11. AD CREATIVE GALLERY — 21 EXAMPLES
+
+Each detail: funnel stage, audience, format, visual direction, primary text, headline, CTA and one test hypothesis. Do not claim results unless verified.
+
+1. Free Audit Checklist — carousel — "আপনার website-এর ৫টি problem free-তে জানুন"
+2. Founder Problem Hook — reel — "Lead আসে, follow-up হারায়?"
+3. CRM Screen Demo — screen reel — New -> Assigned -> Follow-up -> Won
+4. 24–48h Process — montage — Assets -> Build -> QA -> Live
+5. Clinic Niche — static/reel — Appointment + Lead Follow-up
+6. Education Niche — static/reel — Admission Lead + Counsellor CRM
+7. SME Niche — static/reel — Corporate Site + Quotation Leads
+8. E-commerce Niche — carousel — Owned Storefront + Order Tracking
+9. Professional Service Niche — static — Trust + Consultation Booking
+10. Before/After — carousel — old layout vs conversion page
+11. Price Anchor — static — Website + tracking + WhatsApp from ৳14,900
+12. Lead Express Value — carousel — Website + SEO + Content + Marketing Support
+13. Boost vs Ads Manager — educational static
+14. Tracking Dashboard — mockup — know where every lead comes from
+15. Verified Testimonial — UGC/client-quote format
+16. Retargeting Offer — static — "Demo দেখেছেন? এবার Free Audit নিন"
+17. FAQ Objection — reel — "২৪–৪৮ ঘণ্টায় quality সম্ভব?"
+18. Website Speed Loss — static/reel
+19. WhatsApp Is Not a CRM — carousel
+20. SEO Foundation — static
+21. Lead Journey — animated funnel — Ad -> Form -> CRM -> Demo -> Sale
+
+12. BLOG STARTER TOPICS
+
+- বাংলাদেশে Business Website বানাতে কত খরচ?
+- Website + Lead CRM কি ছোট ব্যবসার জন্য দরকার?
+- Facebook Boost বনাম Ads Manager: কোনটি কখন ব্যবহার করবেন?
+- Meta Ads না Google Ads: আপনার business-এর জন্য কোনটি?
+- Domain ও Hosting ownership কেন গুরুত্বপূর্ণ?
+- SEO Setup এবং Monthly SEO-এর পার্থক্য
+- Website দ্রুত লোড না হলে কী ক্ষতি হয়?
+- GA4, GTM ও Meta Pixel সহজ ভাষায়
+- Clinic Website-এর জরুরি feature list
+- Coaching Business-এর admission lead follow-up system
+- Website revision এবং new feature-এর পার্থক্য
+- Free Digital Growth Audit-এ কী কী দেখা হয়?
+
+13. FUNCTIONAL REQUIREMENTS
+
+- Central CMS/data source for packages, services, portfolio, FAQ, static posts, reels, ad creatives and blogs.
+- Search/filter for portfolio and all content libraries.
+- Secure contact/audit forms: server-side validation, spam protection, rate limit, clear success/error state and CRM lead capture.
+- Lead data: source, campaign, UTM, landing page, niche, owner and lifecycle stage.
+- Track: lead_form_submit, whatsapp_click, phone_click, demo_request, pricing_view, portfolio_view, proposal_sent and deal_won.
+- Use GA4/GTM, Meta Pixel and TikTok Pixel only with clear privacy/cookie disclosure and appropriate consent handling.
+- Unique title/meta/canonical, sitemap.xml, robots.txt, descriptive alt text and Organization/LocalBusiness/Service schema where relevant.
+- Compressed responsive media, lazy-loaded galleries, minimal third-party scripts and Core Web Vitals focus.
+- Semantic HTML, labels, contrast, keyboard focus and accessible error messages.
+- Brand-consistent loading, empty, 404 and 500 states.
+
+14. BUILD PRIORITY
+
+Phase 1: Home, Services, Website Development, Pricing, Portfolio, six Demo Detail pages, Free Audit, Contact, FAQ, Privacy, Terms and Refund.
+Phase 2: Solution pages, Case Studies, Testimonials, Blog and Delivery Process.
+Phase 3: Static library (30), Reels library (24), Ad Creative gallery (21), filters and CMS/admin workflow.
+
+15. LAUNCH CHECKLIST
+
+- Service/package content approved and current.
+- Six live demos completed with real screenshots and accurate scope.
+- 30 static posts, 24 reels and 21 ad creatives uploaded with metadata.
+- Audit form -> lead CRM flow tested.
+- WhatsApp, phone and demo CTA tracking tested.
+- GA4/GTM/Meta/TikTok event tests complete where enabled.
+- Legal/trust pages reviewed for business accuracy and legal suitability.
+- Mobile, tablet and desktop QA completed.
+- Performance, SEO metadata, sitemap, robots and schema checked.
+- Testimonials, logos and results verified/permissioned before publishing.

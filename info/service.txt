@@ -1,0 +1,75 @@
+TecBuzz শুধু ওয়েবসাইট নির্মাতা নয়; এটি SME-এর জন্য Website, Lead Management, Tracking, WhatsApp, SEO ও Automation-এর সমন্বিত Growth System।
+
+প্রধান অফার: 
+TecBuzz Stater ৳14,900,
+    - Website
+    - SEO 
+
+Lead Express ৳24,900 , 
+    - Website 
+    - SEO 
+    - 1 Month of content
+    - Marketing Support
+
+Enterprise ৳79,900 
+    - Website + (Update as your business requirement in 1 Month)
+    - SEO 
+    - Marketing Support
+    - 2 Month of content.
+
+Standard Express build advance, assets ও scope approval-এর পর ২৪–৪৮ ঘণ্টায় দেওয়া সম্ভব।
+
+Content Lite
+    - Real Price: ৳7,650/মাস
+    - Discount Price: ৳5,000/মাস (৳2,650 সাশ্রয় — প্রায় 35% ছাড়)
+    - 12 Reels + 30 Static Posts + 21 Ad Creatives
+
+Content Growth
+    - Real Price: ৳12,150/মাস
+    - Discount Price: ৳7,500/মাস (৳4,650 সাশ্রয় — প্রায় 38% ছাড়)
+    - 30 Reels + 30 Static Posts + 21 Ad Creatives
+
+Content Scale
+    - Real Price: ৳24,300/মাস
+    - Discount Price: ৳13,500/মাস (৳10,800 সাশ্রয় — প্রায় 44% ছাড়)
+    - 60 Reels + 60 Static Posts + 42 Ad Creatives 
+
+Single Cost: 
+    - Reels : ৳250
+    - Static : ৳50
+    - Ad Creatives : ৳150
+
+
+TecBuzz Website Features
+- ⚡ দ্রুত লোডিং পারফরম্যান্স (Fast Loading Performance)
+  আমাদের ওয়েবসাইট সব ডিভাইসে দ্রুত লোড হওয়ার জন্য অপ্টিমাইজ করা। ব্যবহারকারীর অভিজ্ঞতা উন্নত করে এবং bounce rate কমায়।
+
+- ∞ আনলিমিটেড পেজ তৈরি (Unlimited Page Creation)
+  আপনার ব্যবসার প্রয়োজনে যতটা পেজ দরকার তৈরি করুন — কোনো সীমাবদ্ধতা নেই। কন্টেন্ট বা সার্ভিস বাড়ার সাথে সাথে সহজে স্কেল করুন।
+
+- ☁ Vercel Cloud Hosting
+  দ্রুত, নিরাপদ ও scalable hosting — SSL, Global CDN ও automatic deployment সহ। **Free Tier available for testing/personal projects**, এবং business website-এর জন্য প্রয়োজন অনুযায়ী premium hosting option।
+
+- 🔐 নিরাপদ অথেন্টিকেশন (Secure Auth & Authorization)
+  রোল-ভিত্তিক অ্যাক্সেস কন্ট্রোলসহ উন্নত লগইন সিস্টেম — শুধুমাত্র অনুমোদিত ব্যবহারকারীরা নির্দিষ্ট ডেটা অ্যাক্সেস করতে পারবে।
+
+- 👥 এমপ্লয়ি ম্যানেজমেন্ট (Employee Management System)
+  আপনার টিম পরিচালনা করুন সহজে — কর্মীদের যোগ করা, আপডেট করা এবং তাদের কার্যক্রম পর্যবেক্ষণের জন্য বিল্ট-ইন টুল।
+
+- 📱 প্রোগ্রেসিভ ওয়েব অ্যাপ (Progressive Web App — PWA)
+  আপনার ওয়েবসাইট মোবাইল ও ডেস্কটপে অ্যাপের মতো কাজ করবে — দ্রুত, ইনস্টলযোগ্য এবং সীমিত ইন্টারনেটেও অ্যাক্সেসযোগ্য।
+
+- 🚫 ইউজার ব্লকিং সিস্টেম (User Blocking System)
+  অ্যাডমিনরা প্রয়োজনে ব্যবহারকারীদের ব্লক বা সীমাবদ্ধ করতে পারবেন — প্ল্যাটফর্মের নিরাপত্তা নিশ্চিত করতে।
+
+- 📊 Google Tag & Facebook Pixel (Analytics Integration)
+  Google Tag Manager ও Facebook Pixel সহজে ইন্টিগ্রেট করে ব্যবহারকারীর আচরণ ট্র্যাক করুন এবং মার্কেটিং পারফরম্যান্স পর্যবেক্ষণ করুন।
+
+- 🔍 SEO অপ্টিমাইজেশন (SEO Optimization)
+  আপনার ওয়েবসাইটকে সার্চ ইঞ্জিনের জন্য উপযুক্তভাবে তৈরি করা হয় — Google-এ ভিজিবিলিটি বাড়ায় এবং অর্গানিক ট্র্যাফিক আনে।
+
+- 📘 Facebook পেজ সেটআপ (Facebook Page Setup)
+  আপনার Facebook পেজ তৈরি ও অপ্টিমাইজ করে দেওয়া হবে এবং প্রথম সপ্তাহের জন্য রেডি-টু-ইউজ কন্টেন্ট প্রদান করা হবে।
+
+- 🚀 অ্যাড বুস্টিং সাপোর্ট (Ad Boosting Support)
+  পেইড অ্যাড পরিচালনা ও অপ্টিমাইজ করতে সাহায্য করা হবে — সঠিক দর্শকদের কাছে পৌঁছান এবং ভালো ফলাফল পান।

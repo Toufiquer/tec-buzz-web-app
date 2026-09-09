@@ -1,62 +1,46 @@
+/*
+|-----------------------------------------
+| setting up layout.tsx for the App
+| @author: Toufiquer Rahman<toufiquer.0@gmail.com>
+| @copyright: Toufiquer, 14 August 2026
+|-----------------------------------------
+*/
+
 import type { Metadata } from "next";
-import { DM_Sans, DM_Serif_Display, Tiro_Bangla } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
+
+import { ConfirmDeleteProvider } from "@/components/confirm-delete-provider";
+import Footer from "@/components/footer/Footer";
+import { Menu } from "@/components/menu/Menu";
+import MobileNavigation from "@/components/MobileNavigation";
+import { PublicMobileNavigationSpacing } from "@/components/PublicMobileNavigationSpacing";
+import { ScrollTransition } from "@/components/ScrollTransition";
+import TopBanner from "@/components/topbanner/TopBanner";
+import { GlobalToast } from "@/components/ui/global-toast";
+import WhatsAppButton from "@/components/whatsapp/WhatsAppButton";
+import { ReduxProvider } from "@/redux/app/provider";
 import "./globals.css";
 
-const dmSans = DM_Sans({
-  weight: ["300", "400", "500", "600"],
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  variable: "--font-dm-sans",
-  display: "swap",
 });
 
-const dmSerifDisplay = DM_Serif_Display({
-  weight: ["400"],
-  style: ["normal", "italic"],
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  variable: "--font-dm-serif",
-  display: "swap",
 });
 
-const tiroBangla = Tiro_Bangla({
-  weight: ["400"],
-  style: ["normal", "italic"],
-  subsets: ["bengali", "latin"],
-  variable: "--font-tiro-bangla",
-  display: "swap",
-});
-
-export const metadata: Metadata = {
-  title: "TecBuzz — আপনার ডিজিটাল সমাধান | Web Design & Development Bangladesh",
-  description:
-    "TecBuzz — বাংলাদেশের বিশ্বস্ত ওয়েব ডিজাইন ও ডেভেলপমেন্ট সংস্থা। দ্রুত লোডিং ওয়েবসাইট, SEO অপ্টিমাইজেশন, লাইফটাইম হোস্টিং এবং আরও অনেক কিছু। Build Smarter. Grow Faster.",
-  keywords: [
-    "TecBuzz",
-    "web design Bangladesh",
-    "ওয়েব ডিজাইন বাংলাদেশ",
-    "website development",
-    "SEO optimization",
-    "lifetime hosting",
-    "Next.js",
-  ],
-  openGraph: {
-    title: "TecBuzz — আপনার ডিজিটাল সমাধান",
-    description:
-      "বাংলাদেশের বিশ্বস্ত ওয়েব ডিজাইন ও ডেভেলপমেন্ট সংস্থা। দ্রুত, নিরাপদ, SEO-অপ্টিমাইজড ওয়েবসাইট।",
-    url: "https://tecbuzz.bd",
-    siteName: "TecBuzz",
-    locale: "bn_BD",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "TecBuzz — Build Smarter. Grow Faster.",
-    description:
-      "Fast, SEO-optimized websites for Bangladesh businesses. Lifetime hosting included.",
-  },
-  alternates: {
-    canonical: "https://tecbuzz.bd",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "TecBuzz",
+    description: "TecBuzz progressive web application",
+    applicationName: "TecBuzz",
+    icons: { icon: "/Logo.png" },
+    appleWebApp: { capable: true, statusBarStyle: "default", title: "TecBuzz" },
+    formatDetection: { telephone: false },
+  };
+}
 
 export default function RootLayout({
   children,
@@ -65,11 +49,28 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="bn"
-      className={`${dmSans.variable} ${dmSerifDisplay.variable} ${tiroBangla.variable} h-full antialiased`}
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
     >
-      <meta name="google-site-verification" content="h777g2wjf5GrRnGzWsyf71CdemUhvYu3nXx2bPc8GgY" />
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ScrollTransition />
+        <GlobalToast />
+        <ReduxProvider>
+          <ConfirmDeleteProvider>
+            <TopBanner />
+            <Menu />
+            <PublicMobileNavigationSpacing>
+              <>
+                {children}
+                <Footer />
+              </>
+            </PublicMobileNavigationSpacing>
+            <WhatsAppButton />
+            <MobileNavigation />
+          </ConfirmDeleteProvider>
+        </ReduxProvider>
+      </body>
     </html>
   );
 }
