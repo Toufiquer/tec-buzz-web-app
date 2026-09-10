@@ -10,9 +10,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "NexaMart",
-    short_name: "NexaMart",
-    description: "NexaMart progressive web application",
+    name: "TecBuzz",
+    short_name: "TecBuzz",
+    description: "TecBuzz progressive web application",
     start_url: "/",
     display: "standalone",
     background_color: "#fafafa",

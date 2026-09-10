@@ -1,4 +1,4 @@
-1. Copy all code from App Generator without
+1. Copy all code from Blank branch without
     - .git
     - .next
     - .env.local [edit later]
@@ -6,19 +6,14 @@
     - bun.lock
     - package-lock.json
 
-
 2. editing base info
-    - 6 image [/public/icons/...]
+    - Logo [/public/Logo.png]
     - favicon [/src/app/favicon.ico]
-    - clear sw.js [/public/sw.js]
     - name [package.json]
     - name, descriptions [/src/layout.tsx]
     - name [/public/manifest.json]
-    - if it is not run then check node version [18.18.2]
 
 3. bun i [install all dependencies, and run build]
-
-
 
 4. # mongodb
     - create project
@@ -61,6 +56,22 @@
 
 9. update .env.local
 
-10. bun run build [check all ok]    
+10. bun run build [check all ok]
+
+11. Push to github and deploy in vercel and connect with domain.
+
+12. Update 
+    - TopBanner
+    - Menu
+    - Home page 
+    - Footer 
+    - security 
+    - about-us
+    - contact-us
+    - refund-policy
+    - cookie-policy
+    - privacy-policy
+    - terms-and-condition
+    - frequently-ask-questions
 
 
