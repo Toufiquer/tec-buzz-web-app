@@ -49,14 +49,14 @@ export function ProblemsSection() {
             const ProblemIcon = problem.icon;
             return (
               <motion.article
-                className="group rounded-2xl border border-[#dceafb] bg-white p-5 shadow-[0_10px_28px_rgba(20,89,170,0.05)] transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-[0_18px_38px_rgba(20,89,170,0.12)]"
+                className="group rounded-sm border border-[#dceafb] bg-white p-5 shadow-[0_10px_28px_rgba(20,89,170,0.05)] transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-[0_18px_38px_rgba(20,89,170,0.12)]"
                 initial={{ opacity: 0, y: 24 }}
                 key={problem.title}
                 transition={{ duration: 0.55, delay: index * 0.07 }}
                 viewport={{ once: true, amount: 0.35 }}
                 whileInView={{ opacity: 1, y: 0 }}
               >
-                <span className="flex size-10 items-center justify-center rounded-xl bg-[#eaf4ff] text-[#087af5]">
+                <span className="flex size-10 items-center justify-center rounded-sm bg-[#eaf4ff] text-[#087af5]">
                   <ProblemIcon className="size-5" />
                 </span>
                 <h3 className="mt-5 font-bold text-[#0b1736]">{problem.title}</h3>

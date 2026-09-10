@@ -40,7 +40,7 @@ export function ProcessSection() {
             const ProcessIcon = step.icon;
             return (
               <motion.article
-                className="relative rounded-2xl border border-[#e2edfa] bg-[#fcfeff] p-5"
+                className="relative rounded-sm border border-[#e2edfa] bg-[#fcfeff] p-5"
                 initial={{ opacity: 0, y: 20 }}
                 key={step.number}
                 transition={{ delay: index * 0.08 }}
@@ -49,7 +49,7 @@ export function ProcessSection() {
               >
                 <div className="flex items-start justify-between">
                   <span className="text-xs font-extrabold tracking-[0.13em] text-[#087af5]">{step.number}</span>
-                  <span className="flex size-9 items-center justify-center rounded-xl bg-[#eaf4ff] text-[#087af5]">
+                  <span className="flex size-9 items-center justify-center rounded-sm bg-[#eaf4ff] text-[#087af5]">
                     <ProcessIcon className="size-4" />
                   </span>
                 </div>
@@ -62,7 +62,7 @@ export function ProcessSection() {
             );
           })}
         </div>
-        <div className="mt-8 flex flex-col justify-between gap-3 rounded-2xl bg-[#f0f8ff] px-5 py-4 text-sm text-slate-600 sm:flex-row sm:items-center">
+        <div className="mt-8 flex flex-col justify-between gap-3 rounded-sm bg-[#f0f8ff] px-5 py-4 text-sm text-slate-600 sm:flex-row sm:items-center">
           <span className="flex items-center gap-2">
             <Clock3 className="size-4 shrink-0 text-[#087af5]" />
             <strong className="text-[#0b1736]">কাজ শুরুর শর্ত:</strong> অগ্রিম অর্থ, প্রয়োজনীয় উপকরণ ও অনুমোদিত কাজের

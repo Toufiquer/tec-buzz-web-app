@@ -40,7 +40,7 @@ export function ProofSection() {
             const ProofIcon = proof.icon;
             return (
               <motion.div
-                className="rounded-2xl border border-white bg-white p-5 shadow-[0_12px_28px_rgba(20,89,170,0.06)]"
+                className="rounded-sm border border-white bg-white p-5 shadow-[0_12px_28px_rgba(20,89,170,0.06)]"
                 initial={{ opacity: 0, y: 18 }}
                 key={proof.title}
                 viewport={{ once: true }}

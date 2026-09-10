@@ -38,7 +38,7 @@ export function ClaritySection() {
                 viewport={{ once: true }}
                 whileInView={{ opacity: 1, x: 0 }}
               >
-                <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-[#e7f5ff] text-[#087af5]">
+                <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-sm bg-[#e7f5ff] text-[#087af5]">
                   <Check className="size-3.5" />
                 </span>
                 <div>
@@ -50,14 +50,14 @@ export function ClaritySection() {
           </div>
         </div>
         <motion.div
-          className="relative overflow-hidden rounded-3xl bg-[#0b1736] p-6 shadow-[0_25px_60px_rgba(11,23,54,0.2)] sm:p-8"
+          className="relative overflow-hidden rounded-sm bg-[#0b1736] p-6 shadow-[0_25px_60px_rgba(11,23,54,0.2)] sm:p-8"
           initial={{ opacity: 0, scale: 0.96 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true, amount: 0.3 }}
           whileInView={{ opacity: 1, scale: 1 }}
         >
-          <div aria-hidden className="absolute -right-16 -top-20 size-72 rounded-full bg-[#087af5]/35 blur-3xl" />
-          <div aria-hidden className="absolute -bottom-20 -left-16 size-64 rounded-full bg-cyan-400/20 blur-3xl" />
+          <div aria-hidden className="absolute -right-16 -top-20 size-72 rounded-sm bg-[#087af5]/35 blur-3xl" />
+          <div aria-hidden className="absolute -bottom-20 -left-16 size-64 rounded-sm bg-cyan-400/20 blur-3xl" />
           <div className="relative">
             <h3 className="max-w-md text-2xl font-bold tracking-tight text-white sm:text-3xl">
               A growth website should make the next customer action obvious.
@@ -68,7 +68,7 @@ export function ClaritySection() {
                 ["02", "Easy action"],
                 ["03", "Visible follow-up"],
               ].map(([number, label]) => (
-                <div className="rounded-2xl border border-white/10 bg-white/[0.07] p-4" key={number}>
+                <div className="rounded-sm border border-white/10 bg-white/[0.07] p-4" key={number}>
                   <span className="text-xs font-bold text-cyan-300">{number}</span>
                   <p className="mt-6 text-sm font-bold text-white">{label}</p>
                 </div>

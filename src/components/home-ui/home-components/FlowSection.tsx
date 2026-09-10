@@ -47,14 +47,14 @@ export function FlowSection() {
             const FlowIcon = step.icon;
             return (
               <motion.div
-                className="relative rounded-2xl border border-white/10 bg-white/[0.055] p-4 backdrop-blur-sm sm:border-0 sm:bg-transparent sm:p-3"
+                className="relative rounded-sm border border-white/10 bg-white/[0.055] p-4 backdrop-blur-sm sm:border-0 sm:bg-transparent sm:p-3"
                 initial={{ opacity: 0, y: 22 }}
                 key={step.label}
                 transition={{ delay: index * 0.1, duration: 0.55 }}
                 viewport={{ once: true }}
                 whileInView={{ opacity: 1, y: 0 }}
               >
-                <div className="relative z-10 flex size-12 items-center justify-center rounded-2xl border border-cyan-300/25 bg-[#123464] text-cyan-200 shadow-[0_0_0_7px_rgba(11,23,54,0.92)]">
+                <div className="relative z-10 flex size-12 items-center justify-center rounded-sm border border-cyan-300/25 bg-[#123464] text-cyan-200 shadow-[0_0_0_7px_rgba(11,23,54,0.92)]">
                   <FlowIcon className="size-5" />
                 </div>
                 <p className="mt-5 font-bold">{step.label}</p>
@@ -67,7 +67,7 @@ export function FlowSection() {
           })}
         </div>
         <motion.div
-          className="mt-12 flex flex-col justify-between gap-5 rounded-2xl border border-white/10 bg-white/[0.06] p-5 sm:flex-row sm:items-center sm:px-6"
+          className="mt-12 flex flex-col justify-between gap-5 rounded-sm border border-white/10 bg-white/[0.06] p-5 sm:flex-row sm:items-center sm:px-6"
           initial={{ opacity: 0 }}
           transition={{ delay: 0.45 }}
           viewport={{ once: true }}

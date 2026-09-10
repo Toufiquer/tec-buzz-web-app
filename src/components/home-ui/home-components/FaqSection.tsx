@@ -46,7 +46,7 @@ export function FaqSection() {
           description="সোজা উত্তর পেলে ভালো কাজ শুরু করা সহজ হয়। আরও প্রশ্ন থাকলে অডিটে আলোচনা করা যাবে।"
           title="সিদ্ধান্তের আগে জরুরি প্রশ্ন"
         />
-        <div className="divide-y divide-[#e2edfa] rounded-2xl border border-[#dceafb] bg-[#fcfeff] px-5 shadow-[0_12px_28px_rgba(20,89,170,0.05)] sm:px-6">
+        <div className="divide-y divide-[#e2edfa] rounded-sm border border-[#dceafb] bg-[#fcfeff] px-5 shadow-[0_12px_28px_rgba(20,89,170,0.05)] sm:px-6">
           {faqs.map((faq, index) => {
             const isOpen = index === openFaq;
             return (

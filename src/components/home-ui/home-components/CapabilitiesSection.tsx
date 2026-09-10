@@ -88,7 +88,7 @@ export function CapabilitiesSection() {
             const CapabilityIcon = capability.icon;
             return (
               <motion.article
-                className="group relative overflow-hidden rounded-2xl border border-[#e2edfa] bg-[#fcfeff] p-5 transition duration-300 hover:-translate-y-1.5 hover:border-blue-200 hover:shadow-[0_20px_45px_rgba(17,94,178,0.12)]"
+                className="group relative overflow-hidden rounded-sm border border-[#e2edfa] bg-[#fcfeff] p-5 transition duration-300 hover:-translate-y-1.5 hover:border-blue-200 hover:shadow-[0_20px_45px_rgba(17,94,178,0.12)]"
                 initial={{ opacity: 0, y: 20 }}
                 key={capability.title}
                 transition={{ duration: 0.5, delay: (index % 4) * 0.08 }}
@@ -97,7 +97,7 @@ export function CapabilitiesSection() {
               >
                 <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${capability.accent}`} />
                 <span
-                  className={`flex size-11 items-center justify-center rounded-xl bg-gradient-to-br ${capability.accent} text-white shadow-lg`}
+                  className={`flex size-11 items-center justify-center rounded-sm bg-gradient-to-br ${capability.accent} text-white shadow-lg`}
                 >
                   <CapabilityIcon className="size-5" />
                 </span>

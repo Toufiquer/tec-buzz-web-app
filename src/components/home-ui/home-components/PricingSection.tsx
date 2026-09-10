@@ -51,7 +51,7 @@ export function PricingSection() {
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {packages.map((pkg, index) => (
             <motion.article
-              className={`relative rounded-2xl border p-6 transition duration-300 hover:-translate-y-1 ${pkg.featured ? "border-[#087af5] bg-[#0b1736] text-white shadow-[0_22px_50px_rgba(8,111,229,0.25)]" : "border-[#dceafb] bg-white shadow-[0_12px_30px_rgba(20,89,170,0.06)]"}`}
+              className={`relative rounded-sm border p-6 transition duration-300 hover:-translate-y-1 ${pkg.featured ? "border-[#087af5] bg-[#0b1736] text-white shadow-[0_22px_50px_rgba(8,111,229,0.25)]" : "border-[#dceafb] bg-white shadow-[0_12px_30px_rgba(20,89,170,0.06)]"}`}
               initial={{ opacity: 0, y: 24 }}
               key={pkg.name}
               transition={{ delay: index * 0.1, duration: 0.55 }}
@@ -84,7 +84,7 @@ export function PricingSection() {
                 ))}
               </ul>
               <a
-                className={`mt-8 flex min-h-11 items-center justify-center gap-2 rounded-xl border text-sm font-bold transition ${pkg.featured ? "border-white/20 bg-white text-[#0b1736] hover:bg-cyan-50" : "border-[#cfe2fb] text-[#086fe5] hover:border-[#087af5] hover:bg-[#eff7ff]"}`}
+                className={`mt-8 flex min-h-11 items-center justify-center gap-2 rounded-sm border text-sm font-bold transition ${pkg.featured ? "border-white/20 bg-white text-[#0b1736] hover:bg-cyan-50" : "border-[#cfe2fb] text-[#086fe5] hover:border-[#087af5] hover:bg-[#eff7ff]"}`}
                 href={WHATSAPP_AUDIT_URL}
                 rel="noopener noreferrer"
                 target="_blank"

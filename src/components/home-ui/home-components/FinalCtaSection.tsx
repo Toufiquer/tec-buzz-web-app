@@ -27,7 +27,7 @@ export function FinalCtaSection() {
       <motion.div
         animate={{ rotate: 360 }}
         aria-hidden
-        className="absolute -right-36 top-1/2 size-[34rem] -translate-y-1/2 rounded-full border border-cyan-300/15"
+        className="absolute -right-36 top-1/2 size-[34rem] -translate-y-1/2 rounded-sm border border-cyan-300/15"
         transition={{ duration: 32, repeat: Infinity, ease: "linear" }}
       />
       <div className="relative mx-auto max-w-4xl text-center">
@@ -40,7 +40,7 @@ export function FinalCtaSection() {
           </p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-white px-5 text-sm font-bold text-[#086fe5] shadow-[0_15px_34px_rgba(0,0,0,.16)] transition duration-300 hover:-translate-y-1 hover:bg-cyan-50"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm bg-white px-5 text-sm font-bold text-[#086fe5] shadow-[0_15px_34px_rgba(0,0,0,.16)] transition duration-300 hover:-translate-y-1 hover:bg-cyan-50"
               href={WHATSAPP_AUDIT_URL}
               rel="noopener noreferrer"
               target="_blank"
@@ -48,7 +48,7 @@ export function FinalCtaSection() {
               বিনামূল্যে অডিট নিন <ArrowRight className="size-4" />
             </a>
             <a
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl border border-white/20 bg-white/5 px-5 text-sm font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-white/10"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-sm border border-white/20 bg-white/5 px-5 text-sm font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-white/10"
               href={WHATSAPP_AUDIT_URL}
               rel="noopener noreferrer"
               target="_blank"
