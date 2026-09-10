@@ -191,7 +191,7 @@ export default function Mutation({
               </select>
             </label>
             <label className="grid min-w-0 gap-1 text-sm">
-              Speed (seconds)
+              Timing (seconds)
               <input
                 className="h-9 w-full min-w-0 rounded-sm border border-stone-200 px-2"
                 max="60"
@@ -202,6 +202,13 @@ export default function Mutation({
               />
             </label>
           </div>
+          <label className="flex items-center justify-between gap-3 rounded-sm border border-stone-200 bg-[#fffaf0] p-3 text-sm">
+            <span>
+              <span className="block font-medium">Loop marquee text</span>
+              <span className="block text-xs text-stone-500">Repeat the message continuously after each pass.</span>
+            </span>
+            <Switch checked={data.loop !== false} onCheckedChange={(loop) => setData({ ...data, loop })} />
+          </label>
           <div className="grid min-w-0 gap-3 sm:grid-cols-2">
             <label className="grid min-w-0 gap-1 text-sm">
               Background

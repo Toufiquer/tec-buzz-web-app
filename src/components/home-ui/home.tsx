@@ -10,6 +10,7 @@
 
 import { MotionConfig } from "framer-motion";
 
+import { AdCreativeSection } from "./home-components/AdCreativeSection";
 import { CapabilitiesSection } from "./home-components/CapabilitiesSection";
 import { ClaritySection } from "./home-components/ClaritySection";
 import { DemosSection } from "./home-components/DemosSection";
@@ -31,6 +32,7 @@ const HomeSection = () => (
       <ProblemsSection />
       <FlowSection />
       <CapabilitiesSection />
+      <AdCreativeSection />
       <DemosSection />
       <ClaritySection />
       <PricingSection />
@@ -43,4 +45,3 @@ const HomeSection = () => (
 );
 
 export default HomeSection;
- 

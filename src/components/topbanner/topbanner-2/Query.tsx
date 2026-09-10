@@ -16,6 +16,7 @@ import type { TopBannerTwoData } from "./data";
 export default function Query({ data }: { data: TopBannerTwoData }) {
   const { data: session } = authClient.useSession();
   if (data.position === "hide" || !data.isVisible) return null;
+  const shouldLoop = data.loop !== false;
   const positionClass = data.position === "fixed" ? "fixed inset-x-0 top-0 z-50" : "sticky top-0 z-40";
   return (
     <div
@@ -33,11 +34,20 @@ export default function Query({ data }: { data: TopBannerTwoData }) {
             style={
               {
                 "--speed": `${data.speed}s`,
+                "--topbanner-marquee-end": shouldLoop ? "-50%" : "-100%",
                 animationDirection: data.direction === "right" ? "reverse" : "normal",
+                animationFillMode: shouldLoop ? "none" : "forwards",
+                animationIterationCount: shouldLoop ? "infinite" : 1,
               } as React.CSSProperties
             }
           >
-            {data.text} <span className="mx-8">•</span> {data.text}
+            {data.text}
+            {shouldLoop ? (
+              <>
+                <span className="mx-8">•</span>
+                {data.text}
+              </>
+            ) : null}
           </div>
         </div>
         <div className="flex shrink-0 items-center gap-2">

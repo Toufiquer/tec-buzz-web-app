@@ -27,22 +27,22 @@ const borderClass: Record<NonNullable<MenuButton["border"]>, string> = {
   xl: "border-4",
 };
 const radiusClass: Record<MenuButton["radius"], string> = {
-  none: "rounded-none",
+  none: "rounded-sm",
   xs: "rounded-sm",
-  sm: "rounded",
-  md: "rounded-md",
-  xl: "rounded-xl",
-  "2xl": "rounded-2xl",
-  full: "rounded-full",
+  sm: "rounded-sm",
+  md: "rounded-sm",
+  xl: "rounded-sm",
+  "2xl": "rounded-sm",
+  full: "rounded-sm",
 };
 const imageRadiusClass = {
-  none: "rounded-none",
-  xs: "rounded-xs",
+  none: "rounded-sm",
+  xs: "rounded-sm",
   sm: "rounded-sm",
-  md: "rounded-md",
-  xl: "rounded-xl",
-  "2xl": "rounded-2xl",
-  full: "rounded-full",
+  md: "rounded-sm",
+  xl: "rounded-sm",
+  "2xl": "rounded-sm",
+  full: "rounded-sm",
 };
 
 export default function MenuThreeQuery({ data, pending }: { data: MenuData; pending: boolean }) {
@@ -148,7 +148,7 @@ export default function MenuThreeQuery({ data, pending }: { data: MenuData; pend
                     aria-controls={`${menuId}-${item.id}`}
                     aria-expanded={isOpen}
                     aria-label={`${item.label} মেনু ${isOpen ? "বন্ধ করুন" : "খুলুন"}`}
-                    className="grid size-8 place-items-center rounded-md transition hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-[var(--menu-accent)]"
+                    className="grid size-8 place-items-center rounded-sm transition hover:bg-blue-50 focus-visible:outline-2 focus-visible:outline-[var(--menu-accent)]"
                     onClick={() => setOpenItemId(isOpen ? null : item.id)}
                     ref={(element) => {
                       triggerRefs.current[item.id] = element;
@@ -165,11 +165,11 @@ export default function MenuThreeQuery({ data, pending }: { data: MenuData; pend
                 ) : null}
                 {isOpen ? (
                   <div
-                    className="absolute left-1/2 top-full z-10 w-[min(64rem,calc(100vw-2rem))] -translate-x-1/2 rounded-2xl border border-[#dceafb] bg-white p-4 shadow-[0_20px_50px_rgba(11,23,54,0.12)]"
+                    className="absolute left-1/2 top-full z-10 w-[min(64rem,calc(100vw-2rem))] -translate-x-1/2 rounded-sm border border-[#dceafb] bg-white p-4 shadow-[0_20px_50px_rgba(11,23,54,0.12)]"
                     id={`${menuId}-${item.id}`}
                   >
                     {item.note ? (
-                      <p className="mb-3 rounded-xl bg-[#eff7ff] px-4 py-3 text-sm leading-6 text-[#155caf]">
+                      <p className="mb-3 rounded-sm bg-[#eff7ff] px-4 py-3 text-sm leading-6 text-[#155caf]">
                         {item.note}
                       </p>
                     ) : null}
@@ -204,7 +204,7 @@ export default function MenuThreeQuery({ data, pending }: { data: MenuData; pend
           </button>
           <CartButton className="border-slate-200 hover:bg-slate-100" />
           {pending ? (
-            <span className="h-8 w-16 animate-pulse rounded-full bg-slate-100" />
+            <span className="h-8 w-16 animate-pulse rounded-sm bg-slate-100" />
           ) : data.button.visible !== false ? (
             <Link
               className={`menu-action-button inline-flex shrink-0 items-center gap-1.5 px-[var(--button-padding-x-mobile)] py-[var(--button-padding-y-mobile)] mx-[var(--button-margin-x-mobile)] my-[var(--button-margin-y-mobile)] text-sm font-semibold transition-colors md:px-[var(--button-padding-x-desktop)] md:py-[var(--button-padding-y-desktop)] md:mx-[var(--button-margin-x-desktop)] md:my-[var(--button-margin-y-desktop)] ${borderClass[data.button.border ?? "none"]} ${radiusClass[data.button.radius]}`}
@@ -301,7 +301,7 @@ function MenuSearchPanel({
       role="search"
     >
       <div className="mx-auto w-full max-w-2xl">
-        <div className="flex items-center gap-2 rounded-lg border border-[#dce3ed] bg-slate-50 p-1.5">
+        <div className="flex items-center gap-2 rounded-sm border border-[#dce3ed] bg-slate-50 p-1.5">
           <span className="pl-2">
             <Icon name="Search" />
           </span>
@@ -320,7 +320,7 @@ function MenuSearchPanel({
           {query ? (
             <button
               aria-label="Clear search text"
-              className="grid size-8 shrink-0 place-items-center rounded-md transition hover:bg-slate-200"
+              className="grid size-8 shrink-0 place-items-center rounded-sm transition hover:bg-slate-200"
               onClick={onClear}
               style={{ color: accent }}
               type="button"
@@ -339,7 +339,7 @@ function MenuSearchResults({ query, search }: { query: string; search: ReturnTyp
   const normalizedQuery = normalizeSearchQuery(query);
   const destination = `/search?q=${encodeURIComponent(normalizedQuery)}`;
   return (
-    <div className="mt-2 rounded-lg border border-[#dce3ed] bg-white p-2 text-sm text-slate-700 shadow-sm">
+    <div className="mt-2 rounded-sm border border-[#dce3ed] bg-white p-2 text-sm text-slate-700 shadow-sm">
       {search.isLoading ? <p className="px-2 py-1.5">Searching…</p> : null}
       {!search.isLoading && search.error ? <p className="px-2 py-1.5 text-red-700">{search.error}</p> : null}
       {!search.isLoading && !search.error && !search.items.length ? (
@@ -348,7 +348,7 @@ function MenuSearchResults({ query, search }: { query: string; search: ReturnTyp
       {!search.isLoading && !search.error
         ? search.items.slice(0, 6).map((item) => (
             <Link
-              className="block rounded-md px-2 py-2 transition hover:bg-slate-100"
+              className="block rounded-sm px-2 py-2 transition hover:bg-slate-100"
               href={
                 item.scope === "page"
                   ? `/search/result?page=${encodeURIComponent(item.pageId)}&scope=page&q=${encodeURIComponent(normalizedQuery)}`
@@ -363,7 +363,7 @@ function MenuSearchResults({ query, search }: { query: string; search: ReturnTyp
         : null}
       {!search.isLoading && !search.error && search.total > 6 ? (
         <Link
-          className="mt-1 block rounded-md bg-slate-100 px-3 py-2 text-center font-medium hover:bg-slate-200"
+          className="mt-1 block rounded-sm bg-slate-100 px-3 py-2 text-center font-medium hover:bg-slate-200"
           href={destination}
         >
           Search Page
@@ -398,7 +398,7 @@ function DropdownCard({ item, onNavigate }: { item: MenuThreeLink; onNavigate: (
   return (
     <div className="group relative">
       <Link
-        className="flex h-full min-h-14 items-start gap-3 rounded-xl border border-[#e2edfa] bg-[#f8fbff] px-4 py-4 text-[15px] font-medium text-[#0b1736] transition-colors hover:border-blue-200 hover:bg-[#eff7ff] focus-visible:outline-2 focus-visible:outline-[var(--menu-accent)]"
+        className="flex h-full min-h-14 items-start gap-3 rounded-sm border border-[#e2edfa] bg-[#f8fbff] px-4 py-4 text-[15px] font-medium text-[#0b1736] transition-colors hover:border-blue-200 hover:bg-[#eff7ff] focus-visible:outline-2 focus-visible:outline-[var(--menu-accent)]"
         href={item.url}
         onClick={onNavigate}
       >
@@ -424,7 +424,7 @@ function DropdownCard({ item, onNavigate }: { item: MenuThreeLink; onNavigate: (
 function SubSubmenuLink({ item, onNavigate }: { item: MenuThreeLink; onNavigate: () => void }) {
   return (
     <Link
-      className="flex min-h-10 items-center gap-2 rounded-lg px-3 py-1.5 text-sm text-slate-700 transition-colors hover:bg-[#f5f6fb] hover:text-slate-950"
+      className="flex min-h-10 items-center gap-2 rounded-sm px-3 py-1.5 text-sm text-slate-700 transition-colors hover:bg-[#f5f6fb] hover:text-slate-950"
       href={item.url}
       onClick={onNavigate}
     >
@@ -485,9 +485,9 @@ function MobileLink({
     : "justify-start text-left";
   return (
     <div className="w-full">
-      <div className="flex w-full items-center rounded-lg bg-slate-50">
+      <div className="flex w-full items-center rounded-sm bg-slate-50">
         <Link
-          className={`flex min-w-0 flex-1 items-center gap-2 rounded-lg px-3 py-3 text-sm transition-colors hover:bg-slate-100 ${alignment}`}
+          className={`flex min-w-0 flex-1 items-center gap-2 rounded-sm px-3 py-3 text-sm transition-colors hover:bg-slate-100 ${alignment}`}
           href={item.url}
           onClick={onNavigate}
         >
@@ -499,7 +499,7 @@ function MobileLink({
             aria-controls={childPanelId}
             aria-expanded={open}
             aria-label={`${open ? "Collapse" : "Expand"} ${item.label}`}
-            className="grid size-10 shrink-0 place-items-center rounded-lg text-slate-500 transition-colors hover:bg-slate-100"
+            className="grid size-10 shrink-0 place-items-center rounded-sm text-slate-500 transition-colors hover:bg-slate-100"
             onClick={() => setOpen((value) => !value)}
             type="button"
           >
@@ -517,7 +517,7 @@ function MobileLink({
           <div className="min-h-0 overflow-hidden">
             <div className="ml-3 border-l border-slate-200 pl-2 pt-1">
               {item.note ? (
-                <p className="mb-2 rounded-lg bg-[#eff7ff] p-3 text-xs leading-5 text-[#155caf]">{item.note}</p>
+                <p className="mb-2 rounded-sm bg-[#eff7ff] p-3 text-xs leading-5 text-[#155caf]">{item.note}</p>
               ) : null}
               {children.map((child) => (
                 <MobileLink item={child} key={child.id} onNavigate={onNavigate} />

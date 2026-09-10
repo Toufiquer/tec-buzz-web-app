@@ -13,6 +13,7 @@ export type TopBannerTwoData = {
   text: string;
   direction: "left" | "right";
   speed: number;
+  loop: boolean;
   background: string;
   foreground: string;
   fontSize: "sm" | "base" | "lg";
@@ -26,24 +27,37 @@ export type TopBannerTwoData = {
 export const defaultData: TopBannerTwoData = {
   variant: "topbanner-2",
   isVisible: true,
-  text: "বিনামূল্যে ১০ মিনিটের অডিট নিন • ২৪–৪৮ ঘণ্টায় স্ট্যান্ডার্ড ওয়েবসাইট চালুর পরিকল্পনা করুন",
+  text: "TecBuzz Starter — ৳14,900 • Lead Express — ৳24,900 • Enterprise — ৳79,900 • Content Lite — ৳5,000/মাস • Content Growth — ৳7,500/মাস • Content Scale — ৳13,500/মাস • Reels — ৳250 • Static — ৳50 • Ad Creatives — ৳150",
   direction: "left",
-  speed: 18,
+  speed: 20,
+  loop: true,
   background: "#0b1736",
   foreground: "#e0f5ff",
   fontSize: "base",
   icons: [
-    { id: "facebook", title: "Facebook", icon: "CiFacebook", url: "https://facebook.com", visible: false },
-    { id: "youtube", title: "YouTube", icon: "AiOutlineYoutube", url: "https://youtube.com", visible: false },
+    {
+      id: "facebook",
+      title: "Facebook",
+      icon: "CiFacebook",
+      url: "https://www.facebook.com/tecbuzzbd/",
+      visible: true,
+    },
+    { id: "youtube", title: "YouTube", icon: "AiOutlineYoutube", url: "", visible: false },
     {
       id: "whatsapp",
       title: "WhatsApp",
       icon: "FaWhatsapp",
-      url: "https://wa.me/01607333369?text=I%20want%20a%2010%20minute%20audit.",
+      url: "https://wa.me/01607333369",
       visible: true,
     },
-    { id: "messenger", title: "Messenger", icon: "FaFacebookMessenger", url: "https://m.me", visible: false },
-    { id: "call", title: "Call", icon: "Phone", url: "tel:+8801607333369", visible: false },
+    {
+      id: "messenger",
+      title: "Messenger",
+      icon: "FaFacebookMessenger",
+      url: "https://www.facebook.com/tecbuzzbd/",
+      visible: true,
+    },
+    { id: "call", title: "Call", icon: "Phone", url: "tel:+8801607333369", visible: true },
   ],
   authLabel: "Free Audit",
   buttonVisible: false,

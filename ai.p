@@ -94,4 +94,3 @@ Based on the content please update those componnets data inside 'src/components/
 'src/components/menu/menu-3/...'
 'src/components/footer/footer-2/...'
 ============================================================================================================================
-

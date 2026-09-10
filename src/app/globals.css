@@ -210,7 +210,7 @@ html[data-scrolling="true"] .scroll-transition {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(var(--topbanner-marquee-end, -50%));
   }
 }
 @layer components {
