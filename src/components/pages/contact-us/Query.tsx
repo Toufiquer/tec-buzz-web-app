@@ -27,6 +27,12 @@ export default function Query({ data = defaultData }: { data?: Record<string, st
   const days = readDays(data.openingDays);
   const value = (key: keyof typeof defaultData) => data[key] || defaultData[key];
   const openAllDay = value("open247") === "true";
+  const hasOpeningHours = days.some((day) => day.openTime && day.closeTime);
+  const isWhatsApp = value("emailLabel").toLowerCase() === "whatsapp";
+  const contactHref = isWhatsApp
+    ? "https://wa.me/01607333369?text=I%20want%20a%2010%20minute%20audit."
+    : `mailto:${value("email")}`;
+  const mapUrl = data.mapUrl ?? defaultData.mapUrl;
   return (
     <section className="overflow-hidden custom-parent-border bg-white">
       <div className="border-b border-amber-200 bg-amber-50 p-7 text-stone-900 sm:p-10">
@@ -40,7 +46,14 @@ export default function Query({ data = defaultData }: { data?: Record<string, st
         <div className="grid gap-3 p-6">
           <article>
             <b>{value("emailLabel")}</b>
-            <p className="mt-1 text-sm text-stone-600">{value("email")}</p>
+            <a
+              className="mt-1 inline-block text-sm text-stone-600 underline underline-offset-4 transition hover:text-emerald-700"
+              href={contactHref}
+              rel={isWhatsApp ? "noopener noreferrer" : undefined}
+              target={isWhatsApp ? "_blank" : undefined}
+            >
+              {value("email")}
+            </a>
           </article>
           <article>
             <b>{value("addressLabel")}</b>
@@ -50,12 +63,14 @@ export default function Query({ data = defaultData }: { data?: Record<string, st
             <b>{value("locationLabel")}</b>
             <p className="mt-1 text-sm text-stone-600">{value("location")}</p>
           </article>
-          <iframe
-            className="mt-3 h-52 w-full rounded-sm border border-[#eadfca]"
-            loading="lazy"
-            src={value("mapUrl")}
-            title="Google Map"
-          />
+          {mapUrl && (
+            <iframe
+              className="mt-3 h-52 w-full rounded-sm border border-[#eadfca]"
+              loading="lazy"
+              src={mapUrl}
+              title="Google Map"
+            />
+          )}
         </div>
         <div className="border-t border-[#eadfca] p-6 md:border-l md:border-t-0">
           {openAllDay ? (
@@ -76,7 +91,7 @@ export default function Query({ data = defaultData }: { data?: Record<string, st
                 </span>
               </div>
             </div>
-          ) : (
+          ) : hasOpeningHours ? (
             <>
               <div className="mb-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-emerald-700">Availability</p>
@@ -100,6 +115,14 @@ export default function Query({ data = defaultData }: { data?: Record<string, st
                 ))}
               </div>
             </>
+          ) : (
+            <div className="rounded-md border border-emerald-200 bg-emerald-50 p-6 text-center">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">Availability</p>
+              <h2 className="mt-2 text-2xl font-semibold text-stone-900">Confirm before visiting</h2>
+              <p className="mx-auto mt-2 max-w-xs text-sm leading-6 text-stone-600">
+                Please confirm availability on WhatsApp before arranging a meeting or visit.
+              </p>
+            </div>
           )}
         </div>
       </div>

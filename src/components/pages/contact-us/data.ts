@@ -7,25 +7,17 @@
 */
 
 export const defaultData = {
-  showEyebrow: "true",
-  title: "Let’s talk",
+  showEyebrow: "false",
+  title: "Start with a 10-minute audit.",
   intro:
-    "Share your question, project idea, or support request and our team will get back to you with a practical next step.",
-  emailLabel: "Email",
-  email: "example@gmail.com",
+    "Tell us about your business, current website, goal, and timeline. We will help you identify the most useful next step.",
+  emailLabel: "WhatsApp",
+  email: "01607-333369",
   addressLabel: "Address",
-  address: "21/B Bijoyshoroni, Tecgaon, Dhaka-1200.",
-  locationLabel: "Location",
-  location: "Dhaka, Bangladesh",
-  mapUrl: "https://www.google.com/maps?q=Dhaka,Bangladesh&output=embed",
+  address: "Address details are shared after a confirmed meeting or project discussion.",
+  locationLabel: "Service area",
+  location: "Bangladesh",
+  mapUrl: "",
   open247: "false",
-  openingDays: JSON.stringify([
-    { day: "Monday", openTime: "09:00", closeTime: "18:00" },
-    { day: "Tuesday", openTime: "09:00", closeTime: "18:00" },
-    { day: "Wednesday", openTime: "09:00", closeTime: "18:00" },
-    { day: "Thursday", openTime: "09:00", closeTime: "18:00" },
-    { day: "Friday", openTime: "09:00", closeTime: "18:00" },
-    { day: "Saturday", openTime: "10:00", closeTime: "16:00" },
-    { day: "Sunday", openTime: "", closeTime: "" },
-  ]),
+  openingDays: JSON.stringify([]),
 };

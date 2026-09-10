@@ -23,36 +23,37 @@ export const defaultLayout = {
 export const defaultDataSecurity: ISecurityData = {
   pageUid: "security-uid",
   pageName: "Security",
-  eyebrow: "Website Security",
-  title: "How TecBuzz protects its website, services, and visitor information.",
-  subtitle: "This Security page explains the practical safeguards TecBuzz uses to protect its website and services.",
-  primaryAction: "Review Security",
-  secondaryAction: "Contact Support",
+  eyebrow: "Security",
+  title: "Practical safeguards for TecBuzz services and visitor information.",
+  subtitle:
+    "This page describes the practical controls TecBuzz uses to reduce risk across its website, business systems, and service delivery. It does not guarantee that any system is completely risk-free.",
+  primaryAction: "Review safeguards",
+  secondaryAction: "Report a concern",
   sections: [
     {
-      eyebrow: "Account Protection",
+      eyebrow: "Access management",
       title: "Protecting access to services",
       description:
         "TecBuzz uses appropriate controls to help protect access to website tools, customer accounts, and administrative systems.",
       items: [
-        "Role-based access to sensitive systems",
-        "Strong account and password practices",
-        "Regular review of access permissions",
+        "Role-based access to sensitive systems where practical",
+        "Account and password practices appropriate to the service",
+        "Access reviews when roles, projects, or responsibilities change",
       ],
     },
     {
-      eyebrow: "Technical Safeguards",
+      eyebrow: "Technical safeguards",
       title: "Keeping systems secure",
       description:
-        "Security measures are maintained to reduce the risk of unauthorized access, alteration, or disruption of services.",
+        "Reasonable technical measures are maintained to reduce the risk of unauthorised access, alteration, or disruption of services.",
       items: [
-        "Secure connections where available",
+        "Secure connections where available and appropriate",
         "Routine software and security updates",
-        "Monitoring for suspicious activity",
+        "Monitoring and review of suspicious activity where available",
       ],
     },
     {
-      eyebrow: "Incident Response",
+      eyebrow: "Incident response",
       title: "Responding to security concerns",
       description:
         "If a security concern is identified, TecBuzz investigates it promptly and takes reasonable action to contain and address the issue.",
@@ -63,13 +64,13 @@ export const defaultDataSecurity: ISecurityData = {
       ],
     },
     {
-      eyebrow: "Report A Concern",
+      eyebrow: "Report a concern",
       title: "Help us keep TecBuzz secure",
       description: "If you believe you have found a security issue, contact TecBuzz using the details below.",
       items: [
-        "Email: example@gmail.com",
-        "Contact: 01711 221122",
-        "Share clear details so the concern can be investigated",
+        "WhatsApp: 01607-333369",
+        "Describe the affected page, feature, account, or action",
+        "Do not send passwords, payment details, or other sensitive credentials in a message",
       ],
     },
   ],

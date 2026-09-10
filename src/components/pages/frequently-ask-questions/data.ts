@@ -8,88 +8,67 @@
 
 export const defaultQuestions = [
   {
-    question: "What does Site do?",
-    answer: "Site helps businesses plan and deliver practical digital products, web solutions, and software services.",
+    question: "How does the 24–48 hour delivery process work?",
+    answer:
+      "The delivery clock for a qualified standard build begins after advance payment, required assets, and approved scope are received. Custom systems receive a separate timeline.",
   },
   {
-    question: "How can I request a project or quotation?",
+    question: "Who owns the domain and hosting?",
     answer:
-      "Share your requirements through the contact channel. The team will review the scope, priorities, timeline, and next steps.",
+      "Ownership, annual renewal, and managed-hosting responsibility are stated clearly in the proposal and terms. TecBuzz does not make an undefined lifetime-hosting promise.",
   },
   {
-    question: "How are project costs and payments handled?",
+    question: "How many revisions are included?",
     answer:
-      "Pricing, payment milestones, and any deposit are confirmed in the applicable proposal or invoice before work begins.",
+      "The proposal states the included revision rounds. Revisions improve approved work; a new feature or page type is handled as a change request.",
   },
   {
-    question: "Can you support an existing website or software product?",
+    question: "Can TecBuzz write content for my website?",
     answer:
-      "Yes. An initial review can identify whether maintenance, improvements, or a separate development engagement is the best fit.",
+      "Content support can be scoped separately. Client business information, factual review, and approval are still required before publication.",
   },
   {
-    question: "How do you protect project information?",
+    question: "Does search optimisation guarantee rankings?",
     answer:
-      "Access is limited to people who need information for authorised work. Avoid sending sensitive credentials through unsecured channels.",
+      "No. TecBuzz delivers the agreed technical and on-page search work. Rankings also depend on competition, content, authority, and search-engine factors.",
   },
   {
-    question: "Where can I get help after delivery?",
-    answer:
-      "Your proposal or service agreement describes the included support period. Contact Site with the relevant project details for further help.",
+    question: "Is the advertising budget separate from the management fee?",
+    answer: "Yes. Advertising-platform spend is separate from TecBuzz management and service fees.",
   },
   {
-    question: "Do you work with startups and small businesses?",
+    question: "How does support work after launch?",
     answer:
-      "Yes. Site works with businesses at different stages and recommends an approach based on goals, budget, and technical needs.",
+      "The package or proposal defines the support channel, maintenance scope, response expectations, and any recurring fees.",
   },
   {
-    question: "Can Site build a mobile-friendly website?",
+    question: "How are custom features priced and scheduled?",
     answer:
-      "Yes. Web solutions are planned to work across modern desktop, tablet, and mobile devices within the agreed project scope.",
+      "TecBuzz reviews the required workflow, confirms the written scope, and then provides a custom quote and delivery plan.",
   },
   {
-    question: "Will I receive updates during the project?",
+    question: "What is reviewed in the free audit?",
     answer:
-      "Yes. Progress updates are shared at the milestones agreed for your project, with feedback requested where needed.",
+      "We review speed, mobile usability, calls to action, WhatsApp, forms, tracking, search basics, trust signals, and the follow-up path.",
   },
   {
-    question: "Can I request changes after a project starts?",
+    question: "Does the 24–48 hour promise apply to every package?",
     answer:
-      "Yes. Each request is reviewed, and changes outside the approved scope may affect the price, timeline, or both.",
+      "No. It applies only to qualified standard builds. Lead systems, automation, and enterprise work may require a longer scope-based timeline.",
   },
   {
-    question: "Do you provide domain and hosting services?",
+    question: "What happens if client assets are delayed?",
     answer:
-      "Site can help choose, set up, or manage suitable domain and hosting services when included in your agreement.",
+      "The delivery clock pauses until the required logo, copy, images, contact details, and approvals are received.",
   },
   {
-    question: "Who owns the final project deliverables?",
-    answer:
-      "Ownership of final deliverables follows your agreement and normally transfers after applicable payments are received.",
-  },
-  {
-    question: "Can you integrate third-party tools or payment gateways?",
-    answer:
-      "Yes, where technically suitable and included in scope. Third-party platforms remain subject to their own terms and approvals.",
-  },
-  {
-    question: "What should I prepare before starting a project?",
-    answer:
-      "Prepare your goals, key requirements, brand assets, content, preferred timeline, and the main contact person for decisions.",
-  },
-  {
-    question: "Can I cancel a project or request a refund?",
-    answer:
-      "Contact Site to discuss cancellation or a refund request. Eligibility depends on completed work, payments, and the applicable agreement.",
-  },
-  {
-    question: "How can I contact Site?",
-    answer:
-      "Use the official contact channel and include your name, organisation, and a short description so the team can respond efficiently.",
+    question: "Where can I read the payment, cancellation, and refund rules?",
+    answer: "Please review the Pricing, Terms and Conditions, and Refund Policy before confirming a project.",
   },
 ];
 
 export const defaultData = {
   title: "Frequently Asked Questions",
-  intro: "Find clear answers about our services, process, support, and what to prepare before getting started.",
+  intro: "Clear answers about delivery, ownership, revisions, support, and the audit process.",
   questionsJson: JSON.stringify(defaultQuestions),
 };

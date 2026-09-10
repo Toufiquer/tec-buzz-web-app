@@ -34,6 +34,7 @@ const parseData = (data?: ICookiePolicyData | CookiePolicyPayload | string): Coo
 };
 const CookiePolicyQuery = ({ data }: CookiePolicyProps) => {
   const pageData = parseData(data);
+  const supportEmail = pageData.supportEmail.trim();
   return (
     <main
       className="bg-white text-stone-800"
@@ -49,12 +50,14 @@ const CookiePolicyQuery = ({ data }: CookiePolicyProps) => {
             <h1 className="mt-3 text-4xl font-bold tracking-tight text-stone-900 sm:text-5xl">{pageData.title}</h1>
             <p className="mt-4 text-sm text-stone-600">{pageData.lastUpdatedLabel}</p>
             <div className="mt-6 flex flex-wrap gap-2">
-              <a
-                className="inline-flex items-center gap-1 rounded-sm bg-lime-200 px-2.5 py-1.5 text-[0.8rem] font-medium text-lime-950 transition duration-700 hover:bg-lime-300"
-                href={`mailto:${pageData.supportEmail}`}
-              >
-                {iconMap.Mail} Contact us
-              </a>
+              {supportEmail && (
+                <a
+                  className="inline-flex items-center gap-1 rounded-sm bg-lime-200 px-2.5 py-1.5 text-[0.8rem] font-medium text-lime-950 transition duration-700 hover:bg-lime-300"
+                  href={`mailto:${supportEmail}`}
+                >
+                  {iconMap.Mail} Contact us
+                </a>
+              )}
               <Button
                 className="cursor-pointer bg-amber-100 text-amber-950 transition duration-700 hover:bg-amber-200"
                 size="sm"
@@ -114,12 +117,14 @@ const CookiePolicyQuery = ({ data }: CookiePolicyProps) => {
           <p className="text-xs font-semibold tracking-[0.14em] text-amber-800 uppercase">Cookie support</p>
           <h2 className="mt-1 text-xl font-semibold text-stone-900">{pageData.contactTitle}</h2>
           <p className="mt-2 max-w-3xl text-sm leading-6 text-stone-600">{pageData.contactDescription}</p>
-          <a
-            className="mt-3 inline-block break-all text-sm font-medium text-amber-800 underline"
-            href={`mailto:${pageData.supportEmail}`}
-          >
-            {pageData.supportEmail}
-          </a>
+          {supportEmail && (
+            <a
+              className="mt-3 inline-block break-all text-sm font-medium text-amber-800 underline"
+              href={`mailto:${supportEmail}`}
+            >
+              {supportEmail}
+            </a>
+          )}
         </div>
       </section>
     </main>

@@ -78,7 +78,7 @@ const SecurityQuery = ({ data }: SecurityProps) => {
             <span className="text-amber-700">{iconMap.ShieldCheck}</span>
             <p className="text-xs font-semibold tracking-[0.14em] text-amber-800 uppercase">{pageData.pageName}</p>
             <p className="text-xl font-semibold text-stone-900">
-              Clear policies, responsible handling, and practical user choices.
+              Practical safeguards, responsible handling, and clear ways to report a concern.
             </p>
           </aside>
         </div>

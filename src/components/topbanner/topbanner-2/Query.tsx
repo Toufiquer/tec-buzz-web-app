@@ -49,6 +49,8 @@ export default function Query({ data }: { data: TopBannerTwoData }) {
                 className="transition duration-700 hover:opacity-70"
                 href={item.url}
                 key={item.id}
+                rel="noopener noreferrer"
+                target="_blank"
                 title={item.url}
               >
                 <Icon name={item.icon ?? "Link"} />

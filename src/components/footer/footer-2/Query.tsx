@@ -64,7 +64,7 @@ function FooterLink({ href, children, className }: { href: string; children: Rea
       {children}
     </Link>
   ) : (
-    <a className={className} href={href} title={title}>
+    <a className={className} href={href} rel="noopener noreferrer" target="_blank" title={title}>
       {children}
     </a>
   );
@@ -163,13 +163,15 @@ export default function Query({ data }: { data: FooterTwoData }) {
           <div>
             <h2 className="text-sm font-bold text-orange-800">Need help?</h2>
             <div className="mt-4 grid gap-3 text-sm">
-              <a
-                className="w-fit truncate text-stone-600 transition duration-200 hover:text-orange-800"
-                href={`mailto:${data.email}`}
-                title={data.email}
-              >
-                {data.email}
-              </a>
+              {data.email && (
+                <a
+                  className="w-fit truncate text-stone-600 transition duration-200 hover:text-orange-800"
+                  href={`mailto:${data.email}`}
+                  title={data.email}
+                >
+                  {data.email}
+                </a>
+              )}
               <a
                 className="w-fit text-stone-600 transition duration-200 hover:text-orange-800"
                 href={`tel:${data.phone.replace(/[^+\d]/g, "")}`}

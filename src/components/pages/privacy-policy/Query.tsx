@@ -99,7 +99,7 @@ const QueryPage4 = ({ data }: Section4Props) => {
           <aside className="h-fit rounded-sm border border-amber-100 bg-white p-6 shadow-[0_14px_40px_rgba(120,83,20,0.06)] lg:sticky lg:top-16">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-amber-800">Privacy at a glance</p>
             <p className="mt-3 text-sm leading-6 text-slate-600">
-              How Site handles information for its products and services.
+              How TecBuzz handles information for its website, services, and contact channels.
             </p>
             <div className="mt-6 space-y-3">
               {sections.map((section, index) => {

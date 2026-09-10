@@ -77,7 +77,7 @@ const QueryPage5 = ({ data }: Section5Props) => {
             )}
             <h1 className="mt-7 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">{pageData.title}</h1>
             <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">{pageData.subtitle}</p>
-            <p className="mt-7 text-sm font-medium text-slate-500">Last updated: 24 August 2026</p>
+            <p className="mt-7 text-sm font-medium text-slate-500">Last updated: 10 September 2026</p>
           </div>
           <div className="relative min-h-56 overflow-hidden rounded-sm border border-amber-100 bg-white shadow-[0_18px_50px_rgba(120,83,20,0.08)] sm:min-h-72">
             <Image
@@ -99,7 +99,7 @@ const QueryPage5 = ({ data }: Section5Props) => {
           <aside className="h-fit rounded-sm border border-amber-100 bg-white p-6 shadow-[0_14px_40px_rgba(120,83,20,0.06)] lg:sticky lg:top-16">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-amber-800">At a glance</p>
             <p className="mt-3 text-sm leading-6 text-slate-600">
-              These terms explain how we work with website users and clients in Bangladesh.
+              These terms explain how TecBuzz works with website users and clients in Bangladesh.
             </p>
             <div className="mt-6 space-y-3">
               {sections.map((section, index) => {
@@ -184,7 +184,7 @@ const QueryPage5 = ({ data }: Section5Props) => {
       <section className="px-4 pb-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl rounded-sm border border-amber-200 bg-[#fff8e8] p-6 text-center sm:p-8">
           <p className="text-sm leading-7 text-slate-600">
-            By continuing to use Site services, you acknowledge that you have read and accepted these Terms and
+            By continuing to use TecBuzz services, you acknowledge that you have read and accepted these Terms and
             Conditions. For clarification, please contact us through our official support channel.
           </p>
         </div>

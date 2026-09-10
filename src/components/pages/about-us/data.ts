@@ -17,31 +17,35 @@ export type AboutSection = {
 export const defaultSections: AboutSection[] = [
   {
     id: "believe",
-    eyebrow: "What we believe",
+    eyebrow: "Our purpose",
     showEyebrow: true,
-    title: "Useful work starts with clear thinking.",
-    description: "Clear thinking, useful design, and honest communication should make every experience better.",
+    title: "Growth should be practical.",
+    description:
+      "Businesses need more than a good-looking website. They need a clear digital path that helps visitors become qualified conversations and customers.",
   },
   {
     id: "work",
-    eyebrow: "How we work",
+    eyebrow: "Our method",
     showEyebrow: true,
-    title: "We make complex work feel simple.",
-    description: "We listen first, define the real goal, and turn complex requirements into practical next steps.",
+    title: "We start with the real gap.",
+    description:
+      "Every project begins with the offer, customer journey, communication path, and follow-up process before design or development begins.",
   },
   {
     id: "people",
-    eyebrow: "The people behind it",
+    eyebrow: "What we build",
     showEyebrow: true,
-    title: "A collaborative team brings ideas to life.",
-    description: "Strategy, craft, and care come together in every detail from the first conversation onward.",
+    title: "One connected growth system.",
+    description:
+      "TecBuzz brings together conversion-focused websites, lead management, tracking, WhatsApp, search foundations, and automation when the business needs it.",
   },
   {
     id: "next",
-    eyebrow: "What comes next",
+    eyebrow: "How we earn trust",
     showEyebrow: true,
-    title: "Strong work keeps improving after launch.",
-    description: "Feedback, support, and thoughtful iteration help every project stay useful as it grows.",
+    title: "Clear scope. Honest communication.",
+    description:
+      "We define the delivery conditions, responsibilities, revisions, ownership, and next steps in writing so every project starts with shared expectations.",
   },
 ];
 
@@ -54,10 +58,11 @@ export const defaultAboutSection: Omit<AboutSection, "id"> = {
 
 // Structured content remains serialized for compatibility with the existing page API.
 export const defaultData = {
-  eyebrow: "About us",
-  showEyebrow: "true",
-  title: "People, purpose, progress",
-  intro: "We turn thoughtful planning into digital experiences that are easy to use.",
+  eyebrow: "",
+  showEyebrow: "false",
+  title: "Growth systems for practical businesses.",
+  intro:
+    "TecBuzz helps Bangladesh businesses build a clearer path from first visit to qualified lead, live demo, proposal, and long-term growth.",
   image: "/images/all-pages-placeholder.png",
   sectionsJson: JSON.stringify(defaultSections),
   paddingX: "0",
