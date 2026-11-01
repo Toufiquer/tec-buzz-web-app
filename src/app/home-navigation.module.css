@@ -125,9 +125,26 @@
 .panel[data-open="true"] .link:nth-of-type(5) {
   transition-delay: 100ms;
 }
+.panel[data-open="true"] .link:nth-of-type(6) {
+  transition-delay: 125ms;
+}
+.panel[data-open="true"] .link:nth-of-type(7) {
+  transition-delay: 150ms;
+}
 
 .link:hover {
   background: #f5f8fc;
+  color: #0755ea;
+}
+
+.link[data-active="true"] {
+  background: #eef6ff;
+  color: #0755ea;
+}
+
+.link[data-active="true"] .index,
+.link[data-active="true"] .label span,
+.link[data-active="true"] .arrow {
   color: #0755ea;
 }
 

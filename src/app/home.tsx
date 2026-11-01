@@ -70,8 +70,7 @@ const consultation = whatsappUrl("Hello TecBuzz, I would like a free consultatio
 
 const sectionTranslations: Record<string, string> = {
   "02": "আপনার বাজেট অনুযায়ী বেছে নিন সম্পূর্ণ Website ও Content Package।",
-  "03": "পুরো প্যাকেজের পাশাপাশি প্রয়োজনের সার্ভিসটি আলাদাও নিতে পারেন।",
-  "04": "আপনার ব্যবসার প্রয়োজন বুঝে তৈরি করি কার্যকর Digital Solutions।",
+  "03": "সম্পূর্ণ প্যাকেজ নয়, আপনার ব্যবসার প্রয়োজন অনুযায়ী বেছে নিন শুধু দরকারি সার্ভিসগুলো—আলাদাভাবে, সাশ্রয়ী মূল্যে।",
   "05": "অভিজ্ঞতা, সাশ্রয়ী মূল্য ও সহজ ব্যবস্থাপনা—সব একসঙ্গে।",
   "06": "পণ্য সাজানো থেকে অর্ডার ও স্টক ম্যানেজমেন্ট—সব এক জায়গায়।",
   "07": "Website, Leads ও Team ম্যানেজ করুন নিজের Dashboard থেকেই।",
@@ -98,7 +97,7 @@ function ActionLink({
   return (
     <a
       href={href}
-      className={`inline-flex min-h-12 items-center justify-center gap-3 rounded-none border px-5 py-3 text-sm font-semibold transition-colors duration-200 ${light ? "border-white bg-white text-[#0755EA] hover:bg-blue-50" : secondary ? "border-slate-300 bg-transparent text-[#172232] hover:border-[#0755EA] hover:text-[#0755EA]" : "border-[#0755EA] bg-[#0755EA] text-white hover:border-[#0645c0] hover:bg-[#0645c0]"} ${className}`}
+      className={`inline-flex min-h-12 items-center justify-center gap-3 rounded-none border px-5 py-3 text-sm font-semibold transition-colors duration-200 ${light ? "border-[#dfc78f] bg-white text-[#78530e] hover:bg-[#fff7df]" : secondary ? "border-slate-300 bg-transparent text-[#49352b] hover:border-[#0755EA] hover:text-[#0755EA]" : "border-[#0755EA] bg-[#0755EA] text-white hover:border-[#0645c0] hover:bg-[#0645c0]"} ${className}`}
     >
       {children}
     </a>
@@ -111,28 +110,36 @@ function SectionHeading({
   title,
   description,
   dark = false,
+  showEyebrow = true,
+  showTranslation = true,
 }: {
-  number: string;
-  label: string;
+  number?: string;
+  label?: string;
   title: string;
   description?: string;
   dark?: boolean;
+  showEyebrow?: boolean;
+  showTranslation?: boolean;
 }) {
   return (
     <div className="max-w-2xl">
-      <p
-        className={`mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] ${dark ? "text-blue-200" : "text-[#0755EA]"}`}
-      >
-        <span className={dark ? "text-blue-200" : "text-slate-500"}>{number} /</span> {label}
-      </p>
+      {showEyebrow && number && label && (
+        <p
+          className={`mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] ${dark ? "text-blue-200" : "text-[#0755EA]"}`}
+        >
+          <span className={dark ? "text-blue-200" : "text-slate-500"}>{number} /</span> {label}
+        </p>
+      )}
       <h2
-        className={`text-3xl leading-tight font-semibold tracking-tight sm:text-4xl lg:text-[2.6rem] ${dark ? "text-white" : "text-[#172232]"}`}
+        className={`text-3xl leading-tight font-semibold tracking-tight sm:text-4xl lg:text-[2.6rem] ${dark ? "text-white" : "text-[#49352b]"}`}
       >
         {title}
       </h2>
-      <p lang="bn" className={`mt-3 text-base leading-8 ${dark ? "text-blue-100" : "text-slate-600"}`}>
-        {sectionTranslations[number]}
-      </p>
+      {showTranslation && number && sectionTranslations[number] && (
+        <p lang="bn" className={`mt-3 text-base leading-8 ${dark ? "text-blue-100" : "text-slate-600"}`}>
+          {sectionTranslations[number]}
+        </p>
+      )}
       {description && (
         <p className={`mt-5 max-w-xl text-base leading-7 ${dark ? "text-slate-300" : "text-slate-600"}`}>
           {description}
@@ -145,7 +152,7 @@ function SectionHeading({
 function IconTile({ icon: Icon, dark = false }: { icon: LucideIcon; dark?: boolean }) {
   return (
     <span
-      className={`inline-flex size-11 shrink-0 items-center justify-center ${dark ? "bg-white/10 text-blue-200" : "bg-[#0755EA]/[0.07] text-[#0755EA]"}`}
+      className={`inline-flex size-11 shrink-0 items-center justify-center ${dark ? "bg-white/10 text-blue-200" : "bg-[#f7eed9] text-[#9a6b18]"}`}
     >
       <Icon size={21} strokeWidth={1.7} aria-hidden="true" />
     </span>
@@ -162,6 +169,65 @@ function CheckList({ items }: { items: readonly string[] }) {
         </li>
       ))}
     </ul>
+  );
+}
+
+function LiveDesignPreview({
+  name,
+  url,
+  previewImage,
+}: {
+  name: string;
+  url: string;
+  previewImage?: string;
+}) {
+  const domain = new URL(url).hostname.replace(/^www\./, "");
+
+  return (
+    <div className="relative aspect-video overflow-hidden border-b border-slate-200 bg-slate-100">
+      <div className="absolute inset-x-0 top-0 z-10 flex h-8 items-center gap-2 border-b border-slate-200 bg-white px-3">
+        <span className="flex shrink-0 gap-1" aria-hidden="true">
+          <span className="size-1.5 rounded-full bg-[#fb7185]" />
+          <span className="size-1.5 rounded-full bg-[#fbbf24]" />
+          <span className="size-1.5 rounded-full bg-[#34d399]" />
+        </span>
+        <span className="min-w-0 flex-1 truncate rounded-sm bg-slate-100 px-2 py-1 text-center font-mono text-[9px] text-slate-500">
+          {domain}
+        </span>
+        <span className="shrink-0 text-[8px] font-semibold tracking-[0.12em] text-[#0755EA]">
+          {previewImage ? "SNAPSHOT" : "LIVE"}
+        </span>
+      </div>
+      <div className="absolute inset-x-0 top-8 bottom-0 overflow-hidden bg-white">
+        {previewImage ? (
+          <Image
+            alt={`${name} homepage design`}
+            className="object-cover object-top"
+            fill
+            loading="lazy"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            src={previewImage}
+          />
+        ) : (
+          <iframe
+            aria-hidden="true"
+            className="pointer-events-none absolute top-0 left-0 h-[200%] w-[200%] origin-top-left scale-50 border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            sandbox="allow-scripts allow-same-origin"
+            src={url}
+            tabIndex={-1}
+            title={`${name} live website preview`}
+          />
+        )}
+      </div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex items-end justify-between bg-gradient-to-t from-[#fffaf0]/95 via-[#fffaf0]/75 to-transparent px-3 pb-3 pt-10 text-[#49352b]">
+        <span className="text-[10px] font-semibold tracking-wide">
+          {previewImage ? "Homepage screenshot" : "Website design preview"}
+        </span>
+        <span className="text-[9px] text-[#765f50]">Open live site below ↗</span>
+      </div>
+    </div>
   );
 }
 
@@ -190,26 +256,15 @@ function Brand({ footer = false }: { footer?: boolean }) {
 
 function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-[#eadfca] bg-[#fffdf8]/95 backdrop-blur-md">
       <div className={`${container} flex h-20 items-center justify-between gap-6`}>
         <Brand />
-        <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:flex">
-          {navigation.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="py-3 text-sm font-medium text-slate-600 transition-colors hover:text-[#0755EA]"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-        <div className="hidden lg:block">
+        <HomeNavigation links={navigation} consultationUrl={consultation} />
+        <div className="hidden xl:block">
           <ActionLink href={consultation}>
             Get Free Consultation <ArrowUpRight size={17} aria-hidden="true" />
           </ActionLink>
         </div>
-        <HomeNavigation links={navigation} consultationUrl={consultation} />
       </div>
     </header>
   );
@@ -253,7 +308,7 @@ function Hero() {
     <section
       id="home"
       aria-labelledby="hero-title"
-      className={`${styles.hero} relative overflow-hidden border-b border-[#203453]`}
+      className={`${styles.hero} relative overflow-hidden border-b border-[#e5d5b5]`}
     >
       <div className={styles.heroGlow} aria-hidden="true" />
       <div className={styles.heroGrid} aria-hidden="true" />
@@ -264,13 +319,13 @@ function Hero() {
           <h1
             id="hero-title"
             lang="bn"
-            className="text-[2.65rem] leading-[1.4] font-semibold tracking-tight text-white sm:text-[3.5rem] lg:text-[3.85rem]"
+            className="text-[2.65rem] leading-[1.4] font-semibold tracking-tight text-[#49352b] sm:text-[3.5rem] lg:text-[3.85rem]"
           >
-            আপনার ব্যবসা,
+            আপনার স্বপ্ন,
             <br />
-            <span className={styles.shimmerText}>এবার ডিজিটাল।</span>
+            <span className={styles.shimmerText}>আমাদের প্রযুক্তি!</span>
           </h1>
-          <p className="mt-5 text-base tracking-wide text-blue-100 sm:text-lg">Website. E-commerce. CRM.</p>
+          <p className="mt-5 text-base tracking-wide text-[#765f50] sm:text-lg">Website. E-commerce. CRM.</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <ActionLink href="#pricing" light>
               <span lang="bn">প্যাকেজ দেখুন</span>
@@ -281,12 +336,12 @@ function Hero() {
               WhatsApp
             </ActionLink>
           </div>
-          <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-300">
+          <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-[#765f50]">
             <p>
-              <strong className="text-xl font-semibold text-white">৳12,300</strong> <span lang="bn">থেকে</span>
+              <strong className="text-xl font-semibold text-[#8e6418]">৳12,300</strong> <span lang="bn">থেকে</span>
             </p>
             <p className="flex items-center gap-2">
-              <ShieldCheck size={16} className="text-blue-300" aria-hidden="true" />
+              <ShieldCheck size={16} className="text-[#a77a22]" aria-hidden="true" />
               5+ years experience
             </p>
           </div>
@@ -319,52 +374,66 @@ function Pricing() {
   return (
     <section id="combo-offers" aria-labelledby="pricing-title" className="py-14 sm:py-16 lg:py-20">
       <div id="pricing" className={`${container} scroll-mt-28`}>
-        <p className="mb-3 text-xs font-semibold tracking-[0.16em] text-[#0755EA] uppercase">Combo Packages</p>
         <h2
           id="pricing-title"
           lang="bn"
           className="text-3xl leading-snug font-semibold tracking-tight text-[#172232] sm:text-4xl"
         >
-          সহজ প্যাকেজ। পরিষ্কার মূল্য।
+          আমাদের প্যাকেজ সমূহ
         </h2>
         <div className="mt-8 grid items-stretch gap-5 lg:grid-cols-3">
           {packages.map((item) => {
             const popular = item.name === "Express";
+            const TierIcon = item.name === "Starter" ? Package : popular ? Zap : Building2;
             return (
               <article
                 key={item.name}
-                className={`relative flex flex-col border p-6 pt-8 ${popular ? "border-[#0755EA] bg-[#F5F8FC] shadow-[0_12px_32px_-16px_rgba(7,85,234,0.25)]" : "border-slate-200 bg-white"}`}
+                className={`group relative flex flex-col overflow-hidden border p-6 pt-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#0755EA]/60 hover:shadow-[0_24px_50px_-20px_rgba(7,85,234,0.35)] focus-within:-translate-y-1 focus-within:border-[#0755EA] focus-within:shadow-[0_20px_44px_-20px_rgba(7,85,234,0.3)] motion-reduce:transform-none motion-reduce:transition-none ${popular ? "border-[#0755EA] bg-[#fcf6e8] shadow-[0_12px_32px_-16px_rgba(7,85,234,0.25)]" : "border-slate-200 bg-white shadow-[0_8px_24px_-20px_rgba(15,23,42,0.25)]"}`}
               >
+                <span
+                  className={`absolute inset-x-0 top-0 h-1 transition-colors duration-300 ${popular ? "bg-[#0755EA]" : "bg-slate-200 group-hover:bg-[#0755EA]"}`}
+                  aria-hidden="true"
+                />
+                <div className="flex items-center justify-between gap-3">
+                  <span
+                    className={`grid size-12 place-items-center transition-colors duration-300 ${popular ? "bg-[#0755EA] text-white" : "bg-[#0755EA]/[0.07] text-[#0755EA] group-hover:bg-[#0755EA] group-hover:text-white"}`}
+                  >
+                    <TierIcon size={22} strokeWidth={1.7} aria-hidden="true" />
+                  </span>
+                  <span className="flex items-center gap-1.5 border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-600">
+                    <Clock3 size={14} className="text-[#0755EA]" aria-hidden="true" />
+                    <span className="sr-only">Delivery:</span>
+                    {item.delivery}
+                  </span>
+                </div>
                 {popular && (
-                  <span className="absolute -top-px right-5 bg-[#0755EA] px-3 py-1 text-[10px] font-semibold tracking-wider text-white uppercase">
+                  <span className="mt-5 w-fit border border-[#0755EA]/20 bg-blue-50 px-3 py-1 text-[10px] font-semibold tracking-wider text-[#0755EA] uppercase">
                     Most Popular
                   </span>
                 )}
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <h3 className="text-xl font-semibold">{item.name}</h3>
-                  <p className="flex items-center gap-1.5 text-xs text-slate-500">
-                    <Clock3 size={14} aria-hidden="true" />
-                    <span className="sr-only">Delivery:</span>
-                    {item.delivery}
-                  </p>
-                </div>
-                <div className="mt-5 flex items-center gap-3">
+                <h3 className={`${popular ? "mt-3" : "mt-5"} text-2xl font-semibold tracking-tight text-[#172232]`}>
+                  {item.name}
+                </h3>
+                <p className="mt-2 min-h-12 text-sm leading-6 text-slate-500">{item.description}</p>
+                <div className="mt-5 flex flex-wrap items-center gap-3">
                   <s className="text-sm text-slate-500">{formatPrice(item.regularPrice)}</s>
-                  <span className="bg-blue-100 px-2 py-1 text-[11px] font-semibold text-[#0755EA]">
+                  <span className="border border-blue-100 bg-blue-50 px-2.5 py-1 text-[11px] font-semibold text-[#0755EA]">
                     Save {item.discount}
                   </span>
                 </div>
-                <p className="mt-1 text-[2.5rem] leading-tight font-semibold tracking-tight">
+                <p className="mt-1 text-[2.75rem] leading-tight font-semibold tracking-tight text-[#172232]">
                   {formatPrice(item.price)}
                 </p>
-                <div className="my-5 border-t border-slate-200" />
-                <CheckList
-                  items={[
-                    "E-commerce + CMS + CRM",
-                    "Admin panel + SEO + PWA",
-                    item.posts ? `${item.posts} Posts + ${item.reels} Reels` : "Posts / Reels নেই",
-                  ]}
-                />
+                <div className="my-5 border-t border-slate-200 transition-colors duration-300 group-hover:border-blue-200" />
+                <div className="border border-slate-200 bg-white/70 p-4">
+                  <CheckList
+                    items={[
+                      "E-commerce + CMS + CRM",
+                      "Admin panel + SEO + PWA",
+                      item.posts ? `${item.posts} Posts + ${item.reels} Reels` : "Posts / Reels নেই",
+                    ]}
+                  />
+                </div>
                 <div className="mt-auto pt-6">
                   <ActionLink
                     href={whatsappUrl(
@@ -381,30 +450,22 @@ function Pricing() {
             );
           })}
         </div>
-        <p lang="bn" className="mt-5 text-xs leading-6 text-slate-500">
-          Content একবারের জন্য · Reels 30 সেকেন্ড · Domain ও Hosting আলাদা।
-        </p>
-        <details className="group mt-7 border border-slate-200">
-          <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 bg-white px-5 py-5 text-sm font-semibold sm:px-7">
-            <span className="flex items-center gap-3">
-              <ListFilter size={19} className="text-[#0755EA]" aria-hidden="true" />
-              Compare every feature
-            </span>
-            <ChevronDown size={19} className="shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
-          </summary>
+        <section className="mt-10 border border-slate-200 bg-white" aria-labelledby="comparison-title">
+          <div className="flex min-h-16 items-center gap-3 border-b border-[#eadfca] bg-[#fcf6e8] px-5 py-5 sm:px-7">
+            <ListFilter size={20} className="shrink-0 text-[#0755EA]" aria-hidden="true" />
+            <h3 id="comparison-title" className="text-lg font-semibold text-[#0755EA] sm:text-xl">
+              কোন প্যাকেজে কী পাচ্ছেন?
+            </h3>
+          </div>
           <div
             role="region"
             aria-label="Full package feature comparison, scroll horizontally on small screens"
             tabIndex={0}
-            className="overflow-x-auto border-t border-slate-200"
+            className="overflow-x-auto"
           >
             <table className="w-full min-w-160 border-collapse text-left text-sm">
-              <caption className="bg-[#F5F8FC] px-6 py-4 text-left text-xs leading-5 text-slate-500">
-                Full package comparison. Scroll horizontally on smaller screens. A check means included; a dash means
-                not included. Content quantities are one-time inclusions.
-              </caption>
               <thead>
-                <tr className="bg-[#172232] text-white">
+                <tr className="bg-[#f1e4c6] text-[#49352b]">
                   <th scope="col" className="w-2/5 px-6 py-4 font-medium">
                     Features
                   </th>
@@ -417,7 +478,7 @@ function Pricing() {
               </thead>
               {featureGroups.map((group) => (
                 <tbody key={group.name}>
-                  <tr className="bg-[#F5F8FC]">
+                  <tr className="bg-[#fcf6e8]">
                     <th
                       colSpan={4}
                       scope="colgroup"
@@ -432,7 +493,7 @@ function Pricing() {
                         {row.name}
                       </th>
                       {row.values.map((value, index) => (
-                        <td key={index} className={`px-5 py-3.5 text-center ${index === 1 ? "bg-blue-50/40" : ""}`}>
+                        <td key={index} className={`px-5 py-3.5 text-center ${index === 1 ? "bg-[#fffaf0]" : ""}`}>
                           <ComparisonValue value={value} />
                         </td>
                       ))}
@@ -442,7 +503,7 @@ function Pricing() {
               ))}
             </table>
           </div>
-        </details>
+        </section>
       </div>
     </section>
   );
@@ -454,15 +515,14 @@ function IndividualServices() {
     <section
       id="individual"
       aria-labelledby="individual-title"
-      className={`${sectionSpace} border-y border-slate-200 bg-[#F5F8FC]`}
+      className={`${sectionSpace} border-y border-[#eadfca] bg-[#fcf6e8]`}
     >
       <div className={container}>
         <div id="individual-title">
           <SectionHeading
             number="03"
-            label="Individual services"
-            title="Just what you need. Nothing extra."
-            description="Start with a single service, or add content to your existing business presence."
+            title="প্যাকেজ নয়, পছন্দ আপনার!"
+            showEyebrow={false}
           />
         </div>
         <div className="mt-9 grid gap-5 lg:grid-cols-3">
@@ -477,7 +537,7 @@ function IndividualServices() {
               <h3 className="mt-6 text-xl font-semibold">{item.name}</h3>
               <p className="mt-3 text-3xl font-semibold tracking-tight">
                 {formatPrice(item.price)}
-                <span className="text-sm font-normal text-slate-500">{item.unit}</span>
+                {item.unit && <span className="text-sm font-normal text-slate-500">{item.unit}</span>}
               </p>
               <p className="mt-3 mb-5 text-sm leading-6 text-slate-500">{item.description}</p>
               <p lang="bn" className="mb-5 text-sm leading-7 text-slate-600">
@@ -498,7 +558,7 @@ function IndividualServices() {
             </article>
           ))}
         </div>
-        <p className="mt-5 text-xs leading-5 text-slate-500">
+        <p className="mt-5 text-xs leading-5 font-medium text-red-600">
           Business Webapp pricing excludes domain registration and hosting.
         </p>
       </div>
@@ -506,42 +566,41 @@ function IndividualServices() {
   );
 }
 
+const aboutDescription =
+  "TecBuzz বাংলাদেশের ব্যবসাগুলোর জন্য আধুনিক ওয়েবসাইট, ওয়েব অ্যাপ্লিকেশন ও কার্যকর ডিজিটাল সমাধান তৈরি করে। পাঁচ বছরের বেশি অভিজ্ঞতাসম্পন্ন আমাদের ডেভেলপাররা যুক্তরাজ্য থেকে রিমোটলি কাজ করে Next.js প্রযুক্তিতে দ্রুতগতির ও ব্যবহারবান্ধব ওয়েবসাইট তৈরি করেন। ই-কমার্স, বিজনেস অটোমেশন ও ডিজিটাল মার্কেটিংয়ের মাধ্যমে ব্যবসা পরিচালনা সহজ করা এবং দীর্ঘমেয়াদি প্রবৃদ্ধিতে সহায়তা করাই আমাদের লক্ষ্য।";
+
 function About() {
   return (
     <section id="about" aria-labelledby="about-title" className={sectionSpace}>
       <div className={`${container} grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20`}>
-        <div className="relative bg-[#172232] p-8 text-white sm:p-10">
-          <p className="text-xs tracking-[0.18em] text-blue-200 uppercase">Experience that builds confidence</p>
-          <p className="mt-5 bg-linear-to-br from-white to-blue-300 bg-clip-text text-[7rem] leading-none font-semibold tracking-tighter text-transparent sm:text-[9rem]">
+        <div className="relative border border-[#eadfca] bg-[#fffaf0] p-8 text-[#49352b] shadow-[0_18px_50px_-30px_rgba(138,100,24,0.24)] sm:p-10">
+          <p className="mt-5 bg-linear-to-br from-[#8e6418] to-[#b78627] bg-clip-text text-[7rem] leading-none font-semibold tracking-tighter text-transparent sm:text-[9rem]">
             5<span className="text-6xl">+</span>
           </p>
-          <p className="mt-4 max-w-60 text-lg leading-7 text-slate-200">years of real-world development experience.</p>
-          <div className="mt-9 space-y-4 border-t border-white/15 pt-6">
-            <p className="flex items-center gap-3 text-sm text-slate-300">
-              <MapPin size={17} className="shrink-0 text-blue-300" aria-hidden="true" />
+          <p className="mt-4 max-w-60 text-lg leading-7 text-[#765f50]">years of real-world development experience.</p>
+          <div className="mt-9 space-y-4 border-t border-[#eadfca] pt-6">
+            <p className="flex items-center gap-3 text-sm text-[#765f50]">
+              <MapPin size={17} className="shrink-0 text-[#a77a22]" aria-hidden="true" />
               Serving businesses across Bangladesh
             </p>
-            <p className="flex items-center gap-3 text-sm text-slate-300">
-              <Globe2 size={17} className="shrink-0 text-blue-300" aria-hidden="true" />
+            <p className="flex items-center gap-3 text-sm text-[#765f50]">
+              <Globe2 size={17} className="shrink-0 text-[#a77a22]" aria-hidden="true" />
               Developers working remotely in the UK
             </p>
           </div>
           <div
-            className="absolute top-0 right-0 h-1 w-24 bg-linear-to-r from-[#0755EA] to-[#009FF5]"
+            className="absolute top-0 right-0 h-1 w-24 bg-linear-to-r from-[#b78627] to-[#e4c875]"
             aria-hidden="true"
           />
         </div>
         <div id="about-title">
-          <SectionHeading number="04" label="About TecBuzz" title="Technology with a business purpose." />
-          <p className="mt-6 text-base leading-8 text-slate-600">
-            TecBuzz is a website development company in Bangladesh focused on making professional digital tools
-            accessible to local businesses. We bring more than five years of real-world development experience to every
-            conversation.
-          </p>
-          <p className="mt-4 text-base leading-8 text-slate-600">
-            Our developers work remotely in the UK, building Next.js websites and web applications for businesses across
-            Bangladesh. We connect software development, business automation, e-commerce, and digital marketing in a
-            practical way of working.
+          <SectionHeading
+            title="প্রযুক্তি নয়, ফলাফলই আসল!"
+            showEyebrow={false}
+            showTranslation={false}
+          />
+          <p lang="bn" className="mt-6 text-base leading-8 text-slate-600">
+            {aboutDescription}
           </p>
           <div className="mt-7 flex flex-wrap gap-x-7 gap-y-4">
             <a href="mailto:tecbuzz@gmail.com" className="flex items-center gap-2 text-sm font-medium text-[#0755EA]">
@@ -579,11 +638,15 @@ function WhyTecBuzz() {
     <section
       id="why-tecbuzz"
       aria-labelledby="why-title"
-      className={`${sectionSpace} border-y border-slate-200 bg-[#F5F8FC]`}
+      className={`${sectionSpace} border-y border-[#eadfca] bg-[#fcf6e8]`}
     >
       <div className={container}>
         <div id="why-title">
-          <SectionHeading number="05" label="Why choose us" title="Built well. Priced clearly. Made for you." />
+          <SectionHeading
+            number="05"
+            title="আপনার চাহিদায়, আমাদের উদ্ভাবন!"
+            showEyebrow={false}
+          />
         </div>
         <div className="mt-10 grid gap-px border border-slate-200 bg-slate-200 sm:grid-cols-2 lg:grid-cols-4">
           {benefits.map((item) => (
@@ -606,9 +669,9 @@ function Ecommerce() {
         <div id="ecommerce-title">
           <SectionHeading
             number="06"
-            label="E-commerce solutions"
-            title="From first click to fulfilled order."
+            title="অর্ডার ম্যানেজমেন্ট এখন আরও সহজ!"
             description="E-commerce website development that connects your storefront with the daily work behind it. Included in every combo package."
+            showEyebrow={false}
           />
           <div className="mt-7">
             <CheckList
@@ -630,7 +693,7 @@ function Ecommerce() {
             Explore our demo websites <ArrowUpRight size={18} aria-hidden="true" />
           </a>
         </div>
-        <div className="border border-slate-200 bg-[#F5F8FC] p-4 sm:p-7">
+        <div className="border border-[#eadfca] bg-[#fcf6e8] p-4 sm:p-7">
           <div className="border border-slate-200 bg-white shadow-sm">
             <div className="flex items-center justify-between border-b border-slate-200 p-5">
               <span className="flex items-center gap-2 text-sm font-semibold">
@@ -640,7 +703,7 @@ function Ecommerce() {
               <span className="text-[9px] tracking-wider text-slate-500 uppercase">Illustration</span>
             </div>
             <div className="p-5">
-              <div className="flex items-center gap-3 border border-slate-200 bg-[#F5F8FC] px-3 py-3 text-xs text-slate-500">
+              <div className="flex items-center gap-3 border border-[#eadfca] bg-[#fcf6e8] px-3 py-3 text-xs text-slate-500">
                 <Search size={15} aria-hidden="true" />
                 Product search & filtering
               </div>
@@ -669,7 +732,7 @@ function Ecommerce() {
               </div>
             </div>
           </div>
-          <div className="mt-4 flex items-center gap-3 bg-[#0755EA] px-5 py-4 text-white">
+          <div className="mt-4 flex items-center gap-3 bg-[#f1e4c6] px-5 py-4 text-[#49352b]">
             <Smartphone size={22} aria-hidden="true" />
             <p className="text-xs leading-5">
               A storefront for every screen.
@@ -696,29 +759,29 @@ function BusinessAutomation() {
     { icon: Search, title: "SEO management", text: "Manage your website's search essentials." },
   ];
   return (
-    <section id="automation" aria-labelledby="automation-title" className={`${sectionSpace} bg-[#172232]`}>
+    <section id="automation" aria-labelledby="automation-title" className={`${sectionSpace} border-y border-[#eadfca] bg-[#fffaf0]`}>
       <div className={container}>
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div id="automation-title">
-            <SectionHeading number="07" label="CMS, CRM & automation" title="Less busywork. More business." dark />
+            <SectionHeading number="07" title="প্রযুক্তি সামলাবে, ব্যবসা এগোবে!" showEyebrow={false} />
           </div>
-          <p className="max-w-md text-base leading-7 text-slate-300">
+          <p className="max-w-md text-base leading-7 text-[#765f50]">
             Update your content without a developer for routine changes. Keep your leads, team, and website organized
             with CRM software built for businesses in Bangladesh.
           </p>
         </div>
         <div className="mt-10 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
           {tools.map((item) => (
-            <article key={item.title} className="flex gap-4 border-t border-white/15 py-6">
-              <IconTile icon={item.icon} dark />
+            <article key={item.title} className="flex gap-4 border-t border-[#eadfca] py-6">
+              <IconTile icon={item.icon} />
               <div>
-                <h3 className="text-sm font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-400">{item.text}</p>
+                <h3 className="text-sm font-semibold text-[#49352b]">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[#765f50]">{item.text}</p>
               </div>
             </article>
           ))}
         </div>
-        <p className="mt-4 border-l-2 border-[#009FF5] pl-4 text-xs leading-6 text-slate-300">
+        <p className="mt-4 border-l-2 border-[#b78627] pl-4 text-xs leading-6 text-[#765f50]">
           All tools listed above are included in Starter, Express, and Enterprise. Ask about your business workflow
           during a free consultation.
         </p>
@@ -756,9 +819,9 @@ function Process() {
         <div id="process-title">
           <SectionHeading
             number="08"
-            label="How we work"
-            title="A straightforward path to launch."
+            title="আইডিয়া দিন, বাকিটা আমাদের!"
             description="Clear conversations and a practical plan, from your first message to your live website."
+            showEyebrow={false}
           />
         </div>
         <ol className="mt-10 grid gap-0 lg:grid-cols-4">
@@ -832,15 +895,15 @@ function Industries() {
     <section
       id="industries"
       aria-labelledby="industries-title"
-      className={`${sectionSpace} border-y border-slate-200 bg-[#F5F8FC]`}
+      className={`${sectionSpace} border-y border-[#eadfca] bg-[#fcf6e8]`}
     >
       <div className={container}>
         <div id="industries-title">
           <SectionHeading
             number="09"
-            label="Industries we serve"
-            title="Your industry. Your way of working."
+            title="যেমন ব্যবসা, তেমন সমাধান!"
             description="Practical website and automation use cases for businesses across Bangladesh. Discuss your exact requirements with us."
+            showEyebrow={false}
           />
         </div>
         <div className="mt-10 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -865,9 +928,8 @@ function DemoPortfolio() {
           <div id="demo-title">
             <SectionHeading
               number="10"
-              label="Demo website portfolio"
-              title="Explore the possibilities."
-              description="Six live demo websites to help you find a direction. Open a demo to explore its current design and content."
+              title="আইডিয়া থেকে অসীম সম্ভাবনা!"
+              showEyebrow={false}
             />
           </div>
           <a
@@ -878,25 +940,9 @@ function DemoPortfolio() {
           </a>
         </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {demoProjects.map((item, index) => (
+          {demoProjects.map((item) => (
             <article key={item.name} className="group overflow-hidden border border-slate-200 bg-white">
-              <div
-                className={`relative flex aspect-[16/9] items-center justify-center overflow-hidden ${index % 3 === 0 ? "bg-[#172232] text-white" : index % 3 === 1 ? "bg-[#0755EA] text-white" : "bg-[#E9F2FF] text-[#0755EA]"}`}
-              >
-                <span className="absolute top-4 left-5 text-[9px] font-medium tracking-[0.18em] uppercase">
-                  TecBuzz / Demo 0{index + 1}
-                </span>
-                <span
-                  className="text-7xl font-medium tracking-[-0.08em] transition-transform duration-300 group-hover:-translate-y-1"
-                  aria-hidden="true"
-                >
-                  {item.code}
-                  <span className="text-3xl">↗</span>
-                </span>
-                <span className="absolute right-5 bottom-4 text-[9px] tracking-widest uppercase">
-                  {new URL(item.url).hostname}
-                </span>
-              </div>
+              <LiveDesignPreview name={item.name} url={item.url} previewImage={item.previewImage} />
               <div className="p-6">
                 <h3 className="text-xl font-semibold">{item.name}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-500">{item.description}</p>
@@ -914,7 +960,7 @@ function DemoPortfolio() {
           ))}
         </div>
         <p className="mt-5 text-xs leading-5 text-slate-500">
-          Project tiles are graphic identifiers, not website screenshots. Demo links open in a new tab.
+          Each preview shows the live demo website. Open a demo to explore it in full.
         </p>
       </div>
     </section>
@@ -926,39 +972,45 @@ function RealPortfolio() {
     <section
       id="real-portfolio"
       aria-labelledby="real-title"
-      className={`${sectionSpace} border-y border-slate-200 bg-[#F5F8FC]`}
+      className={`${sectionSpace} border-y border-[#eadfca] bg-[#fcf6e8]`}
     >
       <div className={container}>
         <div id="real-title">
           <SectionHeading
             number="11"
-            label="Real website portfolio"
-            title="Real websites. Open for a closer look."
-            description="Visit the websites in our project portfolio and explore their current public pages."
+            title="কাজই বলুক আমাদের পরিচয়!"
+            showEyebrow={false}
           />
         </div>
         <div className="mt-9 grid gap-4 sm:grid-cols-2">
           {realProjects.map((item, index) => (
             <article
               key={item.url}
-              className="flex flex-col border border-slate-200 border-l-[3px] border-l-[#0755EA] bg-white p-6 sm:p-7"
+              className="group flex flex-col overflow-hidden border border-slate-200 bg-white"
             >
-              <div className="flex items-start justify-between gap-4">
-                <span className="text-xs font-medium tracking-wider text-slate-500">0{index + 1} / LIVE WEBSITE</span>
-                <Globe2 size={19} className="text-[#0755EA]" aria-hidden="true" />
+              <LiveDesignPreview
+                name={item.name}
+                url={item.url}
+                previewImage={"previewImage" in item ? item.previewImage : undefined}
+              />
+              <div className="flex flex-1 flex-col p-6 sm:p-7">
+                <div className="flex items-center gap-2 text-[10px] font-semibold tracking-[0.14em] text-slate-500 uppercase">
+                  <Globe2 size={15} className="text-[#0755EA]" aria-hidden="true" />
+                  Client website 0{index + 1}
+                </div>
+                <h3 className="mt-4 text-xl font-semibold">{item.name}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-500">{item.description}</p>
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${item.name} website (opens in a new tab)`}
+                  className="mt-auto flex min-h-12 items-center justify-between gap-2 border-t border-slate-200 pt-4 text-sm font-medium text-[#0755EA]"
+                >
+                  <span className="break-all">{item.domain}</span>
+                  <ArrowUpRight size={18} className="shrink-0" aria-hidden="true" />
+                </a>
               </div>
-              <h3 className="mt-5 text-xl font-semibold">{item.name}</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-500">{item.description}</p>
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Visit ${item.name} website (opens in a new tab)`}
-                className="mt-auto flex min-h-12 items-center justify-between gap-2 pt-5 text-sm font-medium text-[#0755EA]"
-              >
-                <span className="break-all">{item.domain}</span>
-                <ArrowUpRight size={18} className="shrink-0" aria-hidden="true" />
-              </a>
             </article>
           ))}
         </div>
@@ -970,13 +1022,12 @@ function RealPortfolio() {
 function Faq() {
   return (
     <section id="faq" aria-labelledby="faq-title" className={sectionSpace}>
-      <div className={`${container} grid gap-9 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20`}>
+      <div className={`${container} grid gap-8`}>
         <div id="faq-title">
           <SectionHeading
             number="12"
-            label="Frequently asked questions"
             title="Good questions. Clear answers."
-            description="The details that help you choose your next step with confidence."
+            showEyebrow={false}
           />
           <a
             href={consultation}
@@ -1018,21 +1069,14 @@ function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-title"
-      className="bg-linear-to-br from-[#0755EA] to-[#063ba9] py-16 text-white sm:py-20"
+      className="bg-linear-to-br from-[#fffaf0] via-[#f8f0df] to-[#f1e4c6] py-16 text-[#49352b] sm:py-20"
     >
       <div className={`${container} grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20`}>
         <div>
-          <p className="mb-5 text-xs font-medium tracking-[0.16em] text-blue-100 uppercase">
-            13 / Let&apos;s build your next chapter
-          </p>
           <h2 id="contact-title" className="max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-5xl">
-            Ready to Build Your Business Website?
+            এবার আপনার ব্যবসার পালা!
           </h2>
-          <p className="mt-5 max-w-lg text-base leading-7 text-blue-100">
-            From your first website to e-commerce, CRM, and digital marketing — let&apos;s find the right fit for your
-            business.
-          </p>
-          <p lang="bn" className="mt-3 max-w-lg text-base leading-8 text-blue-100">
+          <p lang="bn" className="mt-3 max-w-lg text-base leading-8 text-[#765f50]">
             আপনার ব্যবসার জন্য সঠিক Website ও Package বেছে নিতে আমাদের সঙ্গে কথা বলুন।
           </p>
           <div className="mt-7">
@@ -1045,40 +1089,40 @@ function Contact() {
           <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm">
             <a
               href="https://wa.me/8801607333369"
-              className="flex items-center gap-2 text-white underline-offset-4 hover:underline"
+              className="flex items-center gap-2 text-[#60471e] underline-offset-4 hover:underline"
             >
               <MessageCircle size={16} aria-hidden="true" />
               01607333369
             </a>
             <a
               href="mailto:tecbuzz@gmail.com"
-              className="flex items-center gap-2 text-white underline-offset-4 hover:underline"
+              className="flex items-center gap-2 text-[#60471e] underline-offset-4 hover:underline"
             >
               <Mail size={16} aria-hidden="true" />
               tecbuzz@gmail.com
             </a>
           </div>
         </div>
-        <div className="border border-white/25 bg-white/[0.06] p-6 sm:p-8">
+        <div className="border border-[#e6d7b9] bg-white/75 p-6 shadow-[0_18px_50px_-30px_rgba(138,100,24,0.22)] sm:p-8">
           <h3 className="text-lg font-semibold">Have a package in mind?</h3>
-          <p className="mt-2 text-sm leading-6 text-blue-100">Start a conversation with your preferred option.</p>
-          <div className="mt-5 divide-y divide-white/20">
+          <p className="mt-2 text-sm leading-6 text-[#765f50]">Start a conversation with your preferred option.</p>
+          <div className="mt-5 divide-y divide-[#eadfca]">
             {packages.map((item) => (
               <a
                 key={item.name}
                 href={whatsappUrl(
                   `Hello TecBuzz, I would like to discuss the ${item.name} package at ${formatPrice(item.price)} for my business.`,
                 )}
-                className="flex min-h-16 items-center justify-between gap-4 py-4 text-sm transition-colors hover:text-blue-200"
+                className="flex min-h-16 items-center justify-between gap-4 py-4 text-sm transition-colors hover:text-[#9a6b18]"
               >
                 <span>
-                  {item.name} <span className="ml-2 text-xs text-blue-100">{formatPrice(item.price)}</span>
+                  {item.name} <span className="ml-2 text-xs text-[#765f50]">{formatPrice(item.price)}</span>
                 </span>
                 <ArrowUpRight size={17} aria-hidden="true" />
               </a>
             ))}
           </div>
-          <p className="mt-4 text-xs leading-5 text-blue-100">
+          <p className="mt-4 text-xs leading-5 text-[#765f50]">
             Domain and hosting are separate. Content inclusions are one-time.
           </p>
         </div>
@@ -1089,7 +1133,7 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white">
+    <footer className="border-t border-[#eadfca] bg-[#fffaf0]">
       <div className={`${container} grid gap-9 py-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_0.8fr_1fr_1fr]`}>
         <div>
           <Brand footer />
@@ -1278,7 +1322,7 @@ const structuredData = {
 
 export default function Home() {
   return (
-    <div className={`${styles.page} bg-white text-[#172232]`}>
+    <div className={`${styles.page} bg-[#fffaf0] text-[#49352b]`}>
       <HomeScroll />
       <a
         href="#main-content"

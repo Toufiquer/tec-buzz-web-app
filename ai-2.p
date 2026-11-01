@@ -1,16 +1,53 @@
-Please Update home.tsx with the following instructions.
-1. Please remove 
-    - Digital solutions. Business impact.
+ 
+Look at the example 'https://nexamart.tecbuzz.app' 
 
-2. Update Hero Banner, 
-    Do whatever you want to do, But I want a Good Looking Hero for my webstie with stunning animation. 
+It is not display well in the website please fix it. so user can see the real website design from my website. and check again it is working. 
 
-3. Please use Bangla and English for better understanding.
 
-4. At the bottom right side of the page please add a fixed button for WhatsApp CTA. 
+-------------------------------
+Look at the example 'https://adsrova.tecbuzz.app' 
 
-5. Add animation in hamberger menu close and open.
+It is not display well in the website please fix it. so user can see the real website design from my website. and check again it is working. 
 
-6. Only in the Mobile device please Add a footer and inside the footer at the right I want to see whatsApp CTA button. and remove the fix WahtsApp button. 
 
-7. When I scroll down then it will be smooth scroll. 
+Look at the example 'https://speakora.tecbuzz.app' 
+
+It is not display well in the website please fix it. so user can see the real website design from my website. and check again it is working. 
+
+
+-------------------------------
+Look at the example 'https://docnova.tecbuzz.app' 
+
+It is not display well in the website please fix it. so user can see the real website design from my website. and check again it is working. 
+
+
+-------------------------------
+Look at the example 'https://lawdex.tecbuzz.app' 
+
+It is not display well in the website please fix it. so user can see the real website design from my website. and check again it is working. 
+
+
+-------------------------------
+Look at the example 'https://landora.tecbuzz.app' 
+
+It is not display well in the website please fix it. so user can see the real website design from my website. and check again it is working. 
+
+
+-------------------------------
+Look at the example 'http://tpc-eng.com' 
+
+It is not display well in the website please fix it. so user can see the real website design from my website. and check again it is working. 
+
+
+-------------------------------
+Look at the example 'https://www.wesassociates.com' 
+
+It is not display well in the website please fix it. so user can see the real website design from my website. and check again it is working. 
+
+
+-------------------------------
+Look at the example 'https://www.3tapple.com/' and please add it inside the real project.
+
+It is not display well in the website please fix it. so user can see the real website design from my website. and check again it is working. 
+
+ 

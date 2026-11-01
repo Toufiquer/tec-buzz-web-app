@@ -31,7 +31,7 @@
 
 .hero {
   isolation: isolate;
-  background: #08172c;
+  background: linear-gradient(135deg, #fffaf0 0%, #f8f0df 56%, #f1e4c6 100%);
 }
 
 .heroGlow {
@@ -39,7 +39,7 @@
   inset: -25% -15% -20% 15%;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(ellipse at 65% 50%, #0755ea55, transparent 55%);
+  background: radial-gradient(ellipse at 65% 50%, #d3ae5b55, transparent 58%);
   animation: glowDrift 9s ease-in-out infinite alternate;
 }
 
@@ -49,7 +49,7 @@
   z-index: -1;
   pointer-events: none;
   background-image:
-    linear-gradient(#98b9f00a 1px, transparent 1px), linear-gradient(90deg, #98b9f00a 1px, transparent 1px);
+    linear-gradient(#9a6b1810 1px, transparent 1px), linear-gradient(90deg, #9a6b1810 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: linear-gradient(110deg, transparent 10%, #000 85%);
   animation: gridDrift 24s linear infinite;
@@ -69,7 +69,7 @@
 }
 
 .shimmerText {
-  background: linear-gradient(110deg, #8cc8ff 15%, #e1f6ff 40%, #44bbff 60%, #8cc8ff 85%);
+  background: linear-gradient(110deg, #8e6418 15%, #a77a22 40%, #b78627 60%, #8e6418 85%);
   background-size: 220% 100%;
   background-clip: text;
   color: transparent;
@@ -77,13 +77,13 @@
 }
 
 .heroChat {
-  border-color: #ffffff40;
-  background: #ffffff08;
-  color: white;
+  border-color: #c9ab6d;
+  background: #fffdf8cc;
+  color: #60471e;
 }
 .heroChat:hover {
-  border-color: #66b8ff;
-  background: #0755ea40;
+  border-color: #a77a22;
+  background: #f5e8c8;
 }
 
 .motionStage {
@@ -99,7 +99,7 @@
   position: absolute;
   inset: 5%;
   z-index: -1;
-  background: radial-gradient(ellipse, #009ff533 0%, #0755ea12 45%, transparent 70%);
+  background: radial-gradient(ellipse, #d3ae5b4d 0%, #c89b3c1c 45%, transparent 70%);
   animation: haloBreathe 5s ease-in-out infinite alternate;
 }
 
@@ -110,15 +110,15 @@
   left: 50%;
   width: 68%;
   aspect-ratio: 1;
-  border: 1px solid #44baff55;
+  border: 1px solid #b58a3c66;
   box-shadow:
-    inset 0 0 28px #0755ea15,
-    0 0 28px #0755ea15;
+    inset 0 0 28px #b7862718,
+    0 0 28px #b7862718;
   animation: orbitTurn 24s linear infinite;
 }
 .orbitFrameInner {
   width: 48%;
-  border-color: #64c5ff88;
+  border-color: #bd984f99;
   animation: orbitTurn 18s linear infinite reverse;
 }
 
@@ -129,11 +129,11 @@
   height: 100%;
 }
 .connectionBase {
-  stroke: #4bb8ff30;
+  stroke: #b7862740;
   stroke-width: 1;
 }
 .connectionPulse {
-  stroke: #73d2ff;
+  stroke: #a77a22;
   stroke-width: 2;
   stroke-dasharray: 18 150;
   animation: signalTravel 3s linear infinite;
@@ -155,8 +155,8 @@
   background: white;
   padding: 3px;
   box-shadow:
-    0 0 44px #009ff54d,
-    0 18px 40px #0005;
+    0 0 44px #d3ae5b44,
+    0 18px 40px #8e64181a;
 }
 
 .orbitNode {
@@ -168,13 +168,13 @@
   justify-content: center;
   flex-direction: column;
   gap: 5px;
-  border: 1px solid #427cb6;
-  background: #0c2240;
-  color: #a8dbff;
+  border: 1px solid #d8c59d;
+  background: #fffdf8;
+  color: #9a6b18;
   animation: nodeGlow 4s ease-in-out infinite;
 }
 .orbitNode span {
-  color: #d2e8ff;
+  color: #60471e;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.06em;
@@ -225,8 +225,8 @@
   width: 6px;
   height: 6px;
   content: "";
-  background: #9adfff;
-  box-shadow: 0 0 16px 3px #009ff5aa;
+  background: #d0aa50;
+  box-shadow: 0 0 16px 3px #b7862770;
 }
 
 .whatsappFloat {
@@ -306,12 +306,12 @@
 @keyframes nodeGlow {
   0%,
   100% {
-    border-color: #427cb6;
-    box-shadow: 0 0 0 #009ff500;
+    border-color: #d8c59d;
+    box-shadow: 0 0 0 #b7862700;
   }
   50% {
-    border-color: #93d9ff;
-    box-shadow: 0 0 20px #009ff530;
+    border-color: #a77a22;
+    box-shadow: 0 0 20px #b7862738;
   }
 }
 

@@ -14,9 +14,11 @@ export const whatsappUrl = (message: string) => `https://wa.me/8801607333369?tex
 export const navigation = [
   { label: "Home", href: "#home" },
   { label: "Pricing", href: "#pricing" },
-  { label: "Combo Offer", href: "#combo-offers" },
-  { label: "Individual", href: "#individual" },
+  { label: "Service", href: "#individual" },
   { label: "About", href: "#about" },
+  { label: "Website demos", href: "#demo-portfolio" },
+  { label: "Real projects", href: "#real-portfolio" },
+  { label: "Contact", href: "#contact" },
 ] as const;
 
 export const packages = [
@@ -153,42 +155,42 @@ export const individualServices = [
   },
 ] as const;
 
-// These are linked demos, not screenshots or claims about completed functionality.
+// These local previews are snapshots of the linked demo websites, not claims about completed functionality.
 export const demoProjects = [
   {
     name: "NexaMart",
     url: "https://nexamart.tecbuzz.app",
-    code: "NM",
+    previewImage: "/portfolio-previews/nexamart.png",
     description: "An online shopping storefront demo.",
   },
   {
     name: "AdsRova",
     url: "https://adsrova.tecbuzz.app",
-    code: "AR",
+    previewImage: "/portfolio-previews/adsrova.png",
     description: "A digital advertising agency website demo.",
   },
   {
     name: "Speakora",
     url: "https://speakora.tecbuzz.app",
-    code: "SP",
+    previewImage: "/portfolio-previews/speakora.png",
     description: "A language learning and communication website demo.",
   },
   {
     name: "DocNova",
     url: "https://docnova.tecbuzz.app",
-    code: "DN",
+    previewImage: "/portfolio-previews/docnova.png",
     description: "A healthcare services website demo.",
   },
   {
     name: "LawDex",
     url: "https://lawdex.tecbuzz.app",
-    code: "LD",
+    previewImage: "/portfolio-previews/lawdex.png",
     description: "A legal practice and professional services website demo.",
   },
   {
     name: "Landora",
     url: "https://landora.tecbuzz.app",
-    code: "LA",
+    previewImage: "/portfolio-previews/landora.png",
     description: "A property and real estate website demo.",
   },
 ] as const;
@@ -196,27 +198,31 @@ export const demoProjects = [
 export const realProjects = [
   {
     name: "TestPrep Center",
-    url: "http://tpc-eng.com",
+    url: "https://www.tpc-eng.com",
     domain: "tpc-eng.com",
+    previewImage: "/portfolio-previews/tpc.png",
     description: "An English learning and IELTS classes website.",
   },
   {
     name: "WES Associates",
     url: "https://www.wesassociates.com",
     domain: "wesassociates.com",
+    previewImage: "/portfolio-previews/wesassociates.png",
     description: "A study abroad consultancy website.",
-  },
-  {
-    name: "TecBuzz",
-    url: "https://tecbuzz.bd",
-    domain: "tecbuzz.bd",
-    description: "Our digital services and business solutions website.",
   },
   {
     name: "FutureNest Abroad",
     url: "https://www.futurenestabroad.com",
     domain: "futurenestabroad.com",
+    previewImage: "/portfolio-previews/futurenestabroad.png",
     description: "A live website from our project portfolio.",
+  },
+  {
+    name: "3Tapple",
+    url: "https://www.3tapple.com/",
+    domain: "3tapple.com",
+    previewImage: "/portfolio-previews/3tapple.png",
+    description: "A web design and digital growth services website.",
   },
 ] as const;
 
