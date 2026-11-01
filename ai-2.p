@@ -1,28 +1,16 @@
-Here is my Website info that I want to use in the application.
-```
-Name: TecBuzz
+Please Update home.tsx with the following instructions.
+1. Please remove 
+    - Digital solutions. Business impact.
 
-Logo: '/Logo.png' 
+2. Update Hero Banner, 
+    Do whatever you want to do, But I want a Good Looking Hero for my webstie with stunning animation. 
 
-Bio:
-TecBuzz একটি আধুনিক অনলাইন শপিং প্ল্যাটফর্ম, যেখানে সহজে পণ্য খোঁজা, অর্ডার করা ও নিরাপদে কেনাকাটার সুবিধা রয়েছে।
+3. Please use Bangla and English for better understanding.
 
-Number: 01711 221122
-Email: example@gmail.com 
-Address: 21/B Bijoyshoroni, Tecgaon, Dhaka-1200.
+4. At the bottom right side of the page please add a fixed button for WhatsApp CTA. 
 
-``` 
+5. Add animation in hamberger menu close and open.
 
-Look at the file 'all-data-file.txt' in the root folder. There is list of File that I want to change.
+6. Only in the Mobile device please Add a footer and inside the footer at the right I want to see whatsApp CTA button. and remove the fix WahtsApp button. 
 
-Now Your task is Update those file. and check all file, and make sure it will update currectly. 
-
-
----------------
-Look at the products page 'src/app/dashboard/products/...', and category page 'src/app/dashboard/category/...' 
-
-Now please those two page in my application so it is working with eye-catching view and stunning animation and Good Looking color combination. 
-1. 'http://localhost:3000/products?category=laptops-computers' 
-2. '/products/aeroglide-rgb-gaming-mouse-mtq6bqn1-cqv1-29' 
-
-And Make sure both page will be SSR so User can feel a fast Loading website. also make sure I can revalidate those page form 'src/app/dashboard/admin/pages/...' and make sure there is no time validation, I want to only revalidate those page from the admin pages. 
+7. When I scroll down then it will be smooth scroll. 

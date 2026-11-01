@@ -1,0 +1,359 @@
+.page {
+  color-scheme: light;
+  font-family: var(--font-geist-sans), "Nirmala UI", "Vrinda", Arial, sans-serif;
+  padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+  --radius: 0px;
+}
+
+:global(html):has(.page) {
+  scroll-behavior: smooth;
+  scroll-padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+}
+
+.page *,
+.page *::before,
+.page *::after {
+  border-radius: 0;
+}
+
+.page :is(a, button, summary, [tabindex]):focus-visible {
+  outline: 3px solid #009ff5;
+  outline-offset: 4px;
+}
+
+.page section {
+  scroll-margin-top: 6.5rem;
+}
+
+.page summary::-webkit-details-marker {
+  display: none;
+}
+
+.hero {
+  isolation: isolate;
+  background: #08172c;
+}
+
+.heroGlow {
+  position: absolute;
+  inset: -25% -15% -20% 15%;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 65% 50%, #0755ea55, transparent 55%);
+  animation: glowDrift 9s ease-in-out infinite alternate;
+}
+
+.heroGrid {
+  position: absolute;
+  inset: -64px;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(#98b9f00a 1px, transparent 1px), linear-gradient(90deg, #98b9f00a 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(110deg, transparent 10%, #000 85%);
+  animation: gridDrift 24s linear infinite;
+}
+
+.heroCopy > * {
+  animation: enterUp 750ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.heroCopy > :nth-child(2) {
+  animation-delay: 100ms;
+}
+.heroCopy > :nth-child(3) {
+  animation-delay: 180ms;
+}
+.heroCopy > :nth-child(4) {
+  animation-delay: 260ms;
+}
+
+.shimmerText {
+  background: linear-gradient(110deg, #8cc8ff 15%, #e1f6ff 40%, #44bbff 60%, #8cc8ff 85%);
+  background-size: 220% 100%;
+  background-clip: text;
+  color: transparent;
+  animation: textShimmer 5s ease-in-out infinite alternate;
+}
+
+.heroChat {
+  border-color: #ffffff40;
+  background: #ffffff08;
+  color: white;
+}
+.heroChat:hover {
+  border-color: #66b8ff;
+  background: #0755ea40;
+}
+
+.motionStage {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: 1;
+  margin-inline: auto;
+  isolation: isolate;
+}
+
+.motionHalo {
+  position: absolute;
+  inset: 5%;
+  z-index: -1;
+  background: radial-gradient(ellipse, #009ff533 0%, #0755ea12 45%, transparent 70%);
+  animation: haloBreathe 5s ease-in-out infinite alternate;
+}
+
+.orbitFrame,
+.orbitFrameInner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 68%;
+  aspect-ratio: 1;
+  border: 1px solid #44baff55;
+  box-shadow:
+    inset 0 0 28px #0755ea15,
+    0 0 28px #0755ea15;
+  animation: orbitTurn 24s linear infinite;
+}
+.orbitFrameInner {
+  width: 48%;
+  border-color: #64c5ff88;
+  animation: orbitTurn 18s linear infinite reverse;
+}
+
+.connectionLines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.connectionBase {
+  stroke: #4bb8ff30;
+  stroke-width: 1;
+}
+.connectionPulse {
+  stroke: #73d2ff;
+  stroke-width: 2;
+  stroke-dasharray: 18 150;
+  animation: signalTravel 3s linear infinite;
+}
+
+.coreFloat {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32%;
+  max-width: 148px;
+  aspect-ratio: 1;
+  animation: coreFloat 5s ease-in-out infinite;
+}
+.brandCore {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid #bde7ff;
+  background: white;
+  padding: 3px;
+  box-shadow:
+    0 0 44px #009ff54d,
+    0 18px 40px #0005;
+}
+
+.orbitNode {
+  position: absolute;
+  display: flex;
+  width: 64px;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid #427cb6;
+  background: #0c2240;
+  color: #a8dbff;
+  animation: nodeGlow 4s ease-in-out infinite;
+}
+.orbitNode span {
+  color: #d2e8ff;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+.orbitNode[data-position="0"] {
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.orbitNode[data-position="1"] {
+  top: 50%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+  animation-delay: -1s;
+}
+.orbitNode[data-position="2"] {
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -2s;
+}
+.orbitNode[data-position="3"] {
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  animation-delay: -3s;
+}
+
+.motionSpark,
+.motionSparkSecondary {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 68%;
+  aspect-ratio: 1;
+  pointer-events: none;
+  animation: orbitTurn 24s linear infinite;
+}
+.motionSparkSecondary {
+  width: 48%;
+  animation: orbitTurn 18s linear infinite reverse;
+}
+.motionSpark::after,
+.motionSparkSecondary::after {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 6px;
+  height: 6px;
+  content: "";
+  background: #9adfff;
+  box-shadow: 0 0 16px 3px #009ff5aa;
+}
+
+.whatsappFloat {
+  position: relative;
+  isolation: isolate;
+  animation: enterUp 600ms 700ms ease both;
+}
+.mobileContact {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@keyframes enterUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes glowDrift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.7;
+  }
+  to {
+    transform: translate3d(-5%, 4%, 0) scale(1.1);
+    opacity: 1;
+  }
+}
+@keyframes gridDrift {
+  to {
+    transform: translate3d(64px, 64px, 0);
+  }
+}
+@keyframes textShimmer {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 100% 50%;
+  }
+}
+@keyframes haloBreathe {
+  from {
+    transform: scale(0.9);
+    opacity: 0.65;
+  }
+  to {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+@keyframes orbitTurn {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes signalTravel {
+  to {
+    stroke-dashoffset: -168;
+  }
+}
+@keyframes coreFloat {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-50%, calc(-50% - 7px));
+  }
+}
+@keyframes nodeGlow {
+  0%,
+  100% {
+    border-color: #427cb6;
+    box-shadow: 0 0 0 #009ff500;
+  }
+  50% {
+    border-color: #93d9ff;
+    box-shadow: 0 0 20px #009ff530;
+  }
+}
+
+@media (min-width: 768px) {
+  .page {
+    padding-bottom: 0;
+  }
+  :global(html):has(.page) {
+    scroll-padding-bottom: 1rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .motionStage {
+    max-width: 300px;
+  }
+  .orbitNode {
+    width: 54px;
+    height: 54px;
+    gap: 3px;
+  }
+  .orbitNode svg {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page *,
+  .page *::before,
+  .page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .orbitFrame,
+  .orbitFrameInner,
+  .motionSpark,
+  .motionSparkSecondary,
+  .coreFloat {
+    transform: translate(-50%, -50%);
+  }
+  :global(html):has(.page) {
+    scroll-behavior: auto;
+  }
+}

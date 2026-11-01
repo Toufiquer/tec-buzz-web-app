@@ -16,8 +16,10 @@ export function PublicMobileNavigationSpacing({ children }: Readonly<{ children:
   const pathname = usePathname();
   const [mobileNavigationVisible, setMobileNavigationVisible] = useState(false);
   const isDashboardRoute = pathname === "/dashboard" || pathname.startsWith("/dashboard/");
+  const isHomepage = pathname === "/";
 
   useEffect(() => {
+    if (isHomepage) return;
     const load = async () => {
       try {
         const result = await fetch("/api/dashboard/navigation/v1", { cache: "no-store" });
@@ -33,7 +35,11 @@ export function PublicMobileNavigationSpacing({ children }: Readonly<{ children:
     void load();
     window.addEventListener("speed-box-navigation-updated", load);
     return () => window.removeEventListener("speed-box-navigation-updated", load);
-  }, []);
+  }, [isHomepage]);
 
-  return <div className={mobileNavigationVisible && !isDashboardRoute ? "mb-25 md:mb-0" : undefined}>{children}</div>;
+  return (
+    <div className={mobileNavigationVisible && !isDashboardRoute && !isHomepage ? "mb-25 md:mb-0" : undefined}>
+      {children}
+    </div>
+  );
 }

@@ -10,14 +10,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import { ConfirmDeleteProvider } from "@/components/confirm-delete-provider";
-import Footer from "@/components/footer/Footer";
-import { Menu } from "@/components/menu/Menu";
-import MobileNavigation from "@/components/MobileNavigation";
 import { PublicMobileNavigationSpacing } from "@/components/PublicMobileNavigationSpacing";
 import { ScrollTransition } from "@/components/ScrollTransition";
-import TopBanner from "@/components/topbanner/TopBanner";
 import { GlobalToast } from "@/components/ui/global-toast";
-import WhatsAppButton from "@/components/whatsapp/WhatsAppButton";
 import { ReduxProvider } from "@/redux/app/provider";
 import "./globals.css";
 
@@ -33,6 +28,7 @@ const geistMono = Geist_Mono({
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
+    metadataBase: new URL("https://tecbuzz.bd"),
     title: "TecBuzz",
     description: "TecBuzz progressive web application",
     applicationName: "TecBuzz",
@@ -44,8 +40,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RootLayout({
   children,
+  siteHeader,
+  siteFooter,
 }: Readonly<{
   children: React.ReactNode;
+  siteHeader: React.ReactNode;
+  siteFooter: React.ReactNode;
 }>) {
   return (
     <html
@@ -58,16 +58,13 @@ export default function RootLayout({
         <GlobalToast />
         <ReduxProvider>
           <ConfirmDeleteProvider>
-            <TopBanner />
-            <Menu />
+            {siteHeader}
             <PublicMobileNavigationSpacing>
               <>
                 {children}
-                <Footer />
+                {siteFooter}
               </>
             </PublicMobileNavigationSpacing>
-            <WhatsAppButton />
-            <MobileNavigation />
           </ConfirmDeleteProvider>
         </ReduxProvider>
       </body>
