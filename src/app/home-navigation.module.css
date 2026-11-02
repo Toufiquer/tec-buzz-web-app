@@ -97,6 +97,7 @@
   align-items: center;
   gap: 14px;
   border-top: 1px solid #edf1f6;
+  border-bottom: 2px solid transparent;
   padding: 10px 12px;
   color: #172232;
   opacity: 0;
@@ -105,7 +106,7 @@
     opacity 180ms ease,
     transform 220ms ease,
     color 180ms ease,
-    background-color 180ms ease;
+    border-color 180ms ease;
 }
 
 .panel[data-open="true"] .link {
@@ -133,12 +134,11 @@
 }
 
 .link:hover {
-  background: #f5f8fc;
   color: #0755ea;
 }
 
 .link[data-active="true"] {
-  background: #eef6ff;
+  border-bottom-color: #0755ea;
   color: #0755ea;
 }
 

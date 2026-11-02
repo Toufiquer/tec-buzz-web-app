@@ -41,7 +41,9 @@ export default function HomeNavigation({
     const updateActiveSection = () => {
       frame = 0;
       const headerHeight = document.querySelector("header")?.getBoundingClientRect().height ?? 80;
-      const guideY = headerHeight + 16;
+      const scrollPadding = Number.parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+      const scrollMargin = Number.parseFloat(getComputedStyle(sections[0]).scrollMarginTop) || 0;
+      const guideY = Math.max(headerHeight + 16, scrollPadding + scrollMargin + 1);
       const current =
         sections.find((section) => {
           const bounds = section.getBoundingClientRect();
@@ -82,10 +84,9 @@ export default function HomeNavigation({
               href={link.href}
               aria-current={isActive ? "location" : undefined}
               onClick={() => navigateToSection(link.href)}
-              className={`relative py-3 text-sm font-medium transition-colors ${isActive ? "text-[#0755EA]" : "text-slate-600 hover:text-[#0755EA]"}`}
+              className={`border-b-2 py-3 text-sm font-medium transition-colors ${isActive ? "border-[#0755EA] text-[#0755EA]" : "border-transparent text-slate-600 hover:text-[#0755EA]"}`}
             >
               {link.label}
-              {isActive && <span className="absolute inset-x-0 bottom-1 h-0.5 bg-[#0755EA]" aria-hidden="true" />}
             </a>
           );
         })}

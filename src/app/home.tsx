@@ -61,6 +61,7 @@ import {
   whatsappUrl,
   type FeatureValue,
 } from "./home-data";
+import HomeInstallButton from "./home-install-button";
 import HomeNavigation from "./home-navigation";
 import HomeScroll from "./home-scroll";
 import styles from "./home.module.css";
@@ -1210,6 +1211,7 @@ function Footer() {
           <a href="https://wa.me/8801607333369" className="mt-2 block text-sm text-slate-600">
             WhatsApp: 01607333369
           </a>
+          <HomeInstallButton />
         </div>
         <div>
           <h2 className="mb-5 text-xs font-semibold tracking-wider uppercase">
