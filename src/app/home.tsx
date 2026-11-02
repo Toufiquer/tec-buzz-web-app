@@ -45,8 +45,9 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import Image from "next/image";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
+import HomeAnimations from "./home-animations";
 import {
   demoProjects,
   faqs,
@@ -104,6 +105,24 @@ function ActionLink({
   );
 }
 
+function AnimatedText({ text, accent = false }: { text: string; accent?: boolean }) {
+  return (
+    <span className={`${styles.textReveal} ${accent ? styles.textAccent : ""}`} data-aos="text-reveal">
+      <span className="sr-only">{text}</span>
+      <span aria-hidden="true">
+        {text.split(/\s+/).map((word, index) => (
+          <span key={`${word}-${index}`}>
+            {index > 0 ? " " : null}
+            <span className={styles.textWord} style={{ "--word-index": index } as CSSProperties}>
+              {word}
+            </span>
+          </span>
+        ))}
+      </span>
+    </span>
+  );
+}
+
 function SectionHeading({
   number,
   label,
@@ -125,6 +144,7 @@ function SectionHeading({
     <div className="max-w-2xl">
       {showEyebrow && number && label && (
         <p
+          data-aos="fade-up"
           className={`mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] ${dark ? "text-blue-200" : "text-[#0755EA]"}`}
         >
           <span className={dark ? "text-blue-200" : "text-slate-500"}>{number} /</span> {label}
@@ -133,15 +153,24 @@ function SectionHeading({
       <h2
         className={`text-3xl leading-tight font-semibold tracking-tight sm:text-4xl lg:text-[2.6rem] ${dark ? "text-white" : "text-[#49352b]"}`}
       >
-        {title}
+        <AnimatedText text={title} accent />
       </h2>
       {showTranslation && number && sectionTranslations[number] && (
-        <p lang="bn" className={`mt-3 text-base leading-8 ${dark ? "text-blue-100" : "text-slate-600"}`}>
+        <p
+          data-aos="fade-up"
+          data-aos-delay="100"
+          lang="bn"
+          className={`mt-3 text-base leading-8 ${dark ? "text-blue-100" : "text-slate-600"}`}
+        >
           {sectionTranslations[number]}
         </p>
       )}
       {description && (
-        <p className={`mt-5 max-w-xl text-base leading-7 ${dark ? "text-slate-300" : "text-slate-600"}`}>
+        <p
+          data-aos="fade-up"
+          data-aos-delay="150"
+          className={`mt-5 max-w-xl text-base leading-7 ${dark ? "text-slate-300" : "text-slate-600"}`}
+        >
           {description}
         </p>
       )}
@@ -152,7 +181,7 @@ function SectionHeading({
 function IconTile({ icon: Icon, dark = false }: { icon: LucideIcon; dark?: boolean }) {
   return (
     <span
-      className={`inline-flex size-11 shrink-0 items-center justify-center ${dark ? "bg-white/10 text-blue-200" : "bg-[#f7eed9] text-[#9a6b18]"}`}
+      className={`${styles.iconTile} inline-flex size-11 shrink-0 items-center justify-center ${dark ? "bg-white/10 text-blue-200" : "bg-[#f7eed9] text-[#9a6b18]"}`}
     >
       <Icon size={21} strokeWidth={1.7} aria-hidden="true" />
     </span>
@@ -172,15 +201,7 @@ function CheckList({ items }: { items: readonly string[] }) {
   );
 }
 
-function LiveDesignPreview({
-  name,
-  url,
-  previewImage,
-}: {
-  name: string;
-  url: string;
-  previewImage?: string;
-}) {
+function LiveDesignPreview({ name, url, previewImage }: { name: string; url: string; previewImage?: string }) {
   const domain = new URL(url).hostname.replace(/^www\./, "");
 
   return (
@@ -256,7 +277,7 @@ function Brand({ footer = false }: { footer?: boolean }) {
 
 function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[#eadfca] bg-[#fffdf8]/95 backdrop-blur-md">
+    <header className={`${styles.header} sticky top-0 z-50 border-b border-[#eadfca] bg-[#fffdf8]/95 backdrop-blur-md`}>
       <div className={`${container} flex h-20 items-center justify-between gap-6`}>
         <Brand />
         <HomeNavigation links={navigation} consultationUrl={consultation} />
@@ -278,7 +299,7 @@ function HeroVisual() {
     { icon: PanelTop, label: "CMS" },
   ];
   return (
-    <div className={styles.motionStage} aria-hidden="true">
+    <div className={styles.motionStage} data-aos="zoom-in" data-aos-delay="150" aria-hidden="true">
       <div className={styles.motionHalo} />
       <div className={styles.orbitFrame} />
       <div className={styles.orbitFrameInner} />
@@ -321,9 +342,14 @@ function Hero() {
             lang="bn"
             className="text-[2.65rem] leading-[1.4] font-semibold tracking-tight text-[#49352b] sm:text-[3.5rem] lg:text-[3.85rem]"
           >
-            আপনার স্বপ্ন,
+            <span className={styles.heroWord}>আপনার</span> <span className={styles.heroWord}>স্বপ্ন,</span>
             <br />
-            <span className={styles.shimmerText}>আমাদের প্রযুক্তি!</span>
+            <span className={styles.heroWord}>
+              <span className={styles.shimmerText}>আমাদের</span>
+            </span>{" "}
+            <span className={styles.heroWord}>
+              <span className={styles.shimmerText}>প্রযুক্তি!</span>
+            </span>
           </h1>
           <p className="mt-5 text-base tracking-wide text-[#765f50] sm:text-lg">Website. E-commerce. CRM.</p>
           <div className="mt-7 flex flex-wrap gap-3">
@@ -379,16 +405,18 @@ function Pricing() {
           lang="bn"
           className="text-3xl leading-snug font-semibold tracking-tight text-[#172232] sm:text-4xl"
         >
-          আমাদের প্যাকেজ সমূহ
+          <AnimatedText text="আমাদের প্যাকেজ সমূহ" accent />
         </h2>
         <div className="mt-8 grid items-stretch gap-5 lg:grid-cols-3">
-          {packages.map((item) => {
+          {packages.map((item, index) => {
             const popular = item.name === "Express";
             const TierIcon = item.name === "Starter" ? Package : popular ? Zap : Building2;
             return (
               <article
                 key={item.name}
-                className={`group relative flex flex-col overflow-hidden border p-6 pt-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#0755EA]/60 hover:shadow-[0_24px_50px_-20px_rgba(7,85,234,0.35)] focus-within:-translate-y-1 focus-within:border-[#0755EA] focus-within:shadow-[0_20px_44px_-20px_rgba(7,85,234,0.3)] motion-reduce:transform-none motion-reduce:transition-none ${popular ? "border-[#0755EA] bg-[#fcf6e8] shadow-[0_12px_32px_-16px_rgba(7,85,234,0.25)]" : "border-slate-200 bg-white shadow-[0_8px_24px_-20px_rgba(15,23,42,0.25)]"}`}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                className={`${styles.liftCard} group relative flex flex-col overflow-hidden border p-6 pt-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#0755EA]/60 hover:shadow-[0_24px_50px_-20px_rgba(7,85,234,0.35)] focus-within:-translate-y-1 focus-within:border-[#0755EA] focus-within:shadow-[0_20px_44px_-20px_rgba(7,85,234,0.3)] motion-reduce:transform-none motion-reduce:transition-none ${popular ? "border-[#0755EA] bg-[#fcf6e8] shadow-[0_12px_32px_-16px_rgba(7,85,234,0.25)]" : "border-slate-200 bg-white shadow-[0_8px_24px_-20px_rgba(15,23,42,0.25)]"}`}
               >
                 <span
                   className={`absolute inset-x-0 top-0 h-1 transition-colors duration-300 ${popular ? "bg-[#0755EA]" : "bg-slate-200 group-hover:bg-[#0755EA]"}`}
@@ -454,13 +482,14 @@ function Pricing() {
           <div className="flex min-h-16 items-center gap-3 border-b border-[#eadfca] bg-[#fcf6e8] px-5 py-5 sm:px-7">
             <ListFilter size={20} className="shrink-0 text-[#0755EA]" aria-hidden="true" />
             <h3 id="comparison-title" className="text-lg font-semibold text-[#0755EA] sm:text-xl">
-              কোন প্যাকেজে কী পাচ্ছেন?
+              <AnimatedText text="কোন প্যাকেজে কী পাচ্ছেন?" />
             </h3>
           </div>
           <div
             role="region"
             aria-label="Full package feature comparison, scroll horizontally on small screens"
             tabIndex={0}
+            data-aos="fade-up"
             className="overflow-x-auto"
           >
             <table className="w-full min-w-160 border-collapse text-left text-sm">
@@ -519,15 +548,16 @@ function IndividualServices() {
     >
       <div className={container}>
         <div id="individual-title">
-          <SectionHeading
-            number="03"
-            title="প্যাকেজ নয়, পছন্দ আপনার!"
-            showEyebrow={false}
-          />
+          <SectionHeading number="03" title="প্যাকেজ নয়, পছন্দ আপনার!" showEyebrow={false} />
         </div>
         <div className="mt-9 grid gap-5 lg:grid-cols-3">
           {individualServices.map((item, index) => (
-            <article key={item.name} className="flex flex-col border border-slate-200 bg-white p-6 sm:p-7">
+            <article
+              key={item.name}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+              className={`${styles.liftCard} flex flex-col border border-slate-200 bg-white p-6 sm:p-7`}
+            >
               <div className="flex items-center justify-between">
                 <IconTile icon={icons[index]} />
                 <span className="text-[10px] font-medium tracking-widest text-slate-500 uppercase">
@@ -558,7 +588,7 @@ function IndividualServices() {
             </article>
           ))}
         </div>
-        <p className="mt-5 text-xs leading-5 font-medium text-red-600">
+        <p data-aos="fade-up" className="mt-5 text-xs leading-5 font-medium text-red-600">
           Business Webapp pricing excludes domain registration and hosting.
         </p>
       </div>
@@ -573,7 +603,10 @@ function About() {
   return (
     <section id="about" aria-labelledby="about-title" className={sectionSpace}>
       <div className={`${container} grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20`}>
-        <div className="relative border border-[#eadfca] bg-[#fffaf0] p-8 text-[#49352b] shadow-[0_18px_50px_-30px_rgba(138,100,24,0.24)] sm:p-10">
+        <div
+          data-aos="zoom-in"
+          className={`${styles.experienceCard} relative border border-[#eadfca] bg-[#fffaf0] p-8 text-[#49352b] shadow-[0_18px_50px_-30px_rgba(138,100,24,0.24)] sm:p-10`}
+        >
           <p className="mt-5 bg-linear-to-br from-[#8e6418] to-[#b78627] bg-clip-text text-[7rem] leading-none font-semibold tracking-tighter text-transparent sm:text-[9rem]">
             5<span className="text-6xl">+</span>
           </p>
@@ -594,15 +627,11 @@ function About() {
           />
         </div>
         <div id="about-title">
-          <SectionHeading
-            title="প্রযুক্তি নয়, ফলাফলই আসল!"
-            showEyebrow={false}
-            showTranslation={false}
-          />
-          <p lang="bn" className="mt-6 text-base leading-8 text-slate-600">
+          <SectionHeading title="প্রযুক্তি নয়, ফলাফলই আসল!" showEyebrow={false} showTranslation={false} />
+          <p data-aos="fade-up" data-aos-delay="100" lang="bn" className="mt-6 text-base leading-8 text-slate-600">
             {aboutDescription}
           </p>
-          <div className="mt-7 flex flex-wrap gap-x-7 gap-y-4">
+          <div data-aos="fade-up" data-aos-delay="150" className="mt-7 flex flex-wrap gap-x-7 gap-y-4">
             <a href="mailto:tecbuzz@gmail.com" className="flex items-center gap-2 text-sm font-medium text-[#0755EA]">
               <Mail size={17} aria-hidden="true" />
               tecbuzz@gmail.com
@@ -642,15 +671,16 @@ function WhyTecBuzz() {
     >
       <div className={container}>
         <div id="why-title">
-          <SectionHeading
-            number="05"
-            title="আপনার চাহিদায়, আমাদের উদ্ভাবন!"
-            showEyebrow={false}
-          />
+          <SectionHeading number="05" title="আপনার চাহিদায়, আমাদের উদ্ভাবন!" showEyebrow={false} />
         </div>
         <div className="mt-10 grid gap-px border border-slate-200 bg-slate-200 sm:grid-cols-2 lg:grid-cols-4">
-          {benefits.map((item) => (
-            <article key={item.title} className="bg-white p-6 transition-colors hover:bg-blue-50/50 sm:p-7">
+          {benefits.map((item, index) => (
+            <article
+              key={item.title}
+              data-aos="fade-up"
+              data-aos-delay={(index % 4) * 100}
+              className={`${styles.liftCard} bg-white p-6 transition-colors hover:bg-blue-50/50 sm:p-7`}
+            >
               <IconTile icon={item.icon} />
               <h3 className="mt-5 text-base font-semibold">{item.title}</h3>
               <p className="mt-2 text-sm leading-6 text-slate-500">{item.copy}</p>
@@ -673,7 +703,7 @@ function Ecommerce() {
             description="E-commerce website development that connects your storefront with the daily work behind it. Included in every combo package."
             showEyebrow={false}
           />
-          <div className="mt-7">
+          <div data-aos="fade-up" data-aos-delay="100" className="mt-7">
             <CheckList
               items={[
                 "Product catalog and categories",
@@ -688,12 +718,17 @@ function Ecommerce() {
           </div>
           <a
             href="#demo-portfolio"
+            data-aos="fade-up"
             className="mt-7 inline-flex min-h-11 items-center gap-3 text-sm font-semibold text-[#0755EA]"
           >
             Explore our demo websites <ArrowUpRight size={18} aria-hidden="true" />
           </a>
         </div>
-        <div className="border border-[#eadfca] bg-[#fcf6e8] p-4 sm:p-7">
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="100"
+          className={`${styles.storeVisual} border border-[#eadfca] bg-[#fcf6e8] p-4 sm:p-7`}
+        >
           <div className="border border-slate-200 bg-white shadow-sm">
             <div className="flex items-center justify-between border-b border-slate-200 p-5">
               <span className="flex items-center gap-2 text-sm font-semibold">
@@ -759,20 +794,29 @@ function BusinessAutomation() {
     { icon: Search, title: "SEO management", text: "Manage your website's search essentials." },
   ];
   return (
-    <section id="automation" aria-labelledby="automation-title" className={`${sectionSpace} border-y border-[#eadfca] bg-[#fffaf0]`}>
+    <section
+      id="automation"
+      aria-labelledby="automation-title"
+      className={`${sectionSpace} border-y border-[#eadfca] bg-[#fffaf0]`}
+    >
       <div className={container}>
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div id="automation-title">
             <SectionHeading number="07" title="প্রযুক্তি সামলাবে, ব্যবসা এগোবে!" showEyebrow={false} />
           </div>
-          <p className="max-w-md text-base leading-7 text-[#765f50]">
+          <p data-aos="fade-left" className="max-w-md text-base leading-7 text-[#765f50]">
             Update your content without a developer for routine changes. Keep your leads, team, and website organized
             with CRM software built for businesses in Bangladesh.
           </p>
         </div>
         <div className="mt-10 grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
-          {tools.map((item) => (
-            <article key={item.title} className="flex gap-4 border-t border-[#eadfca] py-6">
+          {tools.map((item, index) => (
+            <article
+              key={item.title}
+              data-aos="fade-up"
+              data-aos-delay={(index % 3) * 100}
+              className={`${styles.liftCard} flex gap-4 border-t border-[#eadfca] py-6`}
+            >
               <IconTile icon={item.icon} />
               <div>
                 <h3 className="text-sm font-semibold text-[#49352b]">{item.title}</h3>
@@ -781,7 +825,7 @@ function BusinessAutomation() {
             </article>
           ))}
         </div>
-        <p className="mt-4 border-l-2 border-[#b78627] pl-4 text-xs leading-6 text-[#765f50]">
+        <p data-aos="fade-up" className="mt-4 border-l-2 border-[#b78627] pl-4 text-xs leading-6 text-[#765f50]">
           All tools listed above are included in Starter, Express, and Enterprise. Ask about your business workflow
           during a free consultation.
         </p>
@@ -828,7 +872,9 @@ function Process() {
           {steps.map((item, index) => (
             <li
               key={item.title}
-              className="relative border-l border-slate-200 pb-8 pl-7 last:pb-0 lg:border-t lg:border-l-0 lg:pt-8 lg:pr-7 lg:pb-0 lg:pl-0"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+              className={`${styles.processStep} relative border-l border-slate-200 pb-8 pl-7 last:pb-0 lg:border-t lg:border-l-0 lg:pt-8 lg:pr-7 lg:pb-0 lg:pl-0`}
             >
               <span
                 className="absolute -left-[5px] top-0 size-[9px] bg-[#0755EA] lg:top-[-5px] lg:left-0"
@@ -907,8 +953,13 @@ function Industries() {
           />
         </div>
         <div className="mt-10 grid gap-x-10 sm:grid-cols-2 lg:grid-cols-4">
-          {industries.map((item) => (
-            <article key={item.name} className="border-t border-slate-300 py-6">
+          {industries.map((item, index) => (
+            <article
+              key={item.name}
+              data-aos="fade-up"
+              data-aos-delay={(index % 4) * 100}
+              className={`${styles.liftCard} border-t border-slate-300 py-6`}
+            >
               <item.icon size={25} className="text-[#0755EA]" strokeWidth={1.5} aria-hidden="true" />
               <h3 className="mt-4 text-base font-semibold">{item.name}</h3>
               <p className="mt-2 text-sm leading-6 text-slate-500">{item.copy}</p>
@@ -926,22 +977,24 @@ function DemoPortfolio() {
       <div className={container}>
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div id="demo-title">
-            <SectionHeading
-              number="10"
-              title="আইডিয়া থেকে অসীম সম্ভাবনা!"
-              showEyebrow={false}
-            />
+            <SectionHeading number="10" title="আইডিয়া থেকে অসীম সম্ভাবনা!" showEyebrow={false} />
           </div>
           <a
             href="#real-portfolio"
+            data-aos="fade-up"
             className="inline-flex min-h-11 shrink-0 items-center gap-2 text-sm font-semibold text-[#0755EA]"
           >
             See real websites <ArrowDown size={16} aria-hidden="true" />
           </a>
         </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {demoProjects.map((item) => (
-            <article key={item.name} className="group overflow-hidden border border-slate-200 bg-white">
+          {demoProjects.map((item, index) => (
+            <article
+              key={item.name}
+              data-aos="fade-up"
+              data-aos-delay={(index % 3) * 100}
+              className={`${styles.liftCard} ${styles.portfolioCard} group overflow-hidden border border-slate-200 bg-white`}
+            >
               <LiveDesignPreview name={item.name} url={item.url} previewImage={item.previewImage} />
               <div className="p-6">
                 <h3 className="text-xl font-semibold">{item.name}</h3>
@@ -959,7 +1012,7 @@ function DemoPortfolio() {
             </article>
           ))}
         </div>
-        <p className="mt-5 text-xs leading-5 text-slate-500">
+        <p data-aos="fade-up" className="mt-5 text-xs leading-5 text-slate-500">
           Each preview shows the live demo website. Open a demo to explore it in full.
         </p>
       </div>
@@ -976,17 +1029,15 @@ function RealPortfolio() {
     >
       <div className={container}>
         <div id="real-title">
-          <SectionHeading
-            number="11"
-            title="কাজই বলুক আমাদের পরিচয়!"
-            showEyebrow={false}
-          />
+          <SectionHeading number="11" title="কাজই বলুক আমাদের পরিচয়!" showEyebrow={false} />
         </div>
         <div className="mt-9 grid gap-4 sm:grid-cols-2">
           {realProjects.map((item, index) => (
             <article
               key={item.url}
-              className="group flex flex-col overflow-hidden border border-slate-200 bg-white"
+              data-aos="fade-up"
+              data-aos-delay={(index % 2) * 100}
+              className={`${styles.liftCard} ${styles.portfolioCard} group flex flex-col overflow-hidden border border-slate-200 bg-white`}
             >
               <LiveDesignPreview
                 name={item.name}
@@ -1024,21 +1075,23 @@ function Faq() {
     <section id="faq" aria-labelledby="faq-title" className={sectionSpace}>
       <div className={`${container} grid gap-8`}>
         <div id="faq-title">
-          <SectionHeading
-            number="12"
-            title="Good questions. Clear answers."
-            showEyebrow={false}
-          />
+          <SectionHeading number="12" title="Good questions. Clear answers." showEyebrow={false} />
           <a
             href={consultation}
+            data-aos="fade-up"
             className="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#0755EA]"
           >
             Ask us on WhatsApp <ArrowUpRight size={17} aria-hidden="true" />
           </a>
         </div>
         <div className="border-t border-slate-200">
-          {faqs.map((item) => (
-            <details key={item.question} className="group border-b border-slate-200">
+          {faqs.map((item, index) => (
+            <details
+              key={item.question}
+              data-aos="fade-up"
+              data-aos-delay={(index % 3) * 50}
+              className={`${styles.faqItem} group border-b border-slate-200`}
+            >
               <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-5 py-5 text-sm leading-6 font-semibold">
                 <h3 className="text-sm leading-6 font-semibold">
                   <span lang="bn" className="block leading-7">
@@ -1074,19 +1127,24 @@ function Contact() {
       <div className={`${container} grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20`}>
         <div>
           <h2 id="contact-title" className="max-w-2xl text-3xl leading-tight font-semibold tracking-tight sm:text-5xl">
-            এবার আপনার ব্যবসার পালা!
+            <AnimatedText text="এবার আপনার ব্যবসার পালা!" accent />
           </h2>
-          <p lang="bn" className="mt-3 max-w-lg text-base leading-8 text-[#765f50]">
+          <p
+            data-aos="fade-up"
+            data-aos-delay="100"
+            lang="bn"
+            className="mt-3 max-w-lg text-base leading-8 text-[#765f50]"
+          >
             আপনার ব্যবসার জন্য সঠিক Website ও Package বেছে নিতে আমাদের সঙ্গে কথা বলুন।
           </p>
-          <div className="mt-7">
+          <div data-aos="fade-up" data-aos-delay="150" className="mt-7">
             <ActionLink href={consultation} light>
               <MessageCircle size={18} aria-hidden="true" />
               Get Free Consultation
               <ArrowUpRight size={17} aria-hidden="true" />
             </ActionLink>
           </div>
-          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+          <div data-aos="fade-up" data-aos-delay="200" className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm">
             <a
               href="https://wa.me/8801607333369"
               className="flex items-center gap-2 text-[#60471e] underline-offset-4 hover:underline"
@@ -1103,8 +1161,14 @@ function Contact() {
             </a>
           </div>
         </div>
-        <div className="border border-[#e6d7b9] bg-white/75 p-6 shadow-[0_18px_50px_-30px_rgba(138,100,24,0.22)] sm:p-8">
-          <h3 className="text-lg font-semibold">Have a package in mind?</h3>
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="100"
+          className={`${styles.liftCard} border border-[#e6d7b9] bg-white/75 p-6 shadow-[0_18px_50px_-30px_rgba(138,100,24,0.22)] sm:p-8`}
+        >
+          <h3 className="text-lg font-semibold">
+            <AnimatedText text="Have a package in mind?" />
+          </h3>
           <p className="mt-2 text-sm leading-6 text-[#765f50]">Start a conversation with your preferred option.</p>
           <div className="mt-5 divide-y divide-[#eadfca]">
             {packages.map((item) => (
@@ -1135,7 +1199,7 @@ function Footer() {
   return (
     <footer className="border-t border-[#eadfca] bg-[#fffaf0]">
       <div className={`${container} grid gap-9 py-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_0.8fr_1fr_1fr]`}>
-        <div>
+        <div data-aos="fade-up">
           <Brand footer />
           <p className="mt-4 max-w-64 text-sm leading-6 text-slate-500">
             Web development, business automation, and digital marketing for businesses across Bangladesh.
@@ -1148,8 +1212,10 @@ function Footer() {
           </a>
         </div>
         <div>
-          <h2 className="mb-5 text-xs font-semibold tracking-wider uppercase">Explore</h2>
-          <nav aria-label="Footer navigation" className="flex flex-col gap-3">
+          <h2 className="mb-5 text-xs font-semibold tracking-wider uppercase">
+            <AnimatedText text="Explore" />
+          </h2>
+          <nav data-aos="fade-up" data-aos-delay="100" aria-label="Footer navigation" className="flex flex-col gap-3">
             {navigation.map((item) => (
               <a key={item.href} href={item.href} className="w-fit text-sm text-slate-500 hover:text-[#0755EA]">
                 {item.label}
@@ -1161,8 +1227,10 @@ function Footer() {
           </nav>
         </div>
         <div>
-          <h2 className="mb-5 text-xs font-semibold tracking-wider uppercase">Our services</h2>
-          <nav aria-label="Services" className="flex flex-col gap-3">
+          <h2 className="mb-5 text-xs font-semibold tracking-wider uppercase">
+            <AnimatedText text="Our services" />
+          </h2>
+          <nav data-aos="fade-up" data-aos-delay="150" aria-label="Services" className="flex flex-col gap-3">
             {[
               { label: "Business websites", href: "#pricing" },
               { label: "E-commerce development", href: "#ecommerce" },
@@ -1177,8 +1245,10 @@ function Footer() {
           </nav>
         </div>
         <div>
-          <h2 className="mb-5 text-xs font-semibold tracking-wider uppercase">Selected projects</h2>
-          <nav aria-label="Portfolio websites" className="flex flex-col gap-3">
+          <h2 className="mb-5 text-xs font-semibold tracking-wider uppercase">
+            <AnimatedText text="Selected projects" />
+          </h2>
+          <nav data-aos="fade-up" data-aos-delay="200" aria-label="Portfolio websites" className="flex flex-col gap-3">
             {demoProjects.map((item) => (
               <a
                 key={item.url}
@@ -1322,7 +1392,8 @@ const structuredData = {
 
 export default function Home() {
   return (
-    <div className={`${styles.page} bg-[#fffaf0] text-[#49352b]`}>
+    <div data-home-animations className={`${styles.page} bg-[#fffaf0] text-[#49352b]`}>
+      <HomeAnimations />
       <HomeScroll />
       <a
         href="#main-content"

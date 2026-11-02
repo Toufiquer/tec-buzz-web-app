@@ -146,7 +146,7 @@ export const individualServices = [
   },
   {
     name: "Business Webapp",
-    price: 12300,
+    price: 14900,
     unit: "",
     description: "Bring your storefront, content, and business operations together.",
     descriptionBn: "আপনার অনলাইন স্টোর, কনটেন্ট ও ব্যবসার দৈনন্দিন কাজ এক জায়গায় আনুন।",
