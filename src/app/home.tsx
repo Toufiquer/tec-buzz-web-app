@@ -99,7 +99,7 @@ function ActionLink({
   return (
     <a
       href={href}
-      className={`inline-flex min-h-12 items-center justify-center gap-3 rounded-none border px-5 py-3 text-sm font-semibold transition-colors duration-200 ${light ? "border-[#dfc78f] bg-white text-[#78530e] hover:bg-[#fff7df]" : secondary ? "border-slate-300 bg-transparent text-[#49352b] hover:border-[#0755EA] hover:text-[#0755EA]" : "border-[#0755EA] bg-[#0755EA] text-white hover:border-[#0645c0] hover:bg-[#0645c0]"} ${className}`}
+      className={`inline-flex min-h-12 items-center justify-center gap-3 rounded-none border px-5 py-3 text-sm font-semibold transition-colors duration-200 ${light ? "border-[#bfdbfe] bg-white text-[#0755ea] hover:bg-[#edf5ff]" : secondary ? "border-slate-300 bg-transparent text-[#172b4d] hover:border-[#0755EA] hover:text-[#0755EA]" : "border-[#0755EA] bg-[#0755EA] text-white hover:border-[#0645c0] hover:bg-[#0645c0]"} ${className}`}
     >
       {children}
     </a>
@@ -152,7 +152,7 @@ function SectionHeading({
         </p>
       )}
       <h2
-        className={`text-3xl leading-tight font-semibold tracking-tight sm:text-4xl lg:text-[2.6rem] ${dark ? "text-white" : "text-[#49352b]"}`}
+        className={`text-3xl leading-tight font-semibold tracking-tight sm:text-4xl lg:text-[2.6rem] ${dark ? "text-white" : "text-[#172b4d]"}`}
       >
         <AnimatedText text={title} accent />
       </h2>
@@ -182,7 +182,7 @@ function SectionHeading({
 function IconTile({ icon: Icon, dark = false }: { icon: LucideIcon; dark?: boolean }) {
   return (
     <span
-      className={`${styles.iconTile} inline-flex size-11 shrink-0 items-center justify-center ${dark ? "bg-white/10 text-blue-200" : "bg-[#f7eed9] text-[#9a6b18]"}`}
+      className={`${styles.iconTile} inline-flex size-11 shrink-0 items-center justify-center ${dark ? "bg-white/10 text-blue-200" : "bg-[#e5f1ff] text-[#1d4ed8]"}`}
     >
       <Icon size={21} strokeWidth={1.7} aria-hidden="true" />
     </span>
@@ -243,11 +243,11 @@ function LiveDesignPreview({ name, url, previewImage }: { name: string; url: str
           />
         )}
       </div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex items-end justify-between bg-gradient-to-t from-[#fffaf0]/95 via-[#fffaf0]/75 to-transparent px-3 pb-3 pt-10 text-[#49352b]">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex items-end justify-between bg-gradient-to-t from-[#f5faff]/95 via-[#f5faff]/75 to-transparent px-3 pb-3 pt-10 text-[#172b4d]">
         <span className="text-[10px] font-semibold tracking-wide">
           {previewImage ? "Homepage screenshot" : "Website design preview"}
         </span>
-        <span className="text-[9px] text-[#765f50]">Open live site below ↗</span>
+        <span className="text-[9px] text-[#52657f]">Open live site below ↗</span>
       </div>
     </div>
   );
@@ -278,7 +278,7 @@ function Brand({ footer = false }: { footer?: boolean }) {
 
 function Header() {
   return (
-    <header className={`${styles.header} sticky top-0 z-50 border-b border-[#eadfca] bg-[#fffdf8]/95 backdrop-blur-md`}>
+    <header className={`${styles.header} sticky top-0 z-50 border-b border-[#d6e6f8] bg-[#f8fbff]/95 backdrop-blur-md`}>
       <div className={`${container} flex h-20 items-center justify-between gap-6`}>
         <Brand />
         <HomeNavigation links={navigation} consultationUrl={consultation} />
@@ -330,7 +330,7 @@ function Hero() {
     <section
       id="home"
       aria-labelledby="hero-title"
-      className={`${styles.hero} relative overflow-hidden border-b border-[#e5d5b5]`}
+      className={`${styles.hero} relative overflow-hidden border-b border-[#c9def5]`}
     >
       <div className={styles.heroGlow} aria-hidden="true" />
       <div className={styles.heroGrid} aria-hidden="true" />
@@ -341,7 +341,7 @@ function Hero() {
           <h1
             id="hero-title"
             lang="bn"
-            className="text-[2.65rem] leading-[1.4] font-semibold tracking-tight text-[#49352b] sm:text-[3.5rem] lg:text-[3.85rem]"
+            className="text-[2.65rem] leading-[1.4] font-semibold tracking-tight text-[#172b4d] sm:text-[3.5rem] lg:text-[3.85rem]"
           >
             <span className={styles.heroWord}>আপনার</span> <span className={styles.heroWord}>স্বপ্ন,</span>
             <br />
@@ -352,9 +352,9 @@ function Hero() {
               <span className={styles.shimmerText}>প্রযুক্তি!</span>
             </span>
           </h1>
-          <p className="mt-5 text-base tracking-wide text-[#765f50] sm:text-lg">Website. E-commerce. CRM.</p>
+          <p className="mt-5 text-base tracking-wide text-[#52657f] sm:text-lg">Website. E-commerce. CRM.</p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <ActionLink href="#pricing" light>
+            <ActionLink href="#pricing">
               <span lang="bn">প্যাকেজ দেখুন</span>
               <ArrowRight size={17} aria-hidden="true" />
             </ActionLink>
@@ -363,12 +363,12 @@ function Hero() {
               WhatsApp
             </ActionLink>
           </div>
-          <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-[#765f50]">
+          <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-[#52657f]">
             <p>
-              <strong className="text-xl font-semibold text-[#8e6418]">৳12,300</strong> <span lang="bn">থেকে</span>
+              <strong className="text-xl font-semibold text-[#1d4ed8]">৳12,300</strong> <span lang="bn">থেকে</span>
             </p>
             <p className="flex items-center gap-2">
-              <ShieldCheck size={16} className="text-[#a77a22]" aria-hidden="true" />
+              <ShieldCheck size={16} className="text-[#2563eb]" aria-hidden="true" />
               5+ years experience
             </p>
           </div>
@@ -417,7 +417,7 @@ function Pricing() {
                 key={item.name}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
-                className={`${styles.liftCard} group relative flex flex-col overflow-hidden border p-6 pt-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#0755EA]/60 hover:shadow-[0_24px_50px_-20px_rgba(7,85,234,0.35)] focus-within:-translate-y-1 focus-within:border-[#0755EA] focus-within:shadow-[0_20px_44px_-20px_rgba(7,85,234,0.3)] motion-reduce:transform-none motion-reduce:transition-none ${popular ? "border-[#0755EA] bg-[#fcf6e8] shadow-[0_12px_32px_-16px_rgba(7,85,234,0.25)]" : "border-slate-200 bg-white shadow-[0_8px_24px_-20px_rgba(15,23,42,0.25)]"}`}
+                className={`${styles.liftCard} group relative flex flex-col overflow-hidden border p-6 pt-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-[#0755EA]/60 hover:shadow-[0_24px_50px_-20px_rgba(7,85,234,0.35)] focus-within:-translate-y-1 focus-within:border-[#0755EA] focus-within:shadow-[0_20px_44px_-20px_rgba(7,85,234,0.3)] motion-reduce:transform-none motion-reduce:transition-none ${popular ? "border-[#0755EA] bg-[#edf5ff] shadow-[0_12px_32px_-16px_rgba(7,85,234,0.25)]" : "border-slate-200 bg-white shadow-[0_8px_24px_-20px_rgba(15,23,42,0.25)]"}`}
               >
                 <span
                   className={`absolute inset-x-0 top-0 h-1 transition-colors duration-300 ${popular ? "bg-[#0755EA]" : "bg-slate-200 group-hover:bg-[#0755EA]"}`}
@@ -480,7 +480,7 @@ function Pricing() {
           })}
         </div>
         <section className="mt-10 border border-slate-200 bg-white" aria-labelledby="comparison-title">
-          <div className="flex min-h-16 items-center gap-3 border-b border-[#eadfca] bg-[#fcf6e8] px-5 py-5 sm:px-7">
+          <div className="flex min-h-16 items-center gap-3 border-b border-[#d6e6f8] bg-[#edf5ff] px-5 py-5 sm:px-7">
             <ListFilter size={20} className="shrink-0 text-[#0755EA]" aria-hidden="true" />
             <h3 id="comparison-title" className="text-lg font-semibold text-[#0755EA] sm:text-xl">
               <AnimatedText text="কোন প্যাকেজে কী পাচ্ছেন?" />
@@ -495,7 +495,7 @@ function Pricing() {
           >
             <table className="w-full min-w-160 border-collapse text-left text-sm">
               <thead>
-                <tr className="bg-[#f1e4c6] text-[#49352b]">
+                <tr className="bg-[#dcecff] text-[#172b4d]">
                   <th scope="col" className="w-2/5 px-6 py-4 font-medium">
                     Features
                   </th>
@@ -508,7 +508,7 @@ function Pricing() {
               </thead>
               {featureGroups.map((group) => (
                 <tbody key={group.name}>
-                  <tr className="bg-[#fcf6e8]">
+                  <tr className="bg-[#edf5ff]">
                     <th
                       colSpan={4}
                       scope="colgroup"
@@ -523,7 +523,7 @@ function Pricing() {
                         {row.name}
                       </th>
                       {row.values.map((value, index) => (
-                        <td key={index} className={`px-5 py-3.5 text-center ${index === 1 ? "bg-[#fffaf0]" : ""}`}>
+                        <td key={index} className={`px-5 py-3.5 text-center ${index === 1 ? "bg-[#f5faff]" : ""}`}>
                           <ComparisonValue value={value} />
                         </td>
                       ))}
@@ -545,7 +545,7 @@ function IndividualServices() {
     <section
       id="individual"
       aria-labelledby="individual-title"
-      className={`${sectionSpace} border-y border-[#eadfca] bg-[#fcf6e8]`}
+      className={`${styles.sectionTint} ${sectionSpace} border-y border-[#d6e6f8]`}
     >
       <div className={container}>
         <div id="individual-title">
@@ -606,24 +606,24 @@ function About() {
       <div className={`${container} grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20`}>
         <div
           data-aos="zoom-in"
-          className={`${styles.experienceCard} relative border border-[#eadfca] bg-[#fffaf0] p-8 text-[#49352b] shadow-[0_18px_50px_-30px_rgba(138,100,24,0.24)] sm:p-10`}
+          className={`${styles.experienceCard} relative border border-[#d6e6f8] bg-[#f5faff] p-8 text-[#172b4d] shadow-[0_18px_50px_-30px_rgba(37,99,235,0.24)] sm:p-10`}
         >
-          <p className="mt-5 bg-linear-to-br from-[#8e6418] to-[#b78627] bg-clip-text text-[7rem] leading-none font-semibold tracking-tighter text-transparent sm:text-[9rem]">
+          <p className="mt-5 bg-linear-to-br from-[#1d4ed8] to-[#3b82f6] bg-clip-text text-[7rem] leading-none font-semibold tracking-tighter text-transparent sm:text-[9rem]">
             5<span className="text-6xl">+</span>
           </p>
-          <p className="mt-4 max-w-60 text-lg leading-7 text-[#765f50]">years of real-world development experience.</p>
-          <div className="mt-9 space-y-4 border-t border-[#eadfca] pt-6">
-            <p className="flex items-center gap-3 text-sm text-[#765f50]">
-              <MapPin size={17} className="shrink-0 text-[#a77a22]" aria-hidden="true" />
+          <p className="mt-4 max-w-60 text-lg leading-7 text-[#52657f]">years of real-world development experience.</p>
+          <div className="mt-9 space-y-4 border-t border-[#d6e6f8] pt-6">
+            <p className="flex items-center gap-3 text-sm text-[#52657f]">
+              <MapPin size={17} className="shrink-0 text-[#2563eb]" aria-hidden="true" />
               Serving businesses across Bangladesh
             </p>
-            <p className="flex items-center gap-3 text-sm text-[#765f50]">
-              <Globe2 size={17} className="shrink-0 text-[#a77a22]" aria-hidden="true" />
+            <p className="flex items-center gap-3 text-sm text-[#52657f]">
+              <Globe2 size={17} className="shrink-0 text-[#2563eb]" aria-hidden="true" />
               Developers working remotely in the UK
             </p>
           </div>
           <div
-            className="absolute top-0 right-0 h-1 w-24 bg-linear-to-r from-[#b78627] to-[#e4c875]"
+            className="absolute top-0 right-0 h-1 w-24 bg-linear-to-r from-[#3b82f6] to-[#38bdf8]"
             aria-hidden="true"
           />
         </div>
@@ -668,7 +668,7 @@ function WhyTecBuzz() {
     <section
       id="why-tecbuzz"
       aria-labelledby="why-title"
-      className={`${sectionSpace} border-y border-[#eadfca] bg-[#fcf6e8]`}
+      className={`${styles.sectionTint} ${sectionSpace} border-y border-[#d6e6f8]`}
     >
       <div className={container}>
         <div id="why-title">
@@ -728,7 +728,7 @@ function Ecommerce() {
         <div
           data-aos="zoom-in"
           data-aos-delay="100"
-          className={`${styles.storeVisual} border border-[#eadfca] bg-[#fcf6e8] p-4 sm:p-7`}
+          className={`${styles.storeVisual} border border-[#d6e6f8] bg-[#edf5ff] p-4 sm:p-7`}
         >
           <div className="border border-slate-200 bg-white shadow-sm">
             <div className="flex items-center justify-between border-b border-slate-200 p-5">
@@ -739,7 +739,7 @@ function Ecommerce() {
               <span className="text-[9px] tracking-wider text-slate-500 uppercase">Illustration</span>
             </div>
             <div className="p-5">
-              <div className="flex items-center gap-3 border border-[#eadfca] bg-[#fcf6e8] px-3 py-3 text-xs text-slate-500">
+              <div className="flex items-center gap-3 border border-[#d6e6f8] bg-[#edf5ff] px-3 py-3 text-xs text-slate-500">
                 <Search size={15} aria-hidden="true" />
                 Product search & filtering
               </div>
@@ -768,7 +768,7 @@ function Ecommerce() {
               </div>
             </div>
           </div>
-          <div className="mt-4 flex items-center gap-3 bg-[#f1e4c6] px-5 py-4 text-[#49352b]">
+          <div className="mt-4 flex items-center gap-3 bg-[#dcecff] px-5 py-4 text-[#172b4d]">
             <Smartphone size={22} aria-hidden="true" />
             <p className="text-xs leading-5">
               A storefront for every screen.
@@ -798,14 +798,14 @@ function BusinessAutomation() {
     <section
       id="automation"
       aria-labelledby="automation-title"
-      className={`${sectionSpace} border-y border-[#eadfca] bg-[#fffaf0]`}
+      className={`${styles.sectionTint} ${sectionSpace} border-y border-[#d6e6f8]`}
     >
       <div className={container}>
         <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div id="automation-title">
             <SectionHeading number="07" title="প্রযুক্তি সামলাবে, ব্যবসা এগোবে!" showEyebrow={false} />
           </div>
-          <p data-aos="fade-left" className="max-w-md text-base leading-7 text-[#765f50]">
+          <p data-aos="fade-left" className="max-w-md text-base leading-7 text-[#52657f]">
             Update your content without a developer for routine changes. Keep your leads, team, and website organized
             with CRM software built for businesses in Bangladesh.
           </p>
@@ -816,17 +816,17 @@ function BusinessAutomation() {
               key={item.title}
               data-aos="fade-up"
               data-aos-delay={(index % 3) * 100}
-              className={`${styles.liftCard} flex gap-4 border-t border-[#eadfca] py-6`}
+              className={`${styles.liftCard} flex gap-4 border-t border-[#d6e6f8] py-6`}
             >
               <IconTile icon={item.icon} />
               <div>
-                <h3 className="text-sm font-semibold text-[#49352b]">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-[#765f50]">{item.text}</p>
+                <h3 className="text-sm font-semibold text-[#172b4d]">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[#52657f]">{item.text}</p>
               </div>
             </article>
           ))}
         </div>
-        <p data-aos="fade-up" className="mt-4 border-l-2 border-[#b78627] pl-4 text-xs leading-6 text-[#765f50]">
+        <p data-aos="fade-up" className="mt-4 border-l-2 border-[#3b82f6] pl-4 text-xs leading-6 text-[#52657f]">
           All tools listed above are included in Starter, Express, and Enterprise. Ask about your business workflow
           during a free consultation.
         </p>
@@ -942,7 +942,7 @@ function Industries() {
     <section
       id="industries"
       aria-labelledby="industries-title"
-      className={`${sectionSpace} border-y border-[#eadfca] bg-[#fcf6e8]`}
+      className={`${styles.sectionTint} ${sectionSpace} border-y border-[#d6e6f8]`}
     >
       <div className={container}>
         <div id="industries-title">
@@ -1026,7 +1026,7 @@ function RealPortfolio() {
     <section
       id="real-portfolio"
       aria-labelledby="real-title"
-      className={`${sectionSpace} border-y border-[#eadfca] bg-[#fcf6e8]`}
+      className={`${styles.sectionTint} ${sectionSpace} border-y border-[#d6e6f8]`}
     >
       <div className={container}>
         <div id="real-title">
@@ -1123,7 +1123,7 @@ function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-title"
-      className="bg-linear-to-br from-[#fffaf0] via-[#f8f0df] to-[#f1e4c6] py-16 text-[#49352b] sm:py-20"
+      className="border-t border-[#c9def5] bg-linear-to-br from-[#e6f3ff] via-[#dcecff] to-[#e0f2fe] py-16 text-[#172b4d] sm:py-20"
     >
       <div className={`${container} grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20`}>
         <div>
@@ -1134,7 +1134,7 @@ function Contact() {
             data-aos="fade-up"
             data-aos-delay="100"
             lang="bn"
-            className="mt-3 max-w-lg text-base leading-8 text-[#765f50]"
+            className="mt-3 max-w-lg text-base leading-8 text-[#52657f]"
           >
             আপনার ব্যবসার জন্য সঠিক Website ও Package বেছে নিতে আমাদের সঙ্গে কথা বলুন।
           </p>
@@ -1148,14 +1148,14 @@ function Contact() {
           <div data-aos="fade-up" data-aos-delay="200" className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm">
             <a
               href="https://wa.me/8801607333369"
-              className="flex items-center gap-2 text-[#60471e] underline-offset-4 hover:underline"
+              className="flex items-center gap-2 text-[#24456b] underline-offset-4 hover:underline"
             >
               <MessageCircle size={16} aria-hidden="true" />
               01607333369
             </a>
             <a
               href="mailto:tecbuzz@gmail.com"
-              className="flex items-center gap-2 text-[#60471e] underline-offset-4 hover:underline"
+              className="flex items-center gap-2 text-[#24456b] underline-offset-4 hover:underline"
             >
               <Mail size={16} aria-hidden="true" />
               tecbuzz@gmail.com
@@ -1165,29 +1165,29 @@ function Contact() {
         <div
           data-aos="zoom-in"
           data-aos-delay="100"
-          className={`${styles.liftCard} border border-[#e6d7b9] bg-white/75 p-6 shadow-[0_18px_50px_-30px_rgba(138,100,24,0.22)] sm:p-8`}
+          className={`${styles.liftCard} border border-[#c9def5] bg-white/75 p-6 shadow-[0_18px_50px_-30px_rgba(37,99,235,0.22)] sm:p-8`}
         >
           <h3 className="text-lg font-semibold">
             <AnimatedText text="Have a package in mind?" />
           </h3>
-          <p className="mt-2 text-sm leading-6 text-[#765f50]">Start a conversation with your preferred option.</p>
-          <div className="mt-5 divide-y divide-[#eadfca]">
+          <p className="mt-2 text-sm leading-6 text-[#52657f]">Start a conversation with your preferred option.</p>
+          <div className="mt-5 divide-y divide-[#d6e6f8]">
             {packages.map((item) => (
               <a
                 key={item.name}
                 href={whatsappUrl(
                   `Hello TecBuzz, I would like to discuss the ${item.name} package at ${formatPrice(item.price)} for my business.`,
                 )}
-                className="flex min-h-16 items-center justify-between gap-4 py-4 text-sm transition-colors hover:text-[#9a6b18]"
+                className="flex min-h-16 items-center justify-between gap-4 py-4 text-sm transition-colors hover:text-[#1d4ed8]"
               >
                 <span>
-                  {item.name} <span className="ml-2 text-xs text-[#765f50]">{formatPrice(item.price)}</span>
+                  {item.name} <span className="ml-2 text-xs text-[#52657f]">{formatPrice(item.price)}</span>
                 </span>
                 <ArrowUpRight size={17} aria-hidden="true" />
               </a>
             ))}
           </div>
-          <p className="mt-4 text-xs leading-5 text-[#765f50]">
+          <p className="mt-4 text-xs leading-5 text-[#52657f]">
             Domain and hosting are separate. Content inclusions are one-time.
           </p>
         </div>
@@ -1198,7 +1198,7 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="border-t border-[#eadfca] bg-[#fffaf0]">
+    <footer className="border-t border-[#d6e6f8] bg-[#f5faff]">
       <div className={`${container} grid gap-9 py-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_0.8fr_1fr_1fr]`}>
         <div data-aos="fade-up">
           <Brand footer />
@@ -1394,7 +1394,7 @@ const structuredData = {
 
 export default function Home() {
   return (
-    <div data-home-animations className={`${styles.page} bg-[#fffaf0] text-[#49352b]`}>
+    <div data-home-animations className={`${styles.page} text-[#172b4d]`}>
       <HomeAnimations />
       <HomeScroll />
       <a
